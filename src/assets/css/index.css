@@ -147,6 +147,7 @@ html, body {
     color: #7a7676;
     font-size: 13px;
 }
+
 .nav-ul-li-p > img{
     width: 20px;
     height: 20px;
@@ -161,8 +162,15 @@ nav > div > div > div > ul.noulstyle >li {
 nav > div > div > div> ul.noulstyle >li:last-child {
     border-right: none;
 }
-
+nav > div > div > div> ul.noulstyle >a:last-child {
+    border-right: none;
+}
 nav > div > div >  ul.noulstyle >li {
+    height: 70px;
+    border-right: 1px solid #cec8c8;
+    z-index: 10;
+}
+nav > div > div >  ul.noulstyle >a {
     height: 70px;
     border-right: 1px solid #cec8c8;
     z-index: 10;
@@ -173,11 +181,19 @@ nav > div > div >  ul.noulstyle >li {
 .hover-btn:hover {
     cursor: pointer;
 }
-/*nav > div > div >  ul.noulstyle >li:first-child {*/
-/*    border-right: none;*/
-/*}*/
+nav > div > div >  ul.noulstyle >a:first-child {
+    border-right: none;
+}
 
 nav > div > div >  ul.noulstyle >li > p {
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    color: #262525;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+nav > div > div >  ul.noulstyle >a > p {
     text-align: center;
     line-height: 30px;
     font-size: 20px;
@@ -342,8 +358,8 @@ a.dropdown-menu{
 .pad-t85p{
     padding-top: 85px;
 }
-.pad-t68p{
-    padding-top: 68px;
+.pad-t56p{
+    padding-top: 56px;
 }
 .profile-div > img {
     width: 100%;

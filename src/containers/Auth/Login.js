@@ -77,7 +77,7 @@ class Login extends Component {
                                 <img  className="" src={man} />
                             </div>
                             <form className="form-tag">
-                                <div className="width-100per pad-t68p">
+                                <div className="width-100per pad-t56p">
                                     <div>
                                         <InputWithLabel
                                         className="login-frm-btn"
@@ -99,17 +99,18 @@ class Login extends Component {
                                         />
                                     </div>
                                     <div>
-                                        <AuthButton type='button' className="hover-btn">
+                                        <AuthButton onClick={handleLocalLogin} type='button' className="hover-btn">
                                             <FontAwesomeIcon icon={faPowerOff} />로그인</AuthButton>
+                                        {
+                                            error && <AuthError>{error}</AuthError>
+                                        }
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                {
-                    error && <AuthError>{error}</AuthError>
-                }
+
 
             </div>
         );

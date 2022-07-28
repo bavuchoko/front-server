@@ -23,7 +23,6 @@ class HeaderContainer extends Component {
         window.location.href = '/'; // 홈페이지로 새로고침
     }
 
-
     render() {
         const { visible, user } = this.props;
         if(!visible) return null;
@@ -52,7 +51,7 @@ class HeaderContainer extends Component {
                                         about me
                                     </Link>
                                 </li>
-                                <li className="noulstyle nav-div-ul-li">
+                                <li className="noulstyle nav-div-ul-li" onClick={() => window.open('https://github.com/bavuchoko/monster', '_blank')}>
                                     <p className="nav-ul-li-p"><img  className="hover-btn" src={github} /></p>
                                 </li>
                             </ul>
@@ -67,24 +66,24 @@ class HeaderContainer extends Component {
 
                     <div className="width-100per-400p ">
                         <ul className="noulstyle disp-flex ">
-                            <li className="noulstyle  width-100per-devide-6 hover-li text-center">
+                            <Link className="noulstyle  width-100per-devide-6 hover-li text-center" to="/" >
                                 <FontAwesomeIcon icon={faTv} />
-                            </li>
-                            <li className="noulstyle  width-100per-devide-6 hover-li">
+                            </Link>
+                            <li className="noulstyle  width-100per-devide-6 hover-li" to="/" >
                                 <ScrollDropDown />
                             </li>
-                            <li className="noulstyle  width-100per-devide-6 hover-li" >
+                            <Link className="noulstyle  width-100per-devide-6 hover-li"  to="/" >
                                 <p>API</p>
-                            </li>
-                            <li className="noulstyle  width-100per-devide-6 hover-li">
+                            </Link>
+                            <Link className="noulstyle  width-100per-devide-6 hover-li" to="/" >
                                 <p>TEST</p>
-                            </li>
-                            <li className="noulstyle  width-100per-devide-6 building" >
-                                <p>창고</p>
-                            </li>
-                            <li className="noulstyle  width-100per-devide-6">
+                            </Link>
+                            <Link className="noulstyle  width-100per-devide-6 building"  to="/">
+                            <p>창고</p>
+                            </Link>
+                            <Link className="noulstyle  width-100per-devide-6" to="/" >
 
-                            </li>
+                            </Link>
                         </ul>
                     </div>
 

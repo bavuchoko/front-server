@@ -33,7 +33,7 @@ const ScrollDropDown = () => {
                 ref={btnDropdownRef}
 
             >
-                두루마리
+                STUDY
             </Link>
             <div
                 className={
