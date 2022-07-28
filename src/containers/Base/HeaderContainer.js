@@ -69,17 +69,17 @@ class HeaderContainer extends Component {
                             <Link className="noulstyle  width-100per-devide-6 hover-li text-center" to="/" >
                                 <FontAwesomeIcon icon={faTv} />
                             </Link>
-                            <li className="noulstyle  width-100per-devide-6 hover-li" to="/" >
-                                <ScrollDropDown />
-                            </li>
+                            <Link className="noulstyle  width-100per-devide-6 hover-li" to="/" >
+                                <p>STUDY</p>
+                            </Link>
                             <Link className="noulstyle  width-100per-devide-6 hover-li"  to="/" >
                                 <p>API</p>
                             </Link>
                             <Link className="noulstyle  width-100per-devide-6 hover-li" to="/" >
                                 <p>TEST</p>
                             </Link>
-                            <Link className="noulstyle  width-100per-devide-6 building"  to="/">
-                            <p>창고</p>
+                            <Link className="noulstyle  width-100per-devide-6 hover-li"  to="/">
+                            <p>ETC..</p>
                             </Link>
                             <Link className="noulstyle  width-100per-devide-6" to="/" >
 
@@ -88,11 +88,11 @@ class HeaderContainer extends Component {
                     </div>
 
                     <div className="width-200p ">
-                        <div className="float-right height-100per width-70p"><img className="hover-btn" id="magnifier_img" src={magnifier2} /></div>
+
                     </div>
                 </div>
             </nav>
-        <div className="height-110p width-100per"></div>
+        <div className="height-110p width-100per "></div>
     </>
         );
     }

@@ -9,6 +9,8 @@ import storage from '../../lib/storage';
 import queryString from 'query-string';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
+import MemberlSideMenu from "../../components/sideMenu/MemberlSideMenu";
+
 class Login extends Component {
     componentWillUnmount() {
         const { AuthActions } = this.props;
@@ -65,10 +67,10 @@ class Login extends Component {
         const { error } = this.props;
 
         return (
-            <div  className="width-70per mar-auto-0 disp-flex">
-                <div className="width-200p"></div>
+            <div  className="width-70per mar-auto-0 disp-flex height-100vh-110p">
 
-                <div className="width-100per-200p mar-auto-0">
+
+                <div className="width-100per mar-auto-0  bac-color-white">
                     <div className="padding-rl-80p-t-40p">
 
                         <h2 className="login-h2 h2-head">로그인</h2>
