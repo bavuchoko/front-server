@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { AuthContent, InputWithLabel, AuthButton, RightAlignedLink, AuthError } from '../../components/Auth';
 import { connect } from 'react-redux';
+import man from '../../assets/image/man.png';
 import {bindActionCreators} from 'redux';
 import * as authActions from '../../redux/modules/auth';
 import * as userActions from '../../redux/modules/user';
 import storage from '../../lib/storage';
 import queryString from 'query-string';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
 class Login extends Component {
     componentWillUnmount() {
         const { AuthActions } = this.props;
@@ -63,28 +65,53 @@ class Login extends Component {
         const { error } = this.props;
 
         return (
-            <AuthContent title="로그인">
-                <InputWithLabel
-                    label="이메일"
-                    name="email"
-                    placeholder="이메일"
-                    value={email}
-                    onChange={handleChange}
-                />
-                <InputWithLabel
-                    label="비밀번호"
-                    name="password"
-                    placeholder="비밀번호"
-                    type="password"
-                    value={password}
-                    onChange={handleChange}
-                />
+            <div  className="width-70per mar-auto-0 disp-flex">
+                <div className="width-200p"></div>
+
+                <div className="width-100per-200p mar-auto-0">
+                    <div className="padding-rl-80p-t-40p">
+
+                        <h2 className="login-h2 h2-head">로그인</h2>
+                        <div className="disp-flex login-from pad-t85p ">
+                            <div className="profile-div">
+                                <img  className="" src={man} />
+                            </div>
+                            <form className="form-tag">
+                                <div className="width-100per pad-t68p">
+                                    <div>
+                                        <InputWithLabel
+                                        className="login-frm-btn"
+                                        name="email"
+                                        placeholder="username@email.com"
+                                        value={email}
+                                        onChange={handleChange}
+                                    />
+                                    </div>
+                                    <div>
+
+                                        <InputWithLabel
+                                            className="login-frm-btn"
+                                            name="password"
+                                            placeholder="password"
+                                            type="password"
+                                            value={password}
+                                            onChange={handleChange}
+                                        />
+                                    </div>
+                                    <div>
+                                        <AuthButton type='button' className="hover-btn">
+                                            <FontAwesomeIcon icon={faPowerOff} />로그인</AuthButton>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 {
                     error && <AuthError>{error}</AuthError>
                 }
-                <AuthButton>로그인</AuthButton>
-                <RightAlignedLink to="/auth/register">회원가입</RightAlignedLink>
-            </AuthContent>
+
+            </div>
         );
     }
 }

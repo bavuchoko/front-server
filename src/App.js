@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { Home, Auth } from './pages';
 import HeaderContainer from './containers/Base/HeaderContainer';
-
+import "./assets/css/index.css"
 import storage from './lib/storage';
 import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
