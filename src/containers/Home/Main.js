@@ -4,23 +4,69 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as authActions from "../../redux/modules/auth";
 import * as userActions from "../../redux/modules/user";
+import calendar from '../../assets/image/calendar.png';
+import { Link } from "react-router-dom";
+
 
 class Main extends Component {
 
     render() {
 
         return (
-            <div className="width-70per mar-auto-0 disp-flex height-100vh-110p">
+            <div className="width-1250px mar-auto-0 disp-flex height-100vh-110p">
                 <div className="width-350p">
                     <HomeSideMenu />
                 </div>
 
                 <div className="width-100per-350p mar-auto-0 bac-color-white">
                     <p className="text-indent-20p main-category">HOME</p>
-                    <div className="">
-                        <div className="disp-flex">
+                    <div className="article-container">
+                        <div className="article-banner bac-color-D61C4E"></div>
+                        <div className="date-selector-div" >
+                            <img className="calendar-fas" src={calendar}/>
+                            <span  className="calendar-span">2002 - 02</span>
+                        </div>
+
+                        <div className="article-body">
+                            <ul className="noulstyle padding-tr-40p">
+
+                            <li className="article-card-container noulstyle disp-flex">
+                                <Link className="article-card hover-btn" to="/">
+                                    <div className="width-100per height-230p bac-color-white2">
+                                        <img className="article-card-img" src=""/>
+                                    </div>
+                                    <div>
+                                        <span>JAVA</span>
+                                        <span>2022-01-01</span>
+                                    </div>
+                                    <p>
+                                        React 리덕스(Redux) Immutable.js 상태관리 & Ducks 파일 구조
+                                    </p>
+                                    <p>
+                                        자바스크립트에서 불변성 데이터를 다룰 수 있도록 도와주는 것이 바로 Immutable.js입니다. 우선, 객체 불변성에 대해 살펴 보도록 하겠습니다. 12345let a = 5;let b ...
+                                    </p>
+
+                                </Link>
 
 
+                                <Link className="article-card hover-btn" to="/">
+                                    <div className="width-100per height-230p bac-color-white2">
+                                    </div>
+                                    <div>
+                                        <span>JAVA</span>
+                                        <span>2022-01-01</span>
+                                    </div>
+                                    <p>
+                                        React 리덕스(Redux) Immutable.js 상태관리 & Ducks 파일 구조
+                                    </p>
+                                    <p>
+                                        자바스크립트에서 불변성 데이터를 다룰 수 있도록 도와주는 것이 바로 Immutable.js입니다. 우선, 객체 불변성에 대해 살펴 보도록 하겠습니다. 12345let a = 5;let b ...
+                                    </p>
+
+                                </Link>
+                            </li>
+
+                            </ul>
                         </div>
                     </div>
                 </div>
