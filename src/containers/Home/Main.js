@@ -7,13 +7,14 @@ import * as userActions from "../../redux/modules/user";
 import calendar from '../../assets/image/calendar.png';
 import { Link } from "react-router-dom";
 import Contents from "../../components/content/Contents";
+import Pagenation from "../../components/util/Pagenation";
 
 class Main extends Component {
 
     render() {
 
         return (
-            <div className="width-1250px mar-auto-0 disp-flex height-100vh-110p">
+            <div className="width-1250px mar-auto-0 disp-flex height-100vh">
                 <div className="width-350p">
                     <HomeSideMenu />
                 </div>
@@ -30,8 +31,16 @@ class Main extends Component {
                         <div className="article-body">
                             <ul className="noulstyle padding-tr-40p">
                                 <Contents />
+                                <Contents />
+                                <Contents />
+                                <Contents />
+                                <Contents />
+
                             </ul>
                         </div>
+
+                        <Pagenation />
+
                     </div>
                 </div>
 

@@ -30,7 +30,7 @@ class HeaderContainer extends Component {
 
         return (
             <>
-            <nav className="fixed fullWidth underlineShadow bac-color-white">
+            <nav id="#header" className="fullWidth underlineShadow bac-color-white">
                 <div className="height-40p underline ">
                     <div className="width-70per mar-auto height-100per " >
                         <div className="width-150p height-100per  dsip-inlineblock"></div>
@@ -91,7 +91,6 @@ class HeaderContainer extends Component {
                     </div>
                 </div>
             </nav>
-        <div className="height-110p width-100per "></div>
     </>
         );
     }

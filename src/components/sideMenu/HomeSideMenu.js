@@ -1,9 +1,10 @@
 /*eslint-disable*/
 import React from "react";
-import { Link } from "react-router-dom";
-import magnifier2 from "../../assets/image/magnifier-white.png";
 import Inputer from "../util/Inputer";
 import SiderContent from "../util/SiderContent";
+import SideCategoryLink from "../util/SideCategoryLink";
+import UpperArrow from "../util/UpperArrow";
+
 export default function Sidebar() {
     return (
         <>
@@ -12,7 +13,10 @@ export default function Sidebar() {
                    <Inputer/>
                 </div>
                    <SiderContent/>
+                   <SideCategoryLink/>
+                   <UpperArrow/>
             </nav>
+
         </>
     );
 }
