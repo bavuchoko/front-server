@@ -30,7 +30,33 @@ class HeaderContainer extends Component {
 
         return (
             <>
-            <nav id="#header" className="fullWidth underlineShadow bac-color-white">
+                <nav id="#header" className="top-head-nav2 fullWidth underlineShadow bac-color-white">
+                    <div className="width-70per mar-auto height-70p disp-flex" >
+                                        <div className="width-100per-400p ">
+                        <ul className="noulstyle disp-flex ">
+                            <Link className="noulstyle  width-100per-devide-6 hover-li text-center" to="/" >
+                                <FontAwesomeIcon icon={faTv} />
+                            </Link>
+                            <Link className="noulstyle  width-100per-devide-6 hover-li" to="/" >
+                                <p>STUDY</p>
+                            </Link>
+                            <Link className="noulstyle  width-100per-devide-6 hover-li"  to="/" >
+                                <p>API</p>
+                            </Link>
+                            <Link className="noulstyle  width-100per-devide-6 hover-li" to="/" >
+                                <p>TEST</p>
+                            </Link>
+                            <Link className="noulstyle  width-100per-devide-6 hover-li"  to="/">
+                                <p>ETC..</p>
+                            </Link>
+                            <Link className="noulstyle  width-100per-devide-6" to="/" >
+
+                            </Link>
+                        </ul>
+                    </div>
+
+                </div></nav>
+            <nav id="#header" className="top-head-nav fullWidth underlineShadow bac-color-white">
                 <div className="height-40p underline ">
                     <div className="width-70per mar-auto height-100per " >
                         <div className="width-150p height-100per  dsip-inlineblock"></div>

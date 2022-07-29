@@ -755,3 +755,6 @@ ul > a.hover-li:hover p{
     margin-top: 30px;
     padding: 30px;
 }
+.top-head-nav2{
+    display: none;
+}

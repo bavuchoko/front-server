@@ -18,7 +18,7 @@ function Pagenation () {
     return (
 
         <div className="top-pagenation-div">
-            <div className="mar-auto-0 width-350p height-40p bac-color-gray-blue">
+            <div className="mar-auto-0 width-350p height-40p bac-color-gray-blue pagenation-div">
                 PAGENATION
             </div>
         </div>
