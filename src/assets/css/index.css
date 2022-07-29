@@ -670,7 +670,7 @@ ul > a.hover-li:hover p{
     color: #7a7676;
 }
 .search-bar{
-    font-size: 16px;
+    font-size: 13px;
     color: #7a7676;
     text-indent: 10px;
     margin-left: 13px;
@@ -679,4 +679,17 @@ ul > a.hover-li:hover p{
     height: 30px;
     outline: none;
     border: none;
+}
+.liner{
+    border-radius: 0;
+    width: 0px;
+    position: relative;
+    right: -135px;
+    transition: all 0.1s linear;
+}
+.show{
+    width: 250px;
+    position: relative;
+    right: -11px;
+    transition: all 0.1s linear;
 }
