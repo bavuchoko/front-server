@@ -646,3 +646,37 @@ ul > a.hover-li:hover p{
 .bac-color-white2{
     background-color: #ecebeb;
 }
+
+.article-card-category{
+    width: 100px;
+    margin-top: 10px;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1c8bec;
+}
+.article-card-date{
+    color: #7a7676;
+}
+.article-card-title{
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    font-size: 17px;
+    color: #424241;
+}
+.article-card-content{
+    color: #7a7676;
+}
+.search-bar{
+    font-size: 16px;
+    color: #7a7676;
+    text-indent: 10px;
+    margin-left: 13px;
+    border-radius: 3px;
+    width: 260px;
+    height: 30px;
+    outline: none;
+    border: none;
+}
