@@ -1,17 +1,44 @@
-import React, {Component} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 import HomeSideMenu from "../../components/sideMenu/HomeSideMenu";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as authActions from "../../redux/modules/auth";
 import * as userActions from "../../redux/modules/user";
 import calendar from '../../assets/image/calendar.png';
-import { Link } from "react-router-dom";
-import Contents from "../../components/content/Contents";
-import Pagenation from "../../components/util/Pagenation";
+import Posts from "../../components/content/Posts";
+import Pagination from "../../components/content/Pagination";
+import axios from "axios";
 
-class Main extends Component {
+function Main() {
 
-    render() {
+
+
+
+        const [posts, setPosts] = useState([]);
+        const [loading, setLoading] = useState(false);
+        const [currentPage, setCurrentPage] = useState(1);
+        const [postsPerPage, setPostsPerPage] = useState(8);
+
+        useEffect(() => {
+            const fetchData = async () => {
+                setLoading(true);
+                const response = await axios.get(
+                    "https://jsonplaceholder.typicode.com/posts"
+                );
+                setPosts(response.data);
+                setLoading(false);
+            };
+            fetchData();
+        }, []);
+
+        /* 새로 추가한 부분 */
+        const indexOfLast = currentPage * postsPerPage;
+        const indexOfFirst = indexOfLast - postsPerPage;
+        const currentPosts = (posts) => {
+            let currentPosts = 0;
+            currentPosts = posts.slice(indexOfFirst, indexOfLast);
+            return currentPosts;
+        };
 
         return (
             <div className="width-1250px mar-auto-0 disp-flex height-100vh">
@@ -29,18 +56,15 @@ class Main extends Component {
                         </div>
 
                         <div className="article-body">
-                            <ul className="noulstyle padding-tr-40p">
-                                <Contents />
-                                <Contents />
-                                <Contents />
-                                <Contents />
-                                <Contents />
-
-                            </ul>
+                            <div className="noulstyle padding-tr-40p article-card-body">
+                                <Posts posts={currentPosts(posts)} loading={loading}></Posts>
+                            </div>
                         </div>
-
-                        <Pagenation />
-
+                        <Pagination
+                            postsPerPage={postsPerPage}
+                            totalPosts={posts.length}
+                            paginate={setCurrentPage}
+                        ></Pagination>
                     </div>
                 </div>
 
@@ -48,7 +72,7 @@ class Main extends Component {
             </div>
         );
     }
-}
+
 
 export default connect(
     (state) => ({

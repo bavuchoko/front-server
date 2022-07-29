@@ -634,12 +634,17 @@ ul > a.hover-li:hover p{
     padding-left: 15px;
     padding-right: 15px;
 }
+.article-card-body{
+    display: flex;
+    flex-wrap: wrap;
+}
 .article-card{
     padding-left: 15px;
     padding-right: 15px;
-    width: 50%;
+    flex-basis: 50%;
     border-radius: 3px;
     margin-top: 30px;
+    flex-basis: calc( 50% - 40px);
 }
 
 .height-230p{
@@ -758,3 +763,20 @@ ul > a.hover-li:hover p{
 .top-head-nav2{
     display: none;
 }
+
+.pagination-nav {
+    margin-top: 80px;
+    border-top: 1px solid gainsboro;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.pagination {
+    display: block;
+    width: 280px;
+    height: 70px;
+    margin: 0 auto
+}
+
+
