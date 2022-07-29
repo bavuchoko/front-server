@@ -6,9 +6,8 @@ import storage from '../../lib/storage';
 import {Link} from "react-router-dom";
 import smalllogo from '../../assets/image/smalllogo.png';
 import {faTv} from "@fortawesome/free-solid-svg-icons";
-import magnifier2 from '../../assets/image/magnifier2.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ScrollDropDown from "../../components/Base/Header/dropdown/ScrollDropDown.js";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+
 class HeaderContainer extends Component {
 
     handleLogout = async () => {
