@@ -86,6 +86,13 @@ html, body {
 .width-70p{
     width: 70px;
 }
+.width-900p{
+    width: 900px;
+}
+.width-1248px{
+    width: 1248px;
+}
+
 .width-1250px{
     width: 1250px;
 }
@@ -434,6 +441,11 @@ a.dropdown-menu{
 }
 .text-center{
     text-align: center;
+}
+.line-h-45px{
+    line-height: 45px;
+}
+.line-h-80px{
     line-height: 80px;
 }
 .login-from{
@@ -446,16 +458,6 @@ a.dropdown-menu{
     width: auto;
 }
 
-.write_btn{
-    font-size: 15px;
-    line-height: 35px;
-    text-align: center;
-    width: 100px;
-    height: 35px;
-    border-radius: 3px;
-    border: 2px solid #FEB139;
-    background-color: #293462;
-}
 .write_btn > a {
     color: #FEB139;
 }
@@ -548,6 +550,7 @@ ul > a.hover-li:hover p{
     line-height: 70px;
     margin: 0;
     border-bottom: 1px solid #e5e5e5;
+    display: inline-block;
 }
 .recent-container{
     padding-top: 20px;
@@ -780,3 +783,18 @@ ul > a.hover-li:hover p{
 }
 
 
+
+.write_btn{
+    font-size: 16px;
+    line-height: 35px;
+    text-align: center;
+    width: 100px;
+    height: 35px;
+    border-radius: 2px;
+    border: 1px solid #FEB139;
+    position: relative;
+    top :22px;
+    right: 10px;
+    background-color: #2B2B28;
+    color: wheat;
+}

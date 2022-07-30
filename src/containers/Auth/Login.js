@@ -70,7 +70,7 @@ class Login extends Component {
             <div  className="width-70per mar-auto-0 disp-flex height-100vh-110p">
 
 
-                <div className="width-100per mar-auto-0  bac-color-white">
+                <div className="width-1248px mar-auto-0  bac-color-white">
                     <div className="padding-rl-80p-t-40p">
 
                         <h2 className="login-h2 h2-head">로그인</h2>

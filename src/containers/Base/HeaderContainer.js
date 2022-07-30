@@ -26,15 +26,13 @@ class HeaderContainer extends Component {
         const { visible, user } = this.props;
         if(!visible) return null;
 
-
-
         return (
             <>
                 <nav id="#header" className="top-head-nav2 fullWidth underlineShadow bac-color-white">
-                    <div className="width-70per mar-auto height-70p disp-flex" >
+                    <div className="width-100per mar-auto height-70p disp-flex" >
                                         <div className="width-100per-400p ">
                         <ul className="noulstyle disp-flex ">
-                            <Link className="noulstyle  width-100per-devide-6 hover-li text-center" to="/" >
+                            <Link className="noulstyle  width-100per-devide-6 hover-li text-center  line-h-80px" to="/" >
                                 <FontAwesomeIcon icon={faTv} />
                             </Link>
                             <Link className="noulstyle  width-100per-devide-6 hover-li" to="/" >
@@ -58,7 +56,8 @@ class HeaderContainer extends Component {
                 </div></nav>
             <nav id="#header" className="top-head-nav fullWidth underlineShadow bac-color-white">
                 <div className="height-40p underline ">
-                    <div className="width-70per mar-auto height-100per " >
+                    <div className="width-1248px mar-auto-0">
+                        <div className="width-100per  height-100per " >
                         <div className="width-150p height-100per  dsip-inlineblock"></div>
                         <div className="float-right">
                             <ul className="noulstyle disp-flex">
@@ -82,39 +81,39 @@ class HeaderContainer extends Component {
                             </ul>
                         </div>
                     </div>
+                    </div>
                 </div>
-
-                <div className="width-70per mar-auto height-70p disp-flex" >
+                <div className="width-1248px  height-100per mar-auto-0" >
+                    <div className="width-100per mar-auto height-70p disp-flex" >
                     <div className="width-200p main-logo-top-div">
                         <img src={smalllogo}/>
                     </div>
 
-                    <div className="width-100per-400p ">
+                    <div className="width-900p ">
                         <ul className="noulstyle disp-flex ">
-                            <Link className="noulstyle  width-100per-devide-6 hover-li text-center" to="/" >
+                            <Link className="noulstyle  width-150p hover-li text-center line-h-80px" to="/" >
                                 <FontAwesomeIcon icon={faTv} />
                             </Link>
-                            <Link className="noulstyle  width-100per-devide-6 hover-li" to="/" >
+                            <Link className="noulstyle  width-150p hover-li text-center line-h-45px" to="/" >
                                 <p>STUDY</p>
                             </Link>
-                            <Link className="noulstyle  width-100per-devide-6 hover-li"  to="/" >
+                            <Link className="noulstyle  width-150p hover-li text-center line-h-45px"  to="/" >
                                 <p>API</p>
                             </Link>
-                            <Link className="noulstyle  width-100per-devide-6 hover-li" to="/" >
+                            <Link className="noulstyle  width-150p hover-li text-center line-h-45px" to="/" >
                                 <p>TEST</p>
                             </Link>
-                            <Link className="noulstyle  width-100per-devide-6 hover-li"  to="/">
+                            <Link className="noulstyle  width-150p hover-li text-center line-h-45px"  to="/">
                             <p>ETC..</p>
                             </Link>
-                            <Link className="noulstyle  width-100per-devide-6" to="/" >
+                            <Link className="noulstyle  width-150p text-center line-h-45px" to="/" >
 
                             </Link>
                         </ul>
                     </div>
 
-                    <div className="width-200p ">
 
-                    </div>
+                </div>
                 </div>
             </nav>
     </>

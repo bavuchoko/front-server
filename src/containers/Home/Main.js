@@ -1,4 +1,4 @@
-import React, {Component, useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import HomeSideMenu from "../../components/sideMenu/HomeSideMenu";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
@@ -8,11 +8,13 @@ import calendar from '../../assets/image/calendar.png';
 import Posts from "../../components/content/Posts";
 import Pagination from "../../components/content/Pagination";
 import axios from "axios";
-
-function Main() {
-
+import {Link} from "react-router-dom";
 
 
+function Main(props) {
+        let isLoggedIn = props.isLoggedIn;
+        isLoggedIn = true;
+        const writeBtn = isLoggedIn? <Link className="roboto write_btn float-right" to="/write">WRITE</Link> : null;
 
         const [posts, setPosts] = useState([]);
         const [loading, setLoading] = useState(false);
@@ -41,18 +43,20 @@ function Main() {
         };
 
         return (
-            <div className="width-1250px mar-auto-0 disp-flex height-100vh">
+            <div className="width-1248px mar-auto-0 disp-flex height-100vh">
                 <div className="width-350p">
-                    <HomeSideMenu />
+                    <HomeSideMenu  />
                 </div>
 
                 <div className="width-100per-350p mar-auto-0 bac-color-white">
                     <p className="text-indent-20p main-category">HOME</p>
+
                     <div className="article-container">
                         <div className="article-banner bac-color-D61C4E"></div>
                         <div className="date-selector-div" >
                             <img className="calendar-fas" src={calendar}/>
                             <span  className="calendar-span">2002 - 02</span>
+                            {writeBtn}
                         </div>
 
                         <div className="article-body">

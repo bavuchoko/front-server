@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import { Home, Auth } from './pages';
+import { Home, Auth, Write } from './pages';
 import HeaderContainer from './containers/Base/HeaderContainer';
 import "./assets/css/index.css"
 import storage from './lib/storage';
@@ -36,6 +36,7 @@ class App extends Component {
           <HeaderContainer/>
           <Route exact path="/" component={Home}/>
           <Route path="/auth" component={Auth}/>
+          <Route path="/write" component={Write}/>
         </div>
     );
   }
