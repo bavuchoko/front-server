@@ -798,3 +798,31 @@ ul > a.hover-li:hover p{
     background-color: #2B2B28;
     color: wheat;
 }
+.padding-rl-40p{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.width-1168px{
+    width: 1168px;
+}
+
+/*.toastui-editor-defaultUI, toastui-editor-main toastui-editor-md-mode, toastui-editor-md-container{*/
+/*    height: 800px !important;*/
+/*}*/
+
+.editor-header-container{
+    width: 100%;
+    height: 80px;
+    background-color: #6b6868;
+}
+.editor-title-container{
+    width: 100%;
+    background-color: #da9797;
+    height: 130px;
+}
+.bac-color-temp{
+    background-color: #da8a8a;
+}
+.ProseMirror,toastui-editor-md-preview{
+    background-color: white;
+}

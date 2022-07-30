@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@popperjs/core": "^2.11.5",
+    "@toast-ui/editor-plugin-code-syntax-highlight": "^3.0.0",
+    "@toast-ui/editor-plugin-color-syntax": "^3.0.3",
+    "@toast-ui/react-editor": "^3.1.10",
     "add": "^2.0.6",
     "axios": "^0.27.2",
     "immutable": "^4.1.0",
