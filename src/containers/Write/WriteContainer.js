@@ -4,14 +4,17 @@ import {bindActionCreators} from "redux";
 import * as authActions from "../../redux/modules/auth";
 import * as userActions from "../../redux/modules/user";
 import {Link} from "react-router-dom";
+import 'codemirror/lib/codemirror.css'
+import 'highlight.js/styles/github.css';
+import 'tui-color-picker/dist/tui-color-picker.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import {Editor} from '@toast-ui/react-editor';
-import Prism from 'prismjs';
-import 'prismjs/themes/prism.css';
-import '@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight.css';
+import colorSyntaxPlugin from "@toast-ui/editor-plugin-color-syntax";
+import hljs from "highlight.js";
 import codeSyntaxHighlightPlugin from "@toast-ui/editor-plugin-code-syntax-highlight";
-import 'tui-color-picker/dist/tui-color-picker.css';
-import colorPlugin from '@toast-ui/editor-plugin-color-syntax';
+
+
+
 
 
 
@@ -21,10 +24,6 @@ function WriteContainer(props) {
     const writeBtn = isLoggedIn? <Link className="roboto write_btn float-right" to="/write">WRITE</Link> : null;
 
     const editorRef = createRef();
-    const onChangeEditorTextHandler =()=>{
-        console.log(editorRef.current.getInstance().getMarkdown());
-    }
-
 
     return (
         <div className="width-1248px mar-auto-0 disp-flex height-100vh">
@@ -44,6 +43,8 @@ function WriteContainer(props) {
                         height="600px"
                         initialEditType="markdown"
                         useCommandShortcut={true}
+                        plugins={[codeSyntaxHighlightPlugin.bind(hljs), colorSyntaxPlugin]}
+
                     />
                 </div>
             </div>
