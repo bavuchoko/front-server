@@ -8,7 +8,7 @@ function SiderContent () {
     return (
         <div  className="">
 
-            <p className="text-indent-20p p">RECENT </p>
+            <p className="text-indent-20p p">MOST HIT</p>
             <ul className="noulstyle text-indent-20p">
 
                 <li className="items-center li-to-small-down-style height-100per">

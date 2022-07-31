@@ -6,6 +6,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@material-ui/core": "^4.0.0",
     "@popperjs/core": "^2.11.5",
     "@toast-ui/editor-plugin-code-syntax-highlight": "^3.0.0-alpha.0",
     "@toast-ui/editor-plugin-color-syntax": "^1.0.1",

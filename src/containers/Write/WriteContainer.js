@@ -12,7 +12,7 @@ import {Editor} from '@toast-ui/react-editor';
 import colorSyntaxPlugin from "@toast-ui/editor-plugin-color-syntax";
 import hljs from "highlight.js";
 import codeSyntaxHighlightPlugin from "@toast-ui/editor-plugin-code-syntax-highlight";
-
+import SimpleSelect from "../../components/util/SimpleSelect";
 
 
 
@@ -28,12 +28,11 @@ function WriteContainer(props) {
     return (
         <div className="width-1248px mar-auto-0 disp-flex height-100vh">
             <div className="width-1168px mar-auto-0 bac-color-white padding-rl-40p bac-color-temp">
-                <div className="editor-header-container">
-                    헤더 배너 영역
+                <div className="editor-header-container mar-top-30">
                 </div>
-                <div className="editor-title-container">
-
-                    제목과 등록버튼이 들어갈영역
+                <div className="editor-title-container bac-color-white disp-flex">
+                    <SimpleSelect/>
+                    <input className="content-title-input"/>
                 </div>
                 <div>
 
