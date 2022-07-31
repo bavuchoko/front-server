@@ -826,3 +826,6 @@ ul > a.hover-li:hover p{
 .ProseMirror,toastui-editor-md-preview{
     background-color: white;
 }
+.te-preview{
+    background-color: white;
+}

@@ -64,7 +64,7 @@ class HeaderContainer extends Component {
                                 <li className="noulstyle nav-div-ul-li top-bar-li">
                                     { user.get('logged')
                                         ? (<div>
-                                            {user.getIn(['loggedInfo', 'username'])} <div onClick={this.handleLogout}>(로그아웃)</div>
+                                            {user.getIn(['loggedInfo', 'username'])} <div className="nav-ul-li-p hover-btn " onClick={this.handleLogout}>로그아웃</div>
                                         </div> )
                                         : <LoginButton/>
                                     }

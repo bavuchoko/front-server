@@ -46,12 +46,11 @@ class Login extends Component {
 
     handleLocalLogin = async () => {
         const { form, AuthActions, UserActions, history } = this.props;
-        const { email, password } = form.toJS();
+        const { username, password } = form.toJS();
 
         try {
-            await AuthActions.localLogin({email, password});
+            await AuthActions.userLogin({username, password});
             const loggedInfo = this.props.result.toJS();
-
             UserActions.setLoggedInfo(loggedInfo);
             history.push('/');
             storage.set('loggedInfo', loggedInfo);
@@ -62,7 +61,7 @@ class Login extends Component {
         }
     }
     render() {
-        const { email, password } = this.props.form.toJS(); // form 에서 email 과 password 값을 읽어옴
+        const { username, password } = this.props.form.toJS(); // form 에서 username 과 password 값을 읽어옴
         const { handleChange, handleLocalLogin } = this;
         const { error } = this.props;
 
@@ -83,9 +82,9 @@ class Login extends Component {
                                     <div>
                                         <InputWithLabel
                                         className="login-frm-btn"
-                                        name="email"
+                                        name="username"
                                         placeholder="username@email.com"
-                                        value={email}
+                                        value={username ||"" }
                                         onChange={handleChange}
                                     />
                                     </div>

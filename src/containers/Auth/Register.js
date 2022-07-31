@@ -19,15 +19,12 @@ class Register extends Component {
         });
     }
     validate = {
-        email: (value) => {
-            if(!isEmail(value)) {
-                this.setError('잘못된 이메일 형식 입니다.');
-                return false;
-            }
-            return true;
-        },
         username: (value) => {
             if(!isAlphanumeric(value) || !isLength(value, { min:4, max: 15 })) {
+                if(!isEmail(value)) {
+                    this.setError('잘못된 이메일 형식 입니다.');
+                    return false;
+                }
                 this.setError('아이디는 4~15 글자의 알파벳 혹은 숫자로 이뤄져야 합니다.');
                 return false;
             }
@@ -50,19 +47,7 @@ class Register extends Component {
             return true;
         }
     }
-    checkEmailExists = debounce(async (email) => {
-        const { AuthActions } = this.props;
-        try {
-            await AuthActions.checkEmailExists(email);
-            if(this.props.exists.get('email')) {
-                this.setError('이미 존재하는 이메일입니다.');
-            } else {
-                this.setError(null);
-            }
-        } catch (e) {
-            console.log(e);
-        }
-    }, 300)
+
 
     checkUsernameExists = debounce(async (username) => {
         const { AuthActions } = this.props;
@@ -92,7 +77,7 @@ class Register extends Component {
         if(name.indexOf('password') > -1 || !validation) return; // 비밀번호 검증이거나, 검증 실패하면 여기서 마침
 
         // TODO: 이메일, 아이디 중복 확인
-        const check = name === 'email' ? this.checkEmailExists : this.checkUsernameExists; // name 에 따라 이메일체크할지 아이디 체크 할지 결정
+        const check = this.checkUsernameExists; // name 에 따라 이메일체크할지 아이디 체크 할지 결정
         check(value);
 
     }
@@ -124,8 +109,7 @@ class Register extends Component {
         } catch(e) {
             // 에러 처리하기
             if(e.response.status === 409) {
-                const { key } = e.response.data;
-                const message = key === 'email' ? '이미 존재하는 이메일입니다.' : '이미 존재하는 아이디입니다.';
+                const message = '이미 존재하는 아이디입니다.';
                 return this.setError(message);
             }
             this.setError('알 수 없는 에러가 발생했습니다.')

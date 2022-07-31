@@ -9,12 +9,15 @@ import Posts from "../../components/content/Posts";
 import Pagination from "../../components/content/Pagination";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import storage from "../../lib/storage";
 
 
-function Main(props) {
-        let isLoggedIn = props.isLoggedIn;
-        isLoggedIn = true;
-        const writeBtn = isLoggedIn? <Link className="roboto write_btn float-right" to="/write">WRITE</Link> : null;
+function Main() {
+
+    const loggedInfo = storage.get('loggedInfo');
+    let isLoggedIn = loggedInfo? true : false;
+
+    const writeBtn = isLoggedIn?  <Link className="roboto write_btn float-right" to="/write">WRITE</Link> : null;
 
         const [posts, setPosts] = useState([]);
         const [loading, setLoading] = useState(false);
