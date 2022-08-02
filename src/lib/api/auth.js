@@ -1,13 +1,38 @@
 import axios from 'axios';
+import storage, {getCookie} from '../../lib/storage';
 
-export const checkEmailExists = (email) => axios.get('/api/auth/exists/email/' + email);
-export const checkUsernameExists = (username) => axios.get('/api/auth/exists/username/' + username);
+export const checkEmailExists = (email) => {
+    console.log("checkEmailExists");
+    axios.get('/api/auth/exists/email/' + email);
+}
+export const checkUsernameExists = (username) => {
+    console.log("checkUsernameExists");
+    axios.get('/api/auth/exists/username/' + username);
+}
+export const userRegister = ({username, password}) => {
+    console.log("userRegister");
+    axios.post('/api/user/join', {username, password });
+}
+export const userLogin = ({username, password}) => {
+    console.log("userLogin");
+    axios.post('/api/auth/authenticate', { username, password })
+        .then(
+            res => {
+                console.log(res.data)
+                console.log(res.data["code"])
+                storage.set("token" ,res.data["token"])
+                storage.set("username" , res.data["username"])
+                storage.set('loggedInfo', res.data);
+                window.location.replace("/")
+            }
+        );
 
-export const userRegister = ({username, password}) => axios.post('/api/auth/register/local', {username, password });
-export const userLogin = ({username, password}) => axios.post('/api/user/login', { username, password });
+};
 
 export const checkStatus = () =>{
-    console.log("cccc")
+    console.log("checkStatus");
     axios.get('/api/auth/check');
 }
-export const logout = () =>{ axios.post('/api/auth/logout');}
+export const logout = () =>{
+    console.log("logout")
+    axios.get('/api/auth/logout');}

@@ -1,22 +1,21 @@
-import React, { Component } from 'react';
-import { AuthContent, InputWithLabel, AuthButton, RightAlignedLink, AuthError } from '../../components/Auth';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {AuthButton, AuthError, InputWithLabel} from '../../components/Auth';
+import {connect} from 'react-redux';
 import man from '../../assets/image/man.png';
 import {bindActionCreators} from 'redux';
 import * as authActions from '../../redux/modules/auth';
-import * as userActions from '../../redux/modules/user';
-import storage from '../../lib/storage';
 import queryString from 'query-string';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
-import MemberlSideMenu from "../../components/sideMenu/MemberlSideMenu";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPowerOff} from "@fortawesome/free-solid-svg-icons";
 
 class Login extends Component {
     componentWillUnmount() {
+        console.log("componentWillUnmount");
         const { AuthActions } = this.props;
         AuthActions.initializeForm('login')
     }
     handleChange = (e) => {
+        console.log("handleChange");
         const { AuthActions } = this.props;
         const { name, value } = e.target;
 
@@ -27,6 +26,7 @@ class Login extends Component {
         });
     }
     componentDidMount() {
+        console.log("componentDidMount");
         const { location } = this.props;
         const query = queryString.parse(location.search);
 
@@ -45,15 +45,12 @@ class Login extends Component {
     }
 
     handleLocalLogin = async () => {
-        const { form, AuthActions, UserActions, history } = this.props;
+        console.log("handleLocalLogin");
+        const { form, AuthActions} = this.props;
         const { username, password } = form.toJS();
 
         try {
             await AuthActions.userLogin({username, password});
-            const loggedInfo = this.props.result.toJS();
-            UserActions.setLoggedInfo(loggedInfo);
-            history.push('/');
-            storage.set('loggedInfo', loggedInfo);
 
         } catch (e) {
             console.log('a');
@@ -125,7 +122,6 @@ export default connect(
         result: state.auth.get('result')
     }),
     (dispatch) => ({
-        AuthActions: bindActionCreators(authActions, dispatch),
-        UserActions: bindActionCreators(userActions, dispatch)
+        AuthActions: bindActionCreators(authActions, dispatch)
     })
 )(Login);

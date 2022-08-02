@@ -7,16 +7,16 @@ import {Link} from "react-router-dom";
 import smalllogo from '../../assets/image/smalllogo.png';
 import {faTv} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {bindActionCreators} from "redux";
+import * as userActions from '../../redux/modules/user';
+import axios from "axios";
 
 class HeaderContainer extends Component {
 
     handleLogout = async () => {
         const { UserActions } = this.props;
-        try {
-            await UserActions.logout();
-        } catch (e) {
-            console.log(e);
-        }
+        axios.get('/api/auth/logout');
+
 
         storage.remove('loggedInfo');
         window.location.href = '/'; // 홈페이지로 새로고침
@@ -63,7 +63,7 @@ class HeaderContainer extends Component {
                             <ul className="noulstyle disp-flex">
                                 <li className="noulstyle nav-div-ul-li top-bar-li">
                                     { user.get('logged')
-                                        ? (<div>
+                                        ? (<div className="disp-flex">
                                             {user.getIn(['loggedInfo', 'username'])} <div className="nav-ul-li-p hover-btn " onClick={this.handleLogout}>로그아웃</div>
                                         </div> )
                                         : <LoginButton/>
@@ -127,5 +127,6 @@ export default connect(
         user: state.user
     }),
     (dispatch) => ({
+        AuthActions: bindActionCreators(userActions, dispatch)
     })
 )(HeaderContainer);

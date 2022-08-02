@@ -6,12 +6,12 @@ import { pender } from 'redux-pender';
 
 const SET_LOGGED_INFO = 'user/SET_LOGGED_INFO'; // 로그인 정보 설정
 const SET_VALIDATED = 'user/SET_VALIDATED'; // validated 값 설정
-const LOGOUT = 'user/LOGOUT'; // 로그아웃
+const LOGOUT = 'auth/logout'; // 로그아웃
 const CHECK_STATUS = 'user/CHECK_STATUS'; // 현재 로그인상태 확인
 
 export const setLoggedInfo = createAction(SET_LOGGED_INFO); // loggedInfo
 export const setValidated = createAction(SET_VALIDATED); // validated
-export const logout = createAction(LOGOUT, AuthAPI.logout);
+export const logout = createAction(LOGOUT, AuthAPI.logout());
 export const checkStatus = createAction(CHECK_STATUS, AuthAPI.checkStatus);
 
 const initialState = Map({

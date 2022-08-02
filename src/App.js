@@ -20,6 +20,8 @@ class App extends Component {
         try {
             await UserActions.checkStatus();
         } catch (e) {
+            storage.remove('token');
+            storage.remove('username');
             storage.remove('loggedInfo');
             window.location.href = '/auth/login?expired';
         }
