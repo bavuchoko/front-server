@@ -20,6 +20,7 @@ function Main() {
     const writeBtn = isLoggedIn?  <Link className="roboto write_btn float-right" to="/write">WRITE</Link> : null;
 
         const [posts, setPosts] = useState([]);
+        const [hits, setHits] = useState([]);
         const [loading, setLoading] = useState(false);
         const [currentPage, setCurrentPage] = useState(1);
         const [postsPerPage, setPostsPerPage] = useState(8);
@@ -31,10 +32,16 @@ function Main() {
                     "https://jsonplaceholder.typicode.com/posts"
                 );
                 setPosts(response.data);
+
+                const response2 = await axios.get(
+                    "https://jsonplaceholder.typicode.com/comments"
+                );
+                setHits(response2.data);
                 setLoading(false);
             };
             fetchData();
         }, []);
+
 
         /* 새로 추가한 부분 */
         const indexOfLast = currentPage * postsPerPage;
@@ -44,11 +51,17 @@ function Main() {
             currentPosts = posts.slice(indexOfFirst, indexOfLast);
             return currentPosts;
         };
+    const hitPost = (hits) => {
+
+        let hitposts = 0;
+        hitposts = hits.slice(indexOfFirst, indexOfLast);
+        return hitposts;
+    };
 
         return (
             <div className="width-1248px mar-auto-0 disp-flex height-100vh">
                 <div className="width-350p">
-                    <HomeSideMenu  />
+                    <HomeSideMenu hits={hitPost(hits)} loading={loading}/>
                 </div>
 
                 <div className="width-100per-350p mar-auto-0 bac-color-white">
