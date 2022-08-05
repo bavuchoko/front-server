@@ -15,7 +15,7 @@ const Sidebar = ({ hits, loading }) => {
                 </div>
                 <div  className="">
 
-                    <p className="text-indent-20p p">MOST HIT</p>
+                    <p className="text-indent-20p p font-size-15px ">Most hit</p>
                     <ul className="noulstyle text-indent-20p">
 
                     {loading && <div> loading... </div>}

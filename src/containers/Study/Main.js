@@ -59,16 +59,35 @@ function Main() {
     };
 
         return (
-            <div className="width-1248px mar-auto-0 disp-flex height-100vh">
-                <div className="width-350p">
+            <div className="width-1140px mar-auto-0 disp-flex height-100vh">
+                <div className="width-340p">
                     <HomeSideMenu hits={hitPost(hits)} loading={loading}/>
                 </div>
 
-                <div className="width-100per-350p mar-auto-0 bac-color-white">
-                    <p className="text-indent-20p main-category">HOME</p>
+                <div className="width-800p mar-auto-0 bac-color-white">
+                    <p className="text-indent-20p main-category padding-rl-40p">Stduy</p>
 
                     <div className="article-container">
-                        <div className="article-banner bac-color-D61C4E"></div>
+
+                        <div className="article-banner bac-color-D61C4E">
+                            <ul className="noulstyle disp-flex font-color-white margin-left-30p">
+                                <li className="disp-block padding-right-30p padding-left-30p hover-btn hover-color-FEB139 border-1-s-g-toR">
+                                    Java
+                                </li>
+                                <li className="disp-block padding-right-30p padding-left-30p hover-btn hover-color-FEB139 border-1-s-g-toR">
+                                    Spring
+                                </li>
+                                <li className="disp-block padding-right-30p padding-left-30p hover-btn hover-color-FEB139 border-1-s-g-toR">
+                                    DataBase
+                                </li>
+                                <li className="disp-block padding-right-30p padding-left-30p hover-btn hover-color-FEB139">
+                                    Ubuntu
+                                </li>
+
+                            </ul>
+                        </div>
+
+
                         <div className="date-selector-div" >
                             <img className="calendar-fas" src={calendar}/>
                             <span  className="calendar-span">2002 - 02</span>

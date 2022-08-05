@@ -31,7 +31,7 @@ class Login extends Component {
         const query = queryString.parse(location.search);
 
         if(query.expired !== undefined) {
-            this.setError('세션에 만료되었습니다. 다시 로그인하세요.')
+            this.setError('세션이 만료되었습니다. 다시 로그인하세요.')
         }
     }
 
@@ -66,7 +66,7 @@ class Login extends Component {
             <div  className="width-70per mar-auto-0 disp-flex height-100vh-110p">
 
 
-                <div className="width-1248px mar-auto-0  bac-color-white">
+                <div className="width-1140px mar-auto-0  bac-color-white">
                     <div className="padding-rl-80p-t-40p">
 
                         <h2 className="login-h2 h2-head">로그인</h2>

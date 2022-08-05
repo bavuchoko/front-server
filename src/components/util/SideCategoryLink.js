@@ -14,25 +14,25 @@ function SideCategoryLink () {
                 <li  className="roboto link-to-cateogry">
                     <FontAwesomeIcon icon={faPlay} className="fas-play"/>
                     <Link className="roboto" to="/">
-                        STUDY
+                        Board
                     </Link>
                 </li>
                 <li className="roboto link-to-cateogry">
                     <FontAwesomeIcon icon={faPlay}  className="fas-play"/>
                     <Link className="roboto" to="/">
-                        API
+                        Api/Docs
                     </Link>
                 </li>
                 <li className="roboto link-to-cateogry">
                     <FontAwesomeIcon icon={faPlay}  className="fas-play"/>
                     <Link className="roboto" to="/">
-                        TEST
+                        Test
                     </Link>
                 </li>
                 <li className="roboto link-to-cateogry">
                     <FontAwesomeIcon icon={faPlay}  className="fas-play"/>
                     <Link className="roboto" to="/">
-                        TEC
+                        Etc
                     </Link>
                 </li>
             </ul>

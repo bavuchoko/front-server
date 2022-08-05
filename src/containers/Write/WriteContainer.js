@@ -26,7 +26,7 @@ function WriteContainer(props) {
     const editorRef = createRef();
 
     return (
-        <div className="width-1248px mar-auto-0 disp-flex height-100vh">
+        <div className="width-1140px mar-auto-0 disp-flex height-100vh">
             <div className="width-1168px mar-auto-0 bac-color-white padding-rl-40p bac-color-temp">
                 <div className="editor-header-container mar-top-30">
                 </div>

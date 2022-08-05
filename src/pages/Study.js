@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import {AuthWrapper} from "../components/Auth";
 import {Route} from "react-router-dom";
-import {Main} from "../containers/Home";
+import {Main} from "../containers/Study";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as baseActions from "../redux/modules/base";
 
-class Home extends Component {
+class Study extends Component {
     render() {
         return (
             <AuthWrapper>
-                <Route path="/" component={Main}/>
+                <Route path="/study" component={Main}/>
             </AuthWrapper>
         );
     }
@@ -22,4 +22,4 @@ export default connect(
     (dispatch) => ({
         BaseActions: bindActionCreators(baseActions, dispatch)
     })
-)(Home);
+)(Study);

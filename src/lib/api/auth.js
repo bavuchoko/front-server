@@ -15,7 +15,7 @@ export const userRegister = ({username, password}) => {
 }
 export const userLogin = ({username, password}) => {
     console.log("userLogin");
-    axios.post('/api/auth/authenticate', { username, password })
+    axios.post('/api/user/authenticate', { username, password })
         .then(
             res => {
                 console.log(res.data)
@@ -35,4 +35,4 @@ export const checkStatus = () =>{
 }
 export const logout = () =>{
     console.log("logout")
-    axios.get('/api/auth/logout');}
+    axios.get('/api/user/logout');}

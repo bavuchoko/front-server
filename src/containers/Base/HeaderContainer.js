@@ -28,11 +28,11 @@ class HeaderContainer extends Component {
 
         return (
             <>
-                <nav id="#header" className="top-head-nav2 fullWidth underlineShadow bac-color-white">
-                    <div className="width-100per mar-auto height-70p disp-flex" >
-                                        <div className="width-100per-400p ">
-                        <ul className="noulstyle disp-flex ">
-                            <Link className="noulstyle  width-100per-devide-6 hover-li text-center  line-h-80px" to="/" >
+            <nav id="#header" className="top-head-nav2 fullWidth underlineShadow bac-color-white">
+                <div className="width-100per mar-auto height-70p disp-flex" >
+                    <div className="width-100per-400p ">
+                        <ul className="noulstyle disp-flex  height-70p">
+                            <Link className="noulstyle  width-100per-devide-6 hover-li text-center  line-h-90px" to="/" >
                                 <FontAwesomeIcon icon={faTv} />
                             </Link>
                             <Link className="noulstyle  width-100per-devide-6 hover-li" to="/" >
@@ -52,11 +52,11 @@ class HeaderContainer extends Component {
                             </Link>
                         </ul>
                     </div>
-
-                </div></nav>
+                </div>
+            </nav>
             <nav id="#header" className="top-head-nav fullWidth underlineShadow bac-color-white">
                 <div className="height-40p underline ">
-                    <div className="width-1248px mar-auto-0">
+                    <div className="width-1140px mar-auto-0">
                         <div className="width-100per  height-100per " >
                         <div className="width-150p height-100per  dsip-inlineblock"></div>
                         <div className="float-right">
@@ -64,7 +64,7 @@ class HeaderContainer extends Component {
                                 <li className="noulstyle nav-div-ul-li top-bar-li">
                                     { user.get('logged')
                                         ? (<div className="disp-flex">
-                                            {user.getIn(['loggedInfo', 'username'])} <div className="nav-ul-li-p hover-btn " onClick={this.handleLogout}>로그아웃</div>
+                                            [ {user.getIn(['loggedInfo', 'nickname'])}  ] 님 <div className="margin-left-10p nav-ul-li-p hover-btn " onClick={this.handleLogout}>로그아웃</div>
                                         </div> )
                                         : <LoginButton/>
                                     }
@@ -83,30 +83,32 @@ class HeaderContainer extends Component {
                     </div>
                     </div>
                 </div>
-                <div className="width-1248px  height-100per mar-auto-0" >
+                <div className="width-1140px  height-100per mar-auto-0" >
                     <div className="width-100per mar-auto height-70p disp-flex" >
                     <div className="width-200p main-logo-top-div">
-                        <img src={smalllogo}/>
+                        <Link to="/" >
+                            {/*<img src={smalllogo}/>*/}
+                        </Link>
                     </div>
 
                     <div className="width-900p ">
-                        <ul className="noulstyle disp-flex ">
-                            <Link className="noulstyle  width-150p hover-li text-center line-h-80px" to="/" >
+                        <ul className="noulstyle disp-flex height-70p">
+                            <Link className="noulstyle  width-140p hover-li text-center line-h-90px" to="/" >
                                 <FontAwesomeIcon icon={faTv} />
                             </Link>
-                            <Link className="noulstyle  width-150p hover-li text-center line-h-45px" to="/" >
-                                <p>STUDY</p>
+                            <Link className="noulstyle  width-80p hover-li text-center line-h-54px" to="/study" >
+                                <p>Barod</p>
                             </Link>
-                            <Link className="noulstyle  width-150p hover-li text-center line-h-45px"  to="/" >
-                                <p>API</p>
+                            <Link className="noulstyle  width-80p hover-li text-center line-h-54px"  to="/docs" >
+                                <p>Api/Docs</p>
                             </Link>
-                            <Link className="noulstyle  width-150p hover-li text-center line-h-45px" to="/" >
-                                <p>TEST</p>
+                            <Link className="noulstyle  width-80p hover-li text-center line-h-54px" to="/test" >
+                                <p>Test</p>
                             </Link>
-                            <Link className="noulstyle  width-150p hover-li text-center line-h-45px"  to="/">
-                            <p>ETC..</p>
+                            <Link className="noulstyle  width-80p hover-li text-center line-h-54px"  to="/etc">
+                            <p>Etc..</p>
                             </Link>
-                            <Link className="noulstyle  width-150p text-center line-h-45px" to="/" >
+                            <Link className="noulstyle  width-80p text-center line-h-54px" to="/" >
 
                             </Link>
                         </ul>
@@ -116,6 +118,7 @@ class HeaderContainer extends Component {
                 </div>
                 </div>
             </nav>
+                <div className="width-100per height-112p"></div>
     </>
         );
     }
