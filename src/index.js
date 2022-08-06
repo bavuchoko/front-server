@@ -7,6 +7,9 @@ import './assets/css/responsible.css';
 import configureStore from './redux/configureStore';
 import axios from "axios";
 
+axios.defaults.baseURL = 'http://localhost:8080';
+
+axios.defaults.withCredentials = true;
 const store = configureStore();
 const render = Component => {
     ReactDOM.render(
