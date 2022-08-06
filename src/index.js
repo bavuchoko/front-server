@@ -5,9 +5,10 @@ import Root from './Root';
 import './index.css';
 import './assets/css/responsible.css';
 import configureStore from './redux/configureStore';
+import axios from "axios";
 
 const store = configureStore();
-
+axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? '/' : 'https://125.138.127.39:8080/';
 const render = Component => {
     ReactDOM.render(
             <Component store={store}/>,
