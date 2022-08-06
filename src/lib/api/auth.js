@@ -7,7 +7,7 @@ export const checkEmailExists = (email) => {
 }
 export const checkUsernameExists = (username) => {
     console.log("checkUsernameExists");
-    axios.get('/api/auth/exists/username/' + username);
+    axios.get(process.env.REACT_APP_SERVICE_URL + '/api/auth/exists/username/' + username);
 }
 export const userRegister = ({username, password}) => {
     console.log("userRegister");
