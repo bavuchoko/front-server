@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 
 
 const LoginButton = () => (
-        <Link  className="nav-ul-li-p hover-btn " to="/auth/login">
+        <Link  className="nav-ul-li-p hover-btn " to="/api/auth/login">
             로그인
         </Link>
 );
