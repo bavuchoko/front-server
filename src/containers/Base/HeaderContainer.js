@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import github from '../../assets/image/github.png';
 import storage from '../../lib/storage';
 import {Link} from "react-router-dom";
-import smalllogo from '../../assets/image/smalllogo.png';
 import {faTv} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {bindActionCreators} from "redux";

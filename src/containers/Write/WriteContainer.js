@@ -13,39 +13,53 @@ import colorSyntaxPlugin from "@toast-ui/editor-plugin-color-syntax";
 import hljs from "highlight.js";
 import codeSyntaxHighlightPlugin from "@toast-ui/editor-plugin-code-syntax-highlight";
 import SimpleSelect from "../../components/util/SimpleSelect";
-
-
-
-
+import { useHistory } from "react-router-dom";
+import {Button} from "@material-ui/core";
+import BackwordButton from "../../components/util/BackwordButton";
+import SaveButton from "../../components/util/SaveButton";
 
 function WriteContainer(props) {
     let isLoggedIn = props.isLoggedIn;
     isLoggedIn = true;
-    const writeBtn = isLoggedIn? <Link className="roboto write_btn float-right" to="/write">WRITE</Link> : null;
+    let history =useHistory();
 
-    const editorRef = createRef();
+    const writeBtn = isLoggedIn? <SaveButton /> : null;
+
 
     return (
         <div className="width-1140px mar-auto-0 disp-flex height-100vh">
             <div className="width-1168px mar-auto-0 bac-color-white padding-rl-40p bac-color-temp">
+
+                <div className="title-div width-100per height-70p"></div>
                 <div className="editor-header-container mar-top-30">
                 </div>
-                <div className="editor-title-container bac-color-white disp-flex">
-                    <SimpleSelect/>
-                    <input className="content-title-input"/>
-                </div>
-                <div>
+                <form>
+                    <div className="editor-title-container bac-color-white disp-flex">
+                        <SimpleSelect/>
 
-                    <Editor
-                        initialValue="hello react editor world!"
-                        previewStyle="vertical"
-                        height="600px"
-                        initialEditType="markdown"
-                        useCommandShortcut={true}
-                        plugins={[codeSyntaxHighlightPlugin.bind(hljs), colorSyntaxPlugin]}
+                        <input className="content-title-input text-indent-20p"/>
+                    </div>
+                    <div>
 
-                    />
-                </div>
+                        <Editor
+
+                            initialValue="hello react editor world!"
+                            previewStyle="vertical"
+                            height="600px"
+                            initialEditType="markdown"
+                            useCommandShortcut={true}
+                            plugins={[codeSyntaxHighlightPlugin.bind(hljs), colorSyntaxPlugin]}
+
+                        />
+
+                        {writeBtn}
+                        <BackwordButton history={ history }>
+
+                        </BackwordButton>
+
+
+                    </div>
+                </form>
             </div>
         </div>
     );

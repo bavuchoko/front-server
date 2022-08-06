@@ -252,8 +252,8 @@ nav > div > div >  ul.noulstyle >a > p {
 #magnifier_img{
     display: inline-block;
     margin-top: 18px;
-    width: 20px;
-    height: 20px;
+    width: 14px;
+    height: 14px;
 }
 
 .building:hover {
@@ -735,7 +735,8 @@ ul > a.hover-li:hover p{
 }
 .search-bar{
     font-size: 13px;
-    color: #7a7676;
+    word-spacing: 1px;
+    color: #8f8c8c;
     text-indent: 10px;
     margin-left: 13px;
     border-radius: 3px;
@@ -743,6 +744,7 @@ ul > a.hover-li:hover p{
     height: 30px;
     outline: none;
     border: none;
+    background-color: #fac87b;
 }
 .liner{
     border-radius: 0;
@@ -891,7 +893,8 @@ ul > a.hover-li:hover p{
     background-color: white;
 }
 .content-title-input{
-
+    word-spacing: 3px;
+    color: #5d5a5a;
     padding: 0;
     margin: 0;
     margin-top: 74px;
@@ -900,6 +903,9 @@ ul > a.hover-li:hover p{
     height: 35px;
     outline: none;
     border: 1px solid #d3d3d3;
+}
+.te-editor-section{
+    word-spacing: 3px;
 }
 .MuiFormControl-root{
     margin-top: 62px !important;
@@ -923,4 +929,79 @@ ul > a.hover-li:hover p{
 
 .hover-color-FEB139:hover{
     color: #FEB139;
+}
+
+.MuiButton-contained{
+    margin-right: 20px !important;
+    float: right;
+    letter-spacing: 1px !important;
+    font-size: 12px !important;
+    width: 120px;
+    height: 45px;
+    font-family: Roboto !important;
+    margin-top: 30px !important;
+    background-color: #FEB139 !important;
+}
+
+description-table-parent{
+    width: 100%;
+    margin: 30px;
+}
+.description-table{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+background-color: #ddeaf5;
+}
+.description-table > tr {
+    height: 30px;
+}
+
+
+.description-table > tr > td{
+    text-indent: 5px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #5b5a5a;
+    border: 1px solid #ececec;
+    font-family: Roboto;
+}
+
+.description-table > tr > td:first-child{
+    width: 150px;
+}
+.description-table > tr > td:last-child{
+    width: calc(100% - 150px );
+}
+.dependecies-p {
+    margin-top:50px;
+    margin-bottom: 2px;
+    font-family: Roboto;
+    padding-left: 40px;
+    font-weight: 700;
+    color: #545252;
+}
+
+.dependecies{
+    padding-left: 80px;
+}
+.topCate{
+    padding-left: 5px;
+}
+.subCate{
+    padding-left: 25px;
+}
+.dependecies > ul > li{
+    line-height: 35px;
+    font-family: Roboto;
+    color: #6b6868;
+
+    margin-right: 15px;
+    height: 30px !important;
+    border-bottom: 1px solid #d9d8d8;
+}
+.dependecies-fontawsome{
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 8px;
 }
