@@ -15,7 +15,7 @@ export const userRegister = ({username, password}) => {
 }
 export const userLogin = ({username, password}) => {
     console.log("userLogin");
-    axios.post('/api/user/authenticate', { username, password })
+    axios.post(process.env.REACT_APP_SERVICE_URL + '/api/user/authenticate', { username, password })
         .then(
             res => {
                 console.log(res.data)
