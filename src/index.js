@@ -8,7 +8,7 @@ import configureStore from './redux/configureStore';
 import axios from "axios";
 
 const store = configureStore();
-axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? '/' : 'http://125.138.127.39:8080/';
+axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? '/' : 'http://pjs.monster:8080/';
 const render = Component => {
     ReactDOM.render(
             <Component store={store}/>,
