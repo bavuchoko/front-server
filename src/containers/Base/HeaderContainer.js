@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import github from '../../assets/image/github.png';
 import storage from '../../lib/storage';
 import {Link} from "react-router-dom";
-import {faTv} from "@fortawesome/free-solid-svg-icons";
+import {faHouse} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {bindActionCreators} from "redux";
 import * as userActions from '../../redux/modules/user';
@@ -32,7 +32,7 @@ class HeaderContainer extends Component {
                     <div className="width-100per-400p ">
                         <ul className="noulstyle disp-flex  height-70p">
                             <Link className="noulstyle  width-100per-devide-6 hover-li text-center  line-h-90px" to="/" >
-                                <FontAwesomeIcon icon={faTv} />
+                                <FontAwesomeIcon icon={faHouse} />
                             </Link>
                             <Link className="noulstyle  width-100per-devide-6 hover-li" to="/" >
                                 <p>STUDY</p>
@@ -93,7 +93,7 @@ class HeaderContainer extends Component {
                     <div className="width-900p ">
                         <ul className="noulstyle disp-flex height-70p">
                             <Link className="noulstyle  width-140p hover-li text-center line-h-90px" to="/" >
-                                <FontAwesomeIcon icon={faTv} />
+                                <FontAwesomeIcon icon={faHouse} />
                             </Link>
                             <Link className="noulstyle  width-80p hover-li text-center line-h-54px" to="/study" >
                                 <p>Barod</p>
