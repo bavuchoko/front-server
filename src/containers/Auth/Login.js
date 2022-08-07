@@ -57,11 +57,18 @@ class Login extends Component {
             this.setError('잘못된 계정정보입니다.');
         }
     }
+
+
     render() {
         const { username, password } = this.props.form.toJS(); // form 에서 username 과 password 값을 읽어옴
         const { handleChange, handleLocalLogin } = this;
         const { error } = this.props;
-
+        const handleOnKeyPress = e => {
+            console.log("aaa")
+            if (e.key === 'Enter') {
+                handleLocalLogin();
+            }
+        };
         return (
             <div  className="width-70per mar-auto-0 disp-flex height-100vh-110p">
 
@@ -78,12 +85,13 @@ class Login extends Component {
                                 <div className="width-100per pad-t56p">
                                     <div>
                                         <InputWithLabel
-                                        className="login-frm-btn"
-                                        name="username"
-                                        placeholder="username@email.com"
-                                        value={username ||"" }
-                                        onChange={handleChange}
-                                    />
+                                            className="login-frm-btn"
+                                            name="username"
+                                            placeholder="username@email.com"
+                                            value={username ||"" }
+                                            onChange={handleChange}
+                                            onKeyPress={handleOnKeyPress}
+                                        />
                                     </div>
                                     <div>
 
@@ -94,10 +102,13 @@ class Login extends Component {
                                             type="password"
                                             value={password}
                                             onChange={handleChange}
+                                            onKeyPress={handleOnKeyPress}
                                         />
                                     </div>
                                     <div>
-                                        <AuthButton onClick={handleLocalLogin} type='button' className="hover-btn">
+                                        <AuthButton
+                                            onClick={handleLocalLogin}
+                                            type='button' className="hover-btn">
                                             <FontAwesomeIcon icon={faPowerOff} />로그인</AuthButton>
                                         {
                                             error && <AuthError>{error}</AuthError>
