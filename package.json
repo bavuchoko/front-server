@@ -11,6 +11,7 @@
     "@toast-ui/editor-plugin-code-syntax-highlight": "^3.0.0-alpha.0",
     "@toast-ui/editor-plugin-color-syntax": "^1.0.1",
     "@toast-ui/react-editor": "^2.5.3",
+    "@types/react": "^17.0.48",
     "add": "^2.0.6",
     "axios": "^0.27.2",
     "highlight": "^0.2.4",

@@ -1,16 +1,19 @@
 import React, {Component} from 'react';
-import {AuthWrapper} from "../components/Auth";
-import {Route} from "react-router-dom";
-import {Main} from "../containers/Study";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as baseActions from "../redux/modules/base";
+import {Route} from "react-router-dom";
+import {Main, WriteContainer} from "../containers/Study";
+import AuthWrapper from "../components/Auth/AuthWrapper";
 
 class Study extends Component {
+
+
     render() {
         return (
             <AuthWrapper>
-                <Route path="/study" component={Main}/>
+                <Route path="/study/list" component={Main}/>
+                <Route path="/study/write" component={WriteContainer}/>
             </AuthWrapper>
         );
     }

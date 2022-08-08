@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import { About,Study, Auth, Write } from './pages';
+import { About, Study, Auth } from './pages';
+import {Main as StudyList, WriteContainer, View} from './containers/Study'
+
+
 import HeaderContainer from './containers/Base/HeaderContainer';
 import "./assets/css/index.css"
 import storage from './lib/storage';
@@ -27,13 +30,14 @@ class App extends Component {
 
   render() {
     return (
-        <div>
+        <div className="summit">
           <HeaderContainer/>
           <Route exact path="/" component={About}/>
           <Route exact path="/about" component={About}/>
-          <Route exact path="/study" component={Study}/>
+          <Route exact path="/study/list" component={StudyList}/>
+          <Route exact path="/study/write" component={WriteContainer}/>
+          <Route exact path="/study/view" component={View}/>
           <Route path="/auth" component={Auth}/>
-          <Route path="/write" component={Write}/>
         </div>
     );
   }

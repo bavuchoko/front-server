@@ -95,20 +95,17 @@ class HeaderContainer extends Component {
                             <Link className="noulstyle  width-140p hover-li text-center line-h-90px" to="/" >
                                 <FontAwesomeIcon icon={faHouse} />
                             </Link>
-                            <Link className="noulstyle  width-80p hover-li text-center line-h-54px" to="/study" >
-                                <p>Barod</p>
+                            <Link className="noulstyle  width-100p hover-li text-center line-h-54px" to="/study/list" >
+                                <p>Board</p>
                             </Link>
-                            <Link className="noulstyle  width-80p hover-li text-center line-h-54px"  to="/docs" >
+                            <Link className="noulstyle  width-100p hover-li text-center line-h-54px"  to="/docs" >
                                 <p>Api/Docs</p>
                             </Link>
-                            <Link className="noulstyle  width-80p hover-li text-center line-h-54px" to="/test" >
+                            <Link className="noulstyle  width-100p hover-li text-center line-h-54px" to="/test" >
                                 <p>Test</p>
                             </Link>
-                            <Link className="noulstyle  width-80p hover-li text-center line-h-54px"  to="/etc">
+                            <Link className="noulstyle  width-100p hover-li text-center line-h-54px"  to="/etc">
                             <p>Etc..</p>
-                            </Link>
-                            <Link className="noulstyle  width-80p text-center line-h-54px" to="/" >
-
                             </Link>
                         </ul>
                     </div>

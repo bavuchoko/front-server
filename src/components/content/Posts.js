@@ -6,7 +6,7 @@ const Posts = ({ posts, loading }) => {
         <>
             {loading && <div> loading... </div>}
             {posts.map((post) => (
-            <Link key={post.id} className="article-card hover-btn" to="/">
+            <Link key={post.id} className="article-card hover-btn" to="/study/view">
                 <div className="width-100per height-230p bac-color-white2 ">
                     <img className="article-card-img" src=""/>
                 </div>

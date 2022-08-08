@@ -17,7 +17,7 @@ function Main() {
     const loggedInfo = storage.get('loggedInfo');
     let isLoggedIn = loggedInfo? true : false;
 
-    const writeBtn = isLoggedIn?  <Link className="roboto write_btn float-right" to="/write">WRITE</Link> : null;
+    const writeBtn = isLoggedIn?  <Link className="roboto write_btn float-right" to="/study/write">WRITE</Link> : null;
 
         const [posts, setPosts] = useState([]);
         const [hits, setHits] = useState([]);
@@ -54,7 +54,7 @@ function Main() {
     const hitPost = (hits) => {
 
         let hitposts = 0;
-        hitposts = hits.slice(indexOfFirst, indexOfLast);
+        hitposts = hits.slice(0, 4);
         return hitposts;
     };
 

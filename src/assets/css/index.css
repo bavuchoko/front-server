@@ -5,7 +5,9 @@ pre, form, fieldset, textarea, blockquote, span, * {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-
+.summit{
+    background-color: #f8f8f8;
+}
 body {
     overflow: scroll;
     /* IE scroll 숨김 */
@@ -28,7 +30,7 @@ html, body {
 }
 
 .bac-color-grey{
-    background-color: #eaeaea;
+    background-color: #f1f1f1;
 }
 .fixed{
     position: fixed;
@@ -698,10 +700,9 @@ ul > a.hover-li:hover p{
 .article-card{
     padding-left: 15px;
     padding-right: 15px;
-    flex-basis: 50%;
     border-radius: 3px;
     margin-top: 30px;
-    flex-basis: calc( 50% - 40px);
+    flex-basis: calc( 50% - 30px);
 }
 
 .height-230p{
@@ -1007,4 +1008,7 @@ background-color: #ddeaf5;
 }
 .login-frm-btn::placeholder{
     color: #b7b6b6;
+}
+.view-Header{
+    background-color: #f1f1f1;
 }
