@@ -58,7 +58,7 @@ class HeaderContainer extends Component {
                     <div className="width-1140px mar-auto-0">
                         <div className="width-100per  height-100per " >
                         <div className="width-150p height-100per  dsip-inlineblock"></div>
-                        <div className="float-right">
+                        <div className="float-right top-header">
                             <ul className="noulstyle disp-flex">
                                 <li className="noulstyle nav-div-ul-li top-bar-li">
                                     { user.get('logged')
