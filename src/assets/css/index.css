@@ -1005,3 +1005,6 @@ background-color: #ddeaf5;
     margin-right: 15px;
     font-size: 8px;
 }
+.login-frm-btn::placeholder{
+    color: #b7b6b6;
+}
