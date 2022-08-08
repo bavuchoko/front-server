@@ -11,7 +11,7 @@ module.exports = (app) => {
         }))
     app.use(
         createProxyMiddleware('/api', {
-            target: 'http://localhost:8080',
+            target: 'http://125.138.127.39:8080',
             pathRewrite: {
                 // '^/api':''
             },
