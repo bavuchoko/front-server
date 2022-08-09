@@ -638,7 +638,7 @@ ul > a.hover-li:hover p{
 }
 
 .recent-content-p{
-    font-size: 17px;
+    font-size: 15px;
     height: 25px;
     line-height: 25px;
     color: #1c8bec;
@@ -649,6 +649,7 @@ ul > a.hover-li:hover p{
     height: auto;
     text-indent: 20px;
     height: auto;
+    font-weight: 200;
     line-height: 20px;
     font-size: 13px;
 }
@@ -659,7 +660,7 @@ ul > a.hover-li:hover p{
     text-align: right;
     height: 25px;
     line-height: 25px;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .width-228p{
@@ -1001,9 +1002,11 @@ background-color: #ddeaf5;
     padding-left: 40px;
     font-weight: 700;
     color: #545252;
+
 }
 
 .dependecies{
+    font-size: 14px;
     padding-left: 80px;
 }
 .topCate{
@@ -1035,11 +1038,12 @@ background-color: #ddeaf5;
 .article-title{
     padding-bottom: 30px;
     vertical-align: bottom;
-    font-size: 32px;
+    font-size: 30px;
     margin: 30px;
     word-break: break-word;
     word-spacing: 3px;
     border-bottom: 1px solid #b9b9b9;
+    color : #3b3939;
 }
 .article-title > p{
     margin-bottom: 20px;
@@ -1047,13 +1051,15 @@ background-color: #ddeaf5;
 .article-title > span{
     display: inline-block;
     float: right;
-    font-size: 16px;
+    font-size: 14px;
+    color: #747577;
 }
 .article-title-div {
     display: inline-block;
     margin-right: 12px;
     float: left;
-    font-size: 16px;
+    font-size: 14px;
+    color: #747577;
 }
 .tpye_btn{
     margin: 0 !important;
@@ -1087,4 +1093,6 @@ background-color: #ddeaf5;
     display: inline-block;
     margin-right: 20px;
     margin-left: 20px;
+    font-size: 13px;
+    color: #747577;
 }

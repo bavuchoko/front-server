@@ -33,7 +33,7 @@ function Main() {
                                 </ul>
                             </div>
 
-                            <p className="dependecies-p">DATABASE</p>
+                            <p className="dependecies-p">Database</p>
                             <div className="dependecies">
                                 <ul className="noulstyle">
 
