@@ -4,26 +4,21 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as authActions from "../../redux/modules/auth";
 import * as userActions from "../../redux/modules/user";
-import calendar from '../../assets/image/calendar.png';
-import Posts from "../../components/content/Posts";
-import Pagination from "../../components/content/Pagination";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import PrevButton from "../../components/util/PrevButton";
+import NextButton from "../../components/util/NextButton";
 import storage from "../../lib/storage";
-
+import UpdateOrDeleteBtn from "../../components/util/UpdateOrDeleteBtn";
 
 function Main() {
-
     const loggedInfo = storage.get('loggedInfo');
     let isLoggedIn = loggedInfo? true : false;
 
-    const writeBtn = isLoggedIn?  <Link className="roboto write_btn float-right" to="/study/write">WRITE</Link> : null;
+    const UpdateOrDelet = isLoggedIn?  <UpdateOrDeleteBtn /> : null;
 
-    const [posts, setPosts] = useState([]);
     const [hits, setHits] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(8);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -54,7 +49,7 @@ function Main() {
             </div>
 
             <div className="width-800p mar-auto-0 bac-color-white">
-                <p className="text-indent-20p main-category padding-rl-40p">2022-01-01 - 11:22:33</p>
+                <p className="text-indent-20p main-category padding-rl-40p">Java</p>
 
                 <div className="article-container">
 
@@ -63,15 +58,32 @@ function Main() {
 
                     <div className="article-title ">
                         <p>조 React 리덕스(Redux) Immutable.js 상태관리 & Ducks 파일 구조</p>
+                        {UpdateOrDelet}
+
                         <span>2022-01-01 11:22:33</span>
                     </div>
 
                     <div className="article-body">
                         <div className="noulstyle padding-tr-40p article-card-body">
 
+                            내용
+
                         </div>
                     </div>
-
+                    <div className="article-footer">
+                        <ul className="noulstyle">
+                            <li className="disp-block float-left mar-l-20px">
+                                <Link to="/">
+                                    <PrevButton/>
+                                </Link>
+                            </li>
+                            <li  className="disp-block float-right mar-r-20px">
+                                <Link to="/">
+                                    <NextButton />
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 

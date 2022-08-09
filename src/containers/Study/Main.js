@@ -8,7 +8,6 @@ import calendar from '../../assets/image/calendar.png';
 import Posts from "../../components/content/Posts";
 import Pagination from "../../components/content/Pagination";
 import axios from "axios";
-import {Link} from "react-router-dom";
 import storage from "../../lib/storage";
 import WriteButton from "../../components/util/WriteButton";
 

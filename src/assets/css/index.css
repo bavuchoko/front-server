@@ -823,6 +823,12 @@ ul > a.hover-li:hover p{
     box-shadow: 3px 0 6px 0 rgb(0 0 0 / 20%);;
 }
 .article-body{
+    width: calc( 100% - 60px );
+    height: auto;
+    margin: 30px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #cbcbcb;
 }
 
 .top-pagenation-div{
@@ -1027,6 +1033,7 @@ background-color: #ddeaf5;
     background-color: #293462;
 }
 .article-title{
+    padding-bottom: 30px;
     vertical-align: bottom;
     font-size: 32px;
     margin: 30px;
@@ -1035,10 +1042,17 @@ background-color: #ddeaf5;
     border-bottom: 1px solid #b9b9b9;
 }
 .article-title > p{
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 .article-title > span{
+    display: inline-block;
     float: right;
+    font-size: 16px;
+}
+.article-title-div {
+    display: inline-block;
+    margin-right: 12px;
+    float: left;
     font-size: 16px;
 }
 .tpye_btn{
@@ -1055,4 +1069,22 @@ background-color: #ddeaf5;
 }
 .tpye_btn > span{
     font-size: 17px;
+}
+
+.article-footer{
+    margin: 30px;
+    width: calc(100% - 60px);
+    height: 50px;
+    border-bottom: 1px solid #b9b9b9;
+}
+.mar-l-20px{
+    margin-left: 20px;
+}
+.mar-r-20px{
+    margin-right: 20px;
+}
+.prev-next-btn{
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px;
 }
