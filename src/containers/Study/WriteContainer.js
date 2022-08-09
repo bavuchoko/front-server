@@ -1,9 +1,9 @@
-import React, {createRef} from 'react';
+import React from 'react';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as authActions from "../../redux/modules/auth";
 import * as userActions from "../../redux/modules/user";
-import {Link} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import 'codemirror/lib/codemirror.css'
 import 'highlight.js/styles/github.css';
 import 'tui-color-picker/dist/tui-color-picker.css';
@@ -13,8 +13,6 @@ import colorSyntaxPlugin from "@toast-ui/editor-plugin-color-syntax";
 import hljs from "highlight.js";
 import codeSyntaxHighlightPlugin from "@toast-ui/editor-plugin-code-syntax-highlight";
 import SimpleSelect from "../../components/util/SimpleSelect";
-import { useHistory } from "react-router-dom";
-import {Button} from "@material-ui/core";
 import BackwordButton from "../../components/util/BackwordButton";
 import SaveButton from "../../components/util/SaveButton";
 
@@ -54,7 +52,6 @@ function WriteContainer(props) {
 
                         {writeBtn}
                         <BackwordButton history={ history }>
-
                         </BackwordButton>
 
 

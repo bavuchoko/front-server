@@ -23,7 +23,7 @@ const Sidebar = ({ hits, loading }) => {
                     <li key={hit.id}  className="items-center li-to-small-down-style height-100per">
                         <Link to="/admin/dashboard">
                             <div className="recent-container disp-flex">
-                                <div className="recent-img bac-color-2B2B28">
+                                <div className="recent-img bac-color-FEB139">
 
                                 </div>
                                 <div className="recent-content-box width-228p">

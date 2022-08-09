@@ -4,7 +4,7 @@ body, talbe, th, td, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,p
 pre, form, fieldset, textarea, blockquote, span, * {
     font-family: 'Noto Sans KR', sans-serif;
 }
-
+p{margin: 0; padding: 0}
 .summit{
     background-color: #f8f8f8;
 }
@@ -75,6 +75,9 @@ html, body {
 }
 .mar-top-0{
     margin-top: 0px;
+}
+.pad-top-16{
+    padding-top: 16px  !important;
 }
 .mar-top-30{
     margin-top: 30px;
@@ -446,6 +449,9 @@ a.dropdown-menu{
 .bac-color-FEB139{
     background: #FEB139;
 }
+.bac-color-293462{
+    background: #293462;
+}
 .fa-power-off{
     display: inline-block;
     margin-right: 10px;
@@ -668,8 +674,12 @@ ul > a.hover-li:hover p{
 .bac-color-2B2B28{
     background-color: #2B2B28;
 }
+
 .bac-color-D61C4E{
     background-color: #2B2B28;
+}
+.bac-color-155674{
+    background-color: #155674;
 }
 .date-selector-div{
     width: 100%;
@@ -932,6 +942,10 @@ ul > a.hover-li:hover p{
     color: #FEB139;
 }
 
+.hover-color-F5FFAE:hover{
+    color: #F5FFAE;
+}
+
 .MuiButton-contained{
     margin-right: 20px !important;
     float: right;
@@ -1010,5 +1024,35 @@ background-color: #ddeaf5;
     color: #b7b6b6;
 }
 .view-Header{
-    background-color: #f1f1f1;
+    background-color: #293462;
+}
+.article-title{
+    vertical-align: bottom;
+    font-size: 32px;
+    margin: 30px;
+    word-break: break-word;
+    word-spacing: 3px;
+    border-bottom: 1px solid #b9b9b9;
+}
+.article-title > p{
+    margin-bottom: 50px;
+}
+.article-title > span{
+    float: right;
+    font-size: 16px;
+}
+.tpye_btn{
+    margin: 0 !important;
+    color: #c5c5c5 !important;
+    background-color: #293462 !important;
+    font-size: 13px !important;
+    line-height: 35px !important;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top :15px;
+    right: 10px;
+}
+.tpye_btn > span{
+    font-size: 17px;
 }

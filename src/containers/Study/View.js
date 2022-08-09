@@ -61,6 +61,10 @@ function Main() {
                     <div className="article-banner view-Header">
                     </div>
 
+                    <div className="article-title ">
+                        <p>조 React 리덕스(Redux) Immutable.js 상태관리 & Ducks 파일 구조</p>
+                        <span>2022-01-01 11:22:33</span>
+                    </div>
 
                     <div className="article-body">
                         <div className="noulstyle padding-tr-40p article-card-body">

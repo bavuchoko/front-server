@@ -34,20 +34,17 @@ class HeaderContainer extends Component {
                             <Link className="noulstyle  width-100per-devide-6 hover-li text-center  line-h-90px" to="/" >
                                 <FontAwesomeIcon icon={faHouse} />
                             </Link>
-                            <Link className="noulstyle  width-100per-devide-6 hover-li" to="/" >
+                            <Link className="noulstyle  width-100per-devide-6 hover-li pad-top-16" to="/" >
                                 <p>STUDY</p>
                             </Link>
-                            <Link className="noulstyle  width-100per-devide-6 hover-li"  to="/" >
+                            <Link className="noulstyle  width-100per-devide-6 hover-li pad-top-16"  to="/" >
                                 <p>API</p>
                             </Link>
-                            <Link className="noulstyle  width-100per-devide-6 hover-li" to="/" >
+                            <Link className="noulstyle  width-100per-devide-6 hover-li pad-top-16" to="/" >
                                 <p>TEST</p>
                             </Link>
-                            <Link className="noulstyle  width-100per-devide-6 hover-li"  to="/">
+                            <Link className="noulstyle  width-100per-devide-6 hover-li "  to="/">
                                 <p>ETC..</p>
-                            </Link>
-                            <Link className="noulstyle  width-100per-devide-6" to="/" >
-
                             </Link>
                         </ul>
                     </div>
@@ -95,22 +92,20 @@ class HeaderContainer extends Component {
                             <Link className="noulstyle  width-140p hover-li text-center line-h-90px" to="/" >
                                 <FontAwesomeIcon icon={faHouse} />
                             </Link>
-                            <Link className="noulstyle  width-100p hover-li text-center line-h-54px" to="/study/list" >
+                            <Link className="noulstyle  width-100p hover-li text-center line-h-54px pad-top-16" to="/study/list" >
                                 <p>Board</p>
                             </Link>
-                            <Link className="noulstyle  width-100p hover-li text-center line-h-54px"  to="/docs" >
+                            <Link className="noulstyle  width-100p hover-li text-center line-h-54px pad-top-16"  to="/docs" >
                                 <p>Api/Docs</p>
                             </Link>
-                            <Link className="noulstyle  width-100p hover-li text-center line-h-54px" to="/test" >
+                            <Link className="noulstyle  width-100p hover-li text-center line-h-54px pad-top-16" to="/test" >
                                 <p>Test</p>
                             </Link>
-                            <Link className="noulstyle  width-100p hover-li text-center line-h-54px"  to="/etc">
+                            <Link className="noulstyle  width-100p hover-li text-center line-h-54px pad-top-16"  to="/etc">
                             <p>Etc..</p>
                             </Link>
                         </ul>
                     </div>
-
-
                 </div>
                 </div>
             </nav>

@@ -10,14 +10,14 @@ import Pagination from "../../components/content/Pagination";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import storage from "../../lib/storage";
-
+import WriteButton from "../../components/util/WriteButton";
 
 function Main() {
 
     const loggedInfo = storage.get('loggedInfo');
     let isLoggedIn = loggedInfo? true : false;
 
-    const writeBtn = isLoggedIn?  <Link className="roboto write_btn float-right" to="/study/write">WRITE</Link> : null;
+    const writeBtn = isLoggedIn?  <WriteButton/> : null;
 
         const [posts, setPosts] = useState([]);
         const [hits, setHits] = useState([]);
@@ -69,18 +69,18 @@ function Main() {
 
                     <div className="article-container">
 
-                        <div className="article-banner bac-color-D61C4E">
+                        <div className="article-banner bac-color-155674">
                             <ul className="noulstyle disp-flex font-color-white margin-left-30p">
-                                <li className="disp-block padding-right-30p padding-left-30p hover-btn hover-color-FEB139 border-1-s-g-toR">
+                                <li className="disp-block padding-right-30p padding-left-30p hover-btn hover-color-F5FFAE border-1-s-g-toR">
                                     Java
                                 </li>
-                                <li className="disp-block padding-right-30p padding-left-30p hover-btn hover-color-FEB139 border-1-s-g-toR">
+                                <li className="disp-block padding-right-30p padding-left-30p hover-btn hover-color-F5FFAE border-1-s-g-toR">
                                     Spring
                                 </li>
-                                <li className="disp-block padding-right-30p padding-left-30p hover-btn hover-color-FEB139 border-1-s-g-toR">
+                                <li className="disp-block padding-right-30p padding-left-30p hover-btn hover-color-F5FFAE border-1-s-g-toR">
                                     DataBase
                                 </li>
-                                <li className="disp-block padding-right-30p padding-left-30p hover-btn hover-color-FEB139">
+                                <li className="disp-block padding-right-30p padding-left-30p hover-btn hover-color-F5FFAE">
                                     Ubuntu
                                 </li>
 
