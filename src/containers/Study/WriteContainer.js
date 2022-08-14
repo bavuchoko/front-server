@@ -8,13 +8,37 @@ import 'codemirror/lib/codemirror.css'
 import 'highlight.js/styles/github.css';
 import 'tui-color-picker/dist/tui-color-picker.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
-import {Editor} from '@toast-ui/react-editor';
-import colorSyntaxPlugin from "@toast-ui/editor-plugin-color-syntax";
-import hljs from "highlight.js";
-import codeSyntaxHighlightPlugin from "@toast-ui/editor-plugin-code-syntax-highlight";
+
+
 import SimpleSelect from "../../components/util/SimpleSelect";
 import BackwordButton from "../../components/util/BackwordButton";
 import SaveButton from "../../components/util/SaveButton";
+
+
+
+
+
+import 'codemirror/lib/codemirror.css';
+import 'highlight.js/styles/github.css';
+import 'tui-color-picker/dist/tui-color-picker.css';
+import '@toast-ui/editor/dist/toastui-editor.css';
+
+import { Editor } from "@toast-ui/react-editor";
+
+
+
+
+
+import "codemirror/lib/codemirror.css";
+import "tui-color-picker/dist/tui-color-picker.css";
+import "@toast-ui/editor/dist/toastui-editor.css";
+import "highlight.js/styles/github.css";
+
+import colorSyntaxPlugin from "@toast-ui/editor-plugin-color-syntax";
+import hljs from "highlight.js";
+import codeSyntaxHighlightPlugin from "@toast-ui/editor-plugin-code-syntax-highlight";
+
+
 
 function WriteContainer(props) {
     let isLoggedIn = props.isLoggedIn;
@@ -46,7 +70,7 @@ function WriteContainer(props) {
                             height="600px"
                             initialEditType="markdown"
                             useCommandShortcut={true}
-                            plugins={[codeSyntaxHighlightPlugin.bind(hljs), colorSyntaxPlugin]}
+                            plugins={[[codeSyntaxHighlightPlugin, { hljs }], colorSyntaxPlugin]}
 
                         />
 
