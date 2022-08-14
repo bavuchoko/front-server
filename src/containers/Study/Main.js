@@ -59,7 +59,7 @@ function Main() {
                 </div>
 
                 <div className="width-800p mar-auto-0 bac-color-white">
-                    <p className="text-indent-20p main-category padding-rl-40p">Stduy</p>
+                    <p className="text-indent-20p main-category padding-rl-40p">Board</p>
 
                     <div className="article-container">
 

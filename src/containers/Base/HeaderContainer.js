@@ -67,7 +67,7 @@ class HeaderContainer extends Component {
                                 </li>
 
                                 <li className="noulstyle nav-div-ul-li top-bar-li">
-                                    <Link className="nav-ul-li-p hover-btn " to="/member/login">
+                                    <Link className="nav-ul-li-p hover-btn " to="/about">
                                         about me
                                     </Link>
                                 </li>
