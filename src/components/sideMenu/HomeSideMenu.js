@@ -6,7 +6,8 @@ import UpperArrow from "../util/UpperArrow";
 import {Link} from "react-router-dom";
 
 
-const Sidebar = ({ hits, loading }) => {
+const HomeSideMenu = ({ hits, loading }) => {
+
     return (
         <>
             <nav className="height-100per bac-color-grey border-1-s-g">
@@ -20,6 +21,7 @@ const Sidebar = ({ hits, loading }) => {
 
                     {loading && <div> loading... </div>}
                 {hits.map((hit) => (
+
                     <li key={hit.id}  className="items-center li-to-small-down-style height-100per">
                         <Link to="/admin/dashboard">
                             <div className="recent-container disp-flex">
@@ -27,9 +29,9 @@ const Sidebar = ({ hits, loading }) => {
 
                                 </div>
                                 <div className="recent-content-box width-228p">
-                                    <p className="recent-content-p">{hit.name}</p>
+                                    <p className="recent-content-p">{hit.title}</p>
                                     <p className="recent-content-p2">{hit.body}</p>
-                                    <p className="recent-content-p3">2022-07-03</p>
+                                    <p className="recent-content-p3">{hit.writeTime}</p>
                                 </div>
                             </div>
                         </Link>
@@ -46,4 +48,4 @@ const Sidebar = ({ hits, loading }) => {
         </>
     );
 }
-export default Sidebar;
+export default HomeSideMenu;

@@ -33,9 +33,10 @@ function Main() {
                 setPosts(response.data);
 
                 const response2 = await axios.get(
-                    "https://jsonplaceholder.typicode.com/comments"
+                    "api/content/recent/java"
                 );
-                setHits(response2.data);
+                setHits(response2.data['_embedded']['contentList']);
+                // console.log(response2.data['_embedded']['contentList'])
                 setLoading(false);
             };
             fetchData();
@@ -50,17 +51,11 @@ function Main() {
             currentPosts = posts.slice(indexOfFirst, indexOfLast);
             return currentPosts;
         };
-    const hitPost = (hits) => {
-
-        let hitposts = 0;
-        hitposts = hits.slice(0, 4);
-        return hitposts;
-    };
 
         return (
             <div className="width-1140px mar-auto-0 disp-flex height-100vh">
                 <div className="width-340p">
-                    <HomeSideMenu hits={hitPost(hits)} loading={loading}/>
+                    <HomeSideMenu hits={hits} loading={loading}/>
                 </div>
 
                 <div className="width-800p mar-auto-0 bac-color-white">
