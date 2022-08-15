@@ -8,6 +8,7 @@ import configureStore from './redux/configureStore';
 import axios from "axios";
 
 axios.defaults.baseURL = 'http://125.138.127.39:8080';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.withCredentials = true;
 const store = configureStore();
 const render = Component => {

@@ -8,7 +8,7 @@ import 'codemirror/lib/codemirror.css'
 import 'highlight.js/styles/github.css';
 import 'tui-color-picker/dist/tui-color-picker.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
-
+import fileService from '../../lib/api/fileService'
 
 import SimpleSelect from "../../components/util/SimpleSelect";
 import BackwordButton from "../../components/util/BackwordButton";
@@ -47,6 +47,10 @@ function WriteContainer(props) {
 
     const writeBtn = isLoggedIn? <SaveButton /> : null;
 
+    const onUploadImage = async (blob) => {
+        const url = await fileService.imageUpload(blob);
+        return url;
+    };
 
     return (
         <div className="width-1140px mar-auto-0 disp-flex height-100vh">
@@ -71,6 +75,12 @@ function WriteContainer(props) {
                             initialEditType="markdown"
                             useCommandShortcut={true}
                             plugins={[[codeSyntaxHighlightPlugin, { hljs }], colorSyntaxPlugin]}
+                            hooks={{
+                                addImageBlobHook:(blob, callback) => {
+                                    const img_url = onUploadImage(blob);
+                                    callback(img_url, 'alt_text');
+                                }
+                            }}
 
                         />
 
