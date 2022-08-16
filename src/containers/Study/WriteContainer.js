@@ -26,9 +26,6 @@ import '@toast-ui/editor/dist/toastui-editor.css';
 import { Editor } from "@toast-ui/react-editor";
 
 
-
-
-
 import "codemirror/lib/codemirror.css";
 import "tui-color-picker/dist/tui-color-picker.css";
 import "@toast-ui/editor/dist/toastui-editor.css";
@@ -47,9 +44,10 @@ function WriteContainer(props) {
 
     const writeBtn = isLoggedIn? <SaveButton /> : null;
 
-    const onUploadImage = async (blob) => {
+    const onUploadImage = async (blob, callback) => {
         const url = await fileService.imageUpload(blob);
-        return url;
+        callback("http://125.138.127.39:8080"+url, 'alt text');
+        return false;
     };
 
     return (
@@ -76,10 +74,7 @@ function WriteContainer(props) {
                             useCommandShortcut={true}
                             plugins={[[codeSyntaxHighlightPlugin, { hljs }], colorSyntaxPlugin]}
                             hooks={{
-                                addImageBlobHook:(blob, callback) => {
-                                    const img_url = onUploadImage(blob);
-                                    callback(img_url, 'alt_text');
-                                }
+                                addImageBlobHook: onUploadImage
                             }}
 
                         />
