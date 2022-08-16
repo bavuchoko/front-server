@@ -30,9 +30,22 @@ export const userLogin = ({username, password}) => {
 
 };
 
+const token = storage.get("token");
 export const checkStatus = () =>{
-    console.log("checkStatus");
-    axios.get('/api/auth/check');
+    console.log("validation")
+    axios.get('/api/user/validation',{
+        headers:{
+            Authorization:"Bearer " + token
+        }
+    }).then(
+        res => {
+            console.log(res.data)
+            console.log(res.data["code"])
+            storage.set("token" ,res.data["token"])
+            storage.set("username" , res.data["username"])
+            storage.set('loggedInfo', res.data);
+        }
+    );
 }
 export const logout = () =>{
     console.log("logout")

@@ -17,13 +17,21 @@ import PrivateRoute from "./lib/Router/PrivateRoute";
 class App extends Component {
 
     initializeUserInfo = async () => {
-        const loggedInfo = storage.get('loggedInfo'); // 로그인 정보를 로컬스토리지에서 가져옵니다.
-        if(!loggedInfo) return; // 로그인 정보가 없다면 여기서 멈춥니다.
+        const loggedInfo = storage.get('loggedInfo');
+        if(!loggedInfo) return;
 
 
         const { UserActions } = this.props;
-        UserActions.setLoggedInfo(loggedInfo);
+        // UserActions.setLoggedInfo(loggedInfo);
 
+        try {
+            // await UserActions.checkStatus();
+        } catch (e) {
+            storage.remove('token');
+            storage.remove('username');
+            storage.remove('loggedInfo');
+            window.location.href = '/auth/login?expired';
+        }
     }
 
     componentDidMount() {
