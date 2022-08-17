@@ -18,5 +18,12 @@ export default {
             url: 'api/content/recent/' + category,
             method: 'get'
         })
-    }
+    },
+
+    test() {
+        return instance({
+            url: 'api/content/sagong',
+            method: 'get'
+        })
+    },
 }
