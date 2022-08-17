@@ -22,7 +22,7 @@ class App extends Component {
 
 
         const { UserActions } = this.props;
-        // UserActions.setLoggedInfo(loggedInfo);
+        UserActions.setLoggedInfo(loggedInfo);
 
         try {
             // await UserActions.checkStatus();

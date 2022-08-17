@@ -7,6 +7,7 @@ import * as authActions from '../../redux/modules/auth';
 import queryString from 'query-string';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPowerOff} from "@fortawesome/free-solid-svg-icons";
+import storage from "../../lib/storage";
 
 class Login extends Component {
     componentWillUnmount() {
@@ -49,13 +50,17 @@ class Login extends Component {
         const { form, AuthActions} = this.props;
         const { username, password } = form.toJS();
 
-        try {
-            await AuthActions.userLogin({username, password});
-
-        } catch (e) {
-            console.log('a');
-            this.setError('잘못된 계정정보입니다.');
-        }
+            AuthActions.userLogin({username, password})
+                .then((response)=>{
+                    storage.set("token" ,response.data["token"])
+                    storage.set("username" , response.data["username"])
+                    storage.set('loggedInfo', response.data);
+                    window.location.replace("/")
+                })
+                .catch ((e)=> {
+                    console.log('a');
+                    this.setError('잘못된 계정정보입니다.');
+        })
     }
 
 

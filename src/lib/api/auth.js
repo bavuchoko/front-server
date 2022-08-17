@@ -1,5 +1,6 @@
 import axios from 'axios';
 import storage, {getCookie} from '../../lib/storage';
+import instance from "../Validator"
 
 export const checkEmailExists = (email) => {
     console.log("checkEmailExists");
@@ -13,21 +14,15 @@ export const userRegister = ({username, password}) => {
     console.log("userRegister");
     axios.post('/api/user/join', {username, password });
 }
-export const userLogin = ({username, password}) => {
-    console.log("userLogin");
-    axios.post('api/user/authenticate', { username, password })
-
-        .then(
-            res => {
-                console.log(res.data)
-                console.log(res.data["code"])
-                storage.set("token" ,res.data["token"])
-                storage.set("username" , res.data["username"])
-                storage.set('loggedInfo', res.data);
-                window.location.replace("/")
-            }
-        );
-
+export const userLogin = (username) => {
+    return instance({
+        url:'api/user/authenticate',
+        method: 'post',
+        data:{
+            username:username.username,
+            password:username.password
+        }
+    })
 };
 
 const token = storage.get("token");

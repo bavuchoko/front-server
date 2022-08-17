@@ -7,7 +7,7 @@ import * as userActions from "../../redux/modules/user";
 import calendar from '../../assets/image/calendar.png';
 import Posts from "../../components/content/Posts";
 import Pagination from "../../components/content/Pagination";
-import axios from "axios";
+import Content from "../../lib/api/Content";
 import storage from "../../lib/storage";
 import WriteButton from "../../components/util/WriteButton";
 
@@ -18,39 +18,39 @@ function Main() {
 
     const writeBtn = isLoggedIn?  <WriteButton/> : null;
 
-        const [posts, setPosts] = useState([]);
-        const [hits, setHits] = useState([]);
-        const [loading, setLoading] = useState(false);
-        const [currentPage, setCurrentPage] = useState(1);
-        const [postsPerPage, setPostsPerPage] = useState(8);
 
-        useEffect(() => {
-            const fetchData = async () => {
-                setLoading(true);
-                const response = await axios.get(
-                    "https://jsonplaceholder.typicode.com/posts"
-                );
-                setPosts(response.data);
-
-                const response2 = await axios.get(
-                    "api/content/recent/java"
-                );
-                setHits(response2.data['_embedded']['contentList']);
-                // console.log(response2.data['_embedded']['contentList'])
-                setLoading(false);
-            };
-            fetchData();
-        }, []);
+    const [posts, setPosts] = useState([]);
+    const [pages, setPages] = useState([]);
+    const [hits, setHits] = useState([]);
+    const [loading, setLoading] = useState(false);
 
 
-        /* 새로 추가한 부분 */
-        const indexOfLast = currentPage * postsPerPage;
-        const indexOfFirst = indexOfLast - postsPerPage;
-        const currentPosts = (posts) => {
-            let currentPosts = 0;
-            currentPosts = posts.slice(indexOfFirst, indexOfLast);
-            return currentPosts;
+    useEffect(() => {
+        const fetchData = async () => {
+            setLoading(true);
+            Content.getContentCategory("java")
+                .then((response) =>{
+                    setPages(response.data['page'])
+                    setPosts(response.data['_embedded']['contentList']);
+                })
+                .catch((error) => {
+                    console.log('error',error)
+                    setLoading(false);
+                })
+            Content.getContentCategoryRecent("java")
+                .then((response) =>{
+                    setHits(response.data['_embedded']['contentList']);
+                })
+                .catch((error) => {
+                    console.log('error',error)
+                    setLoading(false);
+                })
+            setLoading(false);
         };
+        fetchData();
+    }, []);
+
+
 
         return (
             <div className="width-1140px mar-auto-0 disp-flex height-100vh">
@@ -89,14 +89,10 @@ function Main() {
 
                         <div className="article-body">
                             <div className="noulstyle padding-tr-40p article-card-body">
-                                <Posts posts={currentPosts(posts)} loading={loading}></Posts>
+                                <Posts posts={posts} loading={loading}></Posts>
                             </div>
                         </div>
-                        <Pagination
-                            postsPerPage={postsPerPage}
-                            totalPosts={posts.length}
-                            paginate={setCurrentPage}
-                        ></Pagination>
+
                     </div>
                 </div>
 
