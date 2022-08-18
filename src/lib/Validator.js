@@ -3,7 +3,7 @@ import storage from "./storage";
 
 // axios 인스턴스를 생성합니다.
 const instance = axios.create({
-    baseURL: 'http://localhost:8080',
+    baseURL: 'http://pjs.monster:8080',
     timeout: 1000
 });
 
