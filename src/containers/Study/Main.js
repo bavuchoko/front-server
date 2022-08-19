@@ -62,7 +62,6 @@ function Main() {
                 <div className="width-340p">
                     <HomeSideMenu hits={hits} loading={loading}/>
                 </div>
-                <div onClick={test} >asdasdads</div>
                 <div className="width-800p mar-auto-0 bac-color-white">
                     <p className="text-indent-20p main-category padding-rl-40p">Board</p>
 
