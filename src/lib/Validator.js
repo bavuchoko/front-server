@@ -1,9 +1,10 @@
 import axios from 'axios'
 import storage from "./storage";
 
+
 // axios 인스턴스를 생성합니다.
 const instance = axios.create({
-    baseURL: 'http://pjs.or.kr:8080',
+    baseURL: 'https://pjs.or.kr:8080',
 
     timeout: 1000
 });
@@ -53,7 +54,7 @@ instance.interceptors.response.use(
             if (!isTokenRefreshing) {
                 // token refresh 요청
                 const response = await axios.get(
-                    `http://localhost:8080/api/user/refreshtoken`, // token refresh api
+                    `api/user/refreshtoken`, // token refresh api
                 );
                 // 기존 스토리지 비우고 새로운 토큰 저장
                 storage.remove("token");

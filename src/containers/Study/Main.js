@@ -6,11 +6,11 @@ import * as authActions from "../../redux/modules/auth";
 import * as userActions from "../../redux/modules/user";
 import calendar from '../../assets/image/calendar.png';
 import Posts from "../../components/content/Posts";
-import Pagination from "../../components/content/Pagination";
 import Content from "../../lib/api/Content";
 import storage from "../../lib/storage";
 import WriteButton from "../../components/util/WriteButton";
-import axios from "axios";
+
+
 
 function Main() {
 
@@ -24,7 +24,6 @@ function Main() {
     const [pages, setPages] = useState([]);
     const [hits, setHits] = useState([]);
     const [loading, setLoading] = useState(false);
-
 
 
     useEffect(() => {
