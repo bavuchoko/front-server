@@ -19,6 +19,7 @@
     "http-proxy-middleware": "^2.0.6",
     "immutable": "^4.1.0",
     "lodash": "^4.17.21",
+    "moment": "^2.29.4",
     "open-color": "^1.9.1",
     "prismjs": "^1.28.0",
     "query-string": "^7.1.1",

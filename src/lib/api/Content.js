@@ -19,7 +19,13 @@ export default {
             method: 'get'
         })
     },
-
+    postContent(category, data) {
+        return instance({
+            url: 'api/content/' + category,
+            method: 'post',
+            data : data
+        })
+    },
     test() {
         return instance({
             url: 'api/content/sagong',

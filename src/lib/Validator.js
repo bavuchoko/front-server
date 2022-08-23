@@ -5,6 +5,7 @@ import storage from "./storage";
 // axios 인스턴스를 생성합니다.
 const instance = axios.create({
     baseURL: 'https://pjs.or.kr:8080',
+    // baseURL: 'http://localhost:8080',
 
     timeout: 1000
 });
@@ -14,7 +15,7 @@ instance.interceptors.request.use(
     function (config) {
         if((storage.get("loggedInfo"))){
             config.headers["Content-Type"] = "application/json; charset=utf-8";
-            config.headers["Authorization"] = storage.get("token");
+            config.headers["Authorization"] = "Bearer " +storage.get("token");
         }
         return config;
     },

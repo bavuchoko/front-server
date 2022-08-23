@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as authActions from "../../redux/modules/auth";
@@ -34,20 +34,38 @@ import "highlight.js/styles/github.css";
 import colorSyntaxPlugin from "@toast-ui/editor-plugin-color-syntax";
 import hljs from "highlight.js";
 import codeSyntaxHighlightPlugin from "@toast-ui/editor-plugin-code-syntax-highlight";
-
+import {Button} from "@material-ui/core";
+import Content from "../../lib/api/Content";
+import moment from 'moment';
+import 'moment/locale/ko';
 
 
 function WriteContainer(props) {
     let isLoggedIn = props.isLoggedIn;
     isLoggedIn = true;
     let history =useHistory();
-
-    const writeBtn = isLoggedIn? <SaveButton /> : null;
+    const editorRef =useRef();
 
     const onUploadImage = async (blob, callback) => {
         const url = await fileService.imageUpload(blob);
-        callback("http://125.138.127.39:8080"+url, 'alt text');
+        callback("http://localhost:8080"+url, 'alt text');
         return false;
+    };
+    const [categoryName, setCategoryName] = useState("");
+
+
+    const handleRegisterButton = () => {
+        // console.log(editorRef.current?.getInstance().getMarkdown());
+
+        if(window.confirm("등록하시겠습니까")){
+            const data={
+                "category"  : categoryName,
+                "title"     : 'awdawd',
+                "body"      : editorRef.current?.getInstance().getHtml(),
+                "writeTime" : moment().format("YYYY-MM-DDTHH:mm:sszz")
+            }
+            Content.postContent(categoryName, data);
+        }
     };
 
     return (
@@ -59,7 +77,7 @@ function WriteContainer(props) {
                 </div>
                 <form>
                     <div className="editor-title-container bac-color-white disp-flex">
-                        <SimpleSelect/>
+                        <SimpleSelect  setCategoryName={setCategoryName}/>
 
                         <input className="content-title-input text-indent-20p"/>
                     </div>
@@ -73,13 +91,14 @@ function WriteContainer(props) {
                             initialEditType="markdown"
                             useCommandShortcut={true}
                             plugins={[[codeSyntaxHighlightPlugin, { hljs }], colorSyntaxPlugin]}
+                            ref={editorRef}
                             hooks={{
                                 addImageBlobHook: onUploadImage
                             }}
 
                         />
 
-                        {writeBtn}
+                        <Button onClick={handleRegisterButton} variant="contained">save</Button>
                         <BackwordButton history={ history }>
                         </BackwordButton>
 
