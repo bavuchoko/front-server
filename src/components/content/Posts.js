@@ -18,7 +18,7 @@ const Posts = ({ posts, loading }) => {
                     {post.title}
                 </p>
                 <p className="article-card-content">
-                    {post.body}
+                    {post.bodyPreView}
                 </p>
 
             </Link>

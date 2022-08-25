@@ -30,7 +30,7 @@ const HomeSideMenu = ({ hits, loading }) => {
                                 </div>
                                 <div className="recent-content-box width-228p">
                                     <p className="recent-content-p">{hit.title}</p>
-                                    <p className="recent-content-p2">{hit.body}</p>
+                                    <p className="recent-content-p2">{hit.bodyPreView}</p>
                                     <p className="recent-content-p3">{hit.writeTime}</p>
                                 </div>
                             </div>

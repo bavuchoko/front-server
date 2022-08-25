@@ -52,6 +52,7 @@ function WriteContainer(props) {
         return false;
     };
     const [categoryName, setCategoryName] = useState("");
+    const [title, setTitle] = useState("");
 
 
     const handleRegisterButton = () => {
@@ -60,12 +61,17 @@ function WriteContainer(props) {
         if(window.confirm("등록하시겠습니까")){
             const data={
                 "category"  : categoryName,
-                "title"     : 'awdawd',
+                "title"     : title,
                 "body"      : editorRef.current?.getInstance().getHtml(),
+                "bodyPreView"      : editorRef.current?.getInstance().getMarkdown().substring(0,150),
                 "writeTime" : moment().format("YYYY-MM-DDTHH:mm:sszz")
             }
-            Content.postContent(categoryName, data);
+            try {
+                Content.postContent(categoryName, data);
+                window.location.replace("/")
+            }catch (e){}
         }
+
     };
 
     return (
@@ -79,7 +85,7 @@ function WriteContainer(props) {
                     <div className="editor-title-container bac-color-white disp-flex">
                         <SimpleSelect  setCategoryName={setCategoryName}/>
 
-                        <input className="content-title-input text-indent-20p"/>
+                        <input className="content-title-input text-indent-20p" onChange={(event) => setTitle(event.target.value)}/>
                     </div>
                     <div>
 

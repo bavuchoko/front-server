@@ -1,13 +1,13 @@
-import axios from "axios";
-import storage from "../storage";
+import instance from "../Validator";
 
-class fileService{
+export default{
 
 
     imageUpload(blob){
         let formData = new FormData();
         formData.append('file', blob);
-        return axios('api/content/image',{
+        console.log("Aaa")
+        return instance('api/content/image',{
             method: 'POST',
             data: formData,
             headers : {
@@ -18,13 +18,12 @@ class fileService{
             .then(
                     res => {
                         return res.data
-                        // console.log(res)
-                        // console.log(res.data)
-                        // console.log(res.data["url"])
+                        console.log(res)
+                        console.log(res.data)
+                        console.log(res.data["url"])
                     }
             );
     }
 
 
 }
-export default new fileService;
