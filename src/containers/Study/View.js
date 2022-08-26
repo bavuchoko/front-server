@@ -1,39 +1,45 @@
 import React, {useEffect, useState} from 'react';
 import HomeSideMenu from "../../components/sideMenu/HomeSideMenu";
-import {connect} from "react-redux";
-import {bindActionCreators} from "redux";
-import * as authActions from "../../redux/modules/auth";
-import * as userActions from "../../redux/modules/user";
-import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link,useLocation} from "react-router-dom";
 import PrevButton from "../../components/util/PrevButton";
 import NextButton from "../../components/util/NextButton";
-import storage from "../../lib/storage";
-import UpdateOrDeleteBtn from "../../components/util/UpdateOrDeleteBtn";
+import Content from "../../lib/api/Content";
+import { Viewer } from '@toast-ui/react-editor';
 
-function Main() {
-    const loggedInfo = storage.get('loggedInfo');
-    let isLoggedIn = loggedInfo? true : false;
-
-    const UpdateOrDelet = isLoggedIn?  <UpdateOrDeleteBtn /> : null;
-
+function View() {
+    const location = useLocation();
+    const id = (location.state.data)
     const [hits, setHits] = useState([]);
+    const [post, setPost] = useState([]);
     const [loading, setLoading] = useState(false);
-
     useEffect(() => {
         const fetchData = async () => {
-            setLoading(true);
-            const response2 = await axios.get(
-                "https://jsonplaceholder.typicode.com/comments"
-            );
-            setHits(response2.data);
+            Content.getContentCategoryRecent("java")
+                .then((response) =>{
+                    setHits(response.data['_embedded']['contentList']);
+                })
+                .catch((error) => {
+                    console.log('error',error)
+                    setLoading(false);
+                })
+            setLoading(false);
+
+
+
+            Content.getSingleContent("java",id)
+                .then((response) =>{
+                    console.log(response.data)
+                    setPost(response.data)
+                })
+                .catch((error) => {
+                    console.log('error',error)
+                    setLoading(false);
+                })
+
             setLoading(false);
         };
         fetchData();
     }, []);
-
-
-    /* 새로 추가한 부분 */
 
     const hitPost = (hits) => {
 
@@ -45,7 +51,7 @@ function Main() {
     return (
         <div className="width-1140px mar-auto-0 disp-flex height-100vh">
             <div className="width-340p">
-                <HomeSideMenu hits={hitPost(hits)} loading={loading}/>
+                <HomeSideMenu hits={hits} loading={loading}/>
             </div>
 
             <div className="width-800p mar-auto-0 bac-color-white">
@@ -57,30 +63,25 @@ function Main() {
                     </div>
 
                     <div className="article-title ">
-                        <p>조 React 리덕스(Redux) Immutable.js 상태관리 & Ducks 파일 구조</p>
-                        {UpdateOrDelet}
+                        <p>{post.title}</p>
 
-                        <span>2022-01-01 11:22:33</span>
+
+                        <span>{post.writeTime}</span>
                     </div>
 
                     <div className="article-body">
                         <div className="noulstyle padding-tr-40p article-card-body">
 
-                            내용
-
+                            <Viewer initialValue={post.body} />
                         </div>
                     </div>
                     <div className="article-footer">
                         <ul className="noulstyle">
                             <li className="disp-block float-left mar-l-20px">
-                                <Link to="/">
-                                    <PrevButton/>
-                                </Link>
+                                <PrevButton/>
                             </li>
                             <li  className="disp-block float-right mar-r-20px">
-                                <Link to="/">
-                                    <NextButton />
-                                </Link>
+                                <NextButton />
                             </li>
                         </ul>
                     </div>
@@ -93,15 +94,4 @@ function Main() {
 }
 
 
-export default connect(
-    (state) => ({
-        form: state.auth.getIn(['register', 'form']),
-        error: state.auth.getIn(['register', 'error']),
-        exists: state.auth.getIn(['register', 'exists']),
-        result: state.auth.get('result')
-    }),
-    (dispatch) => ({
-        AuthActions: bindActionCreators(authActions, dispatch),
-        UserActions: bindActionCreators(userActions, dispatch)
-    })
-)(Main);
+export default View

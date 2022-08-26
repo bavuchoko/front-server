@@ -12,37 +12,37 @@ const HomeSideMenu = ({ hits, loading }) => {
         <>
             <nav className="height-100per bac-color-grey border-1-s-g">
                 <div className="width-100per height-55p bac-color-FEB139 color-FEB139 tc-lh60-fs15">
-                   <Inputer/>
+                    <Inputer/>
                 </div>
                 <div  className="">
 
                     <p className="text-indent-20p p font-size-15px ">Most hit</p>
                     <ul className="noulstyle text-indent-20p">
 
-                    {loading && <div> loading... </div>}
-                {hits.map((hit) => (
+                        {loading && <div> loading... </div>}
+                        {hits.map((hit) => (
 
-                    <li key={hit.id}  className="items-center li-to-small-down-style height-100per">
-                        <Link to="/admin/dashboard">
-                            <div className="recent-container disp-flex">
-                                <div className="recent-img bac-color-FEB139">
+                            <li key={hit.id}  className="items-center li-to-small-down-style height-100per">
+                                <Link to="/admin/dashboard">
+                                    <div className="recent-container disp-flex">
+                                        <div className="recent-img bac-color-FEB139">
 
-                                </div>
-                                <div className="recent-content-box width-228p">
-                                    <p className="recent-content-p">{hit.title}</p>
-                                    <p className="recent-content-p2">{hit.bodyPreView}</p>
-                                    <p className="recent-content-p3">{hit.writeTime}</p>
-                                </div>
-                            </div>
-                        </Link>
-                        <div className="liner-padding-rl-20px"></div>
-                    </li>
-                ))}
+                                        </div>
+                                        <div className="recent-content-box width-228p">
+                                            <p className="recent-content-p">{hit.title}</p>
+                                            <p className="recent-content-p2">{hit.bodyPreView}</p>
+                                            <p className="recent-content-p3">{hit.writeTime.substring(0,16)}</p>
+                                        </div>
+                                    </div>
+                                </Link>
+                                <div className="liner-padding-rl-20px"></div>
+                            </li>
+                        ))}
                     </ul>
 
                 </div>
-                   <SideCategoryLink/>
-                   <UpperArrow/>
+                <SideCategoryLink/>
+                <UpperArrow/>
             </nav>
 
         </>

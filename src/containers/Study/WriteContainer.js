@@ -12,24 +12,9 @@ import fileService from '../../lib/api/fileService'
 
 import SimpleSelect from "../../components/util/SimpleSelect";
 import BackwordButton from "../../components/util/BackwordButton";
-import SaveButton from "../../components/util/SaveButton";
 
+import {Editor} from "@toast-ui/react-editor";
 
-
-
-
-import 'codemirror/lib/codemirror.css';
-import 'highlight.js/styles/github.css';
-import 'tui-color-picker/dist/tui-color-picker.css';
-import '@toast-ui/editor/dist/toastui-editor.css';
-
-import { Editor } from "@toast-ui/react-editor";
-
-
-import "codemirror/lib/codemirror.css";
-import "tui-color-picker/dist/tui-color-picker.css";
-import "@toast-ui/editor/dist/toastui-editor.css";
-import "highlight.js/styles/github.css";
 
 import colorSyntaxPlugin from "@toast-ui/editor-plugin-color-syntax";
 import hljs from "highlight.js";
@@ -56,8 +41,16 @@ function WriteContainer(props) {
 
 
     const handleRegisterButton = () => {
-        // console.log(editorRef.current?.getInstance().getMarkdown());
-
+        //Todo 제목, 카테고리, 본문 등 유효성 체크
+        if (title == '') {
+            alert("제목을 입력하세요");
+            return;
+        }
+        if (categoryName == '') {
+            alert("분류를 선택하세요");
+            return;
+        }
+        console.log(categoryName)
         if(window.confirm("등록하시겠습니까")){
             const data={
                 "category"  : categoryName,
@@ -66,10 +59,14 @@ function WriteContainer(props) {
                 "bodyPreView"      : editorRef.current?.getInstance().getMarkdown().substring(0,150),
                 "writeTime" : moment().format("YYYY-MM-DDTHH:mm:sszz")
             }
-            try {
-                Content.postContent(categoryName, data);
-                window.location.replace("/")
-            }catch (e){}
+            Content.postContent(categoryName, data)
+                .then((response)=>{
+                    if(response.status==201){
+                        window.location.replace("/")
+                    }
+                }).catch((e)=>{
+                alert("등록에 실패하였습니다.");
+            })
         }
 
     };
@@ -91,7 +88,7 @@ function WriteContainer(props) {
 
                         <Editor
 
-                            initialValue="hello react editor world!"
+                            initialValue=""
                             previewStyle="vertical"
                             height="600px"
                             initialEditType="markdown"
