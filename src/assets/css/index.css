@@ -1096,3 +1096,10 @@ background-color: #ddeaf5;
     font-size: 13px;
     color: #747577;
 }
+pre{
+    width: 660px;
+    padding-left: 20px ;
+    padding-right: 20px ;
+    padding-top: 20px ;
+    background-color: #f9f9f9 !important;
+}

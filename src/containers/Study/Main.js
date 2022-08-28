@@ -40,7 +40,6 @@ function Main() {
                 })
                 .catch((error) => {
                     console.log('error',error)
-                    setLoading(false);
                 })
             Content.getContentCategoryRecent("java")
                 .then((response) =>{

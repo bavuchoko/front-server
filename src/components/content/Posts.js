@@ -12,7 +12,7 @@ const Posts = ({ posts, loading }) => {
                           state: {
                               // name: '이름',
                               data: post.id,
-                              // body: '본문',
+                              body: '본문',
                           },
                       }}
                 >

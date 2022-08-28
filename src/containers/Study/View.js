@@ -1,19 +1,35 @@
 import React, {useEffect, useState} from 'react';
 import HomeSideMenu from "../../components/sideMenu/HomeSideMenu";
-import {Link,useLocation} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 import PrevButton from "../../components/util/PrevButton";
 import NextButton from "../../components/util/NextButton";
 import Content from "../../lib/api/Content";
 import { Viewer } from '@toast-ui/react-editor';
-
+import 'highlight.js/styles/github.css';
+import 'tui-color-picker/dist/tui-color-picker.css';
+import '@toast-ui/editor/dist/toastui-editor.css';
+import codeSyntaxHighlightPlugin from "@toast-ui/editor-plugin-code-syntax-highlight";
+import hljs from "highlight.js";
+import colorSyntaxPlugin from "@toast-ui/editor-plugin-color-syntax";
 function View() {
     const location = useLocation();
     const id = (location.state.data)
     const [hits, setHits] = useState([]);
-    const [post, setPost] = useState([]);
+    const [post, setPost] = useState(0);
     const [loading, setLoading] = useState(false);
+
+
+
     useEffect(() => {
         const fetchData = async () => {
+            setLoading(true);
+            Content.getSingleContent("java", id)
+                .then((response) =>{
+                    setPost(response.data);
+                })
+                .catch((error) => {
+                    console.log('error',error)
+                })
             Content.getContentCategoryRecent("java")
                 .then((response) =>{
                     setHits(response.data['_embedded']['contentList']);
@@ -23,30 +39,11 @@ function View() {
                     setLoading(false);
                 })
             setLoading(false);
-
-
-
-            Content.getSingleContent("java",id)
-                .then((response) =>{
-                    console.log(response.data)
-                    setPost(response.data)
-                })
-                .catch((error) => {
-                    console.log('error',error)
-                    setLoading(false);
-                })
-
-            setLoading(false);
+        console.log(post)
         };
         fetchData();
     }, []);
 
-    const hitPost = (hits) => {
-
-        let hitposts = 0;
-        hitposts = hits.slice(0, 4);
-        return hitposts;
-    };
 
     return (
         <div className="width-1140px mar-auto-0 disp-flex height-100vh">
@@ -72,7 +69,10 @@ function View() {
                     <div className="article-body">
                         <div className="noulstyle padding-tr-40p article-card-body">
 
-                            <Viewer initialValue={post.body} />
+                            {post.body&&< Viewer
+                                plugins={[[codeSyntaxHighlightPlugin, { hljs }], colorSyntaxPlugin]}
+                                initialValue={post.body}
+                            />}
                         </div>
                     </div>
                     <div className="article-footer">

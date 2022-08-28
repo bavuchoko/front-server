@@ -9,7 +9,7 @@ function PrevButton (props) {
         <Link to ="/study/write">
 
             <FontAwesomeIcon icon={faCircleLeft} />
-            <spn className="prev-next-btn">sefsef</spn>
+            <span className="prev-next-btn">sefsef</span>
         </Link>
     );
 }
