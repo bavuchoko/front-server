@@ -26,6 +26,7 @@ function View() {
             Content.getSingleContent("java", id)
                 .then((response) =>{
                     setPost(response.data);
+                    console.log(response.data)
                 })
                 .catch((error) => {
                     console.log('error',error)
@@ -68,6 +69,7 @@ function View() {
 
                     <div className="article-body">
                         <div className="noulstyle padding-tr-40p article-card-body">
+
 
                             {post.body&&< Viewer
                                 plugins={[[codeSyntaxHighlightPlugin, { hljs }], colorSyntaxPlugin]}

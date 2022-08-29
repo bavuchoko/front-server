@@ -827,7 +827,6 @@ ul > a.hover-li:hover p{
     width: calc( 100% - 60px );
     height: auto;
     margin: 30px;
-    padding-top: 60px;
     padding-bottom: 60px;
     border-bottom: 1px solid #cbcbcb;
 }
@@ -1096,10 +1095,59 @@ background-color: #ddeaf5;
     font-size: 13px;
     color: #747577;
 }
-pre{
-    width: 660px;
-    padding-left: 20px ;
-    padding-right: 20px ;
-    padding-top: 20px ;
-    background-color: #f9f9f9 !important;
+.tui-editor-contents{
+
+}
+
+.article-card-body > div{
+    width: 100%;
+}
+.tui-editor-contents > pre{
+    border-radius: 15px !important;
+    width: calc(100% - 40px);
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 40px !important;
+    padding-bottom: 15px !important;
+    background-color: rgb(30, 30, 30) !important;
+    border-bottom: 1px solid #e1d6d6 !important;
+    box-shadow: 0 6px 6px 0 rgb(0 0 0 / 20%) !important;
+}
+code{
+    font-family: Roboto !important;
+    letter-spacing: 0.5px !important;
+    color: #e3e2e2 !important;
+}
+.hljs-type{
+    color: #e38951;
+}
+.hljs-string{
+    color: #44a93f;
+}
+.hljs-variable{
+    color: #b86ce3;
+}
+.hljs-operator{
+    color: #f5f5f5;
+}
+.hljs-meta{
+    color: #d7d72c;
+}
+.hljs-keyword{
+    color:  #e38951 !important;
+}
+.function_{
+    color: #eec74b !important;
+}
+.hljs-params{
+    color: whitesmoke;
+}
+.hljs-literal{
+    color:  #e38951 !important;
+}
+.class_ {
+    color: whitesmoke !important;
+}
+.hljs-built_in{
+
 }

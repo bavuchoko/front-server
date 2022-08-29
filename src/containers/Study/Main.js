@@ -37,6 +37,7 @@ function Main() {
                     setPostsPerPage(response.data['page']['size'])
                     setTotalElements(response.data['page']['totalElements'])
                     setPosts(response.data['_embedded']['contentList']);
+                    console.log((response.data))
                 })
                 .catch((error) => {
                     console.log('error',error)
