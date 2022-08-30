@@ -1224,32 +1224,39 @@ code{
 .menu-downer{
     display: inline-block;
     top:0px;
-    left: calc(50% - (500px +( 50% - 570px )));
+    left: 0px;
     min-height: 500px;
     height: 100%;
 }
 .disp-in{
+    float: left;
     transition: all 0.1s linear;
 }
 .disp-out{
+    display: inline-block;
+    position: fixed;
+    width: 0px;
     transition: all 0.1s linear;
-    display: none;
+    /*display: none;*/
 }
 .back-color-menu{
     background-color: #f1f7fd;
 }
 .sideMenu{
-    margin-top: 160px;
+    max-width: 350px;
+    width: 300px;
+    float: right;
+    margin-top: 158px;
 }
 .sideMenu > ul{
     margin-bottom: 60px;
 }
 .sideMenu > ul > li{
     color: #3a3b3f;
+    margin-bottom: 3px;
     font-family: Roboto;
-    margin-left: 100px;
     text-align: left;
-    width: calc(100% - 100px);
+    width: 100%;
     overflow: hidden
 }
 .bac-color-red{
@@ -1261,9 +1268,8 @@ code{
     margin-bottom: 10px;
 }
 .subCate{
-    display: inline-block;
+    display: block;
     margin-left: 25px;
-    width: calc(100% - 125px) !important;
 }
 .article-img{
     border: 1px solid #f1f1f1;
@@ -1275,4 +1281,7 @@ code{
 .article-card-body > a {
     padding-bottom: 10px;
     border-bottom: 1px solid #e0e0e0;
+}
+.hover-li:hover{
+    font-weight: 800;
 }

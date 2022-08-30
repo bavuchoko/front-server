@@ -1,16 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import HomeSideMenu from "../../components/sideMenu/HomeSideMenu";
 import {useLocation} from "react-router-dom";
-import PrevButton from "../../components/util/PrevButton";
-import NextButton from "../../components/util/NextButton";
 import Content from "../../lib/api/Content";
-import { Viewer } from '@toast-ui/react-editor';
+import {Viewer} from '@toast-ui/react-editor';
 import 'highlight.js/styles/github.css';
 import 'tui-color-picker/dist/tui-color-picker.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import codeSyntaxHighlightPlugin from "@toast-ui/editor-plugin-code-syntax-highlight";
 import hljs from "highlight.js";
 import colorSyntaxPlugin from "@toast-ui/editor-plugin-color-syntax";
+
 function View() {
     const location = useLocation();
     const id = (location.state.data)

@@ -8,6 +8,7 @@ import Content from "../../lib/api/Content";
 import storage from "../../lib/storage";
 import WriteButton from "../../components/util/WriteButton";
 import {Pagination} from "../../components/content";
+import {useLocation} from "react-router-dom";
 
 
 function Main() {
@@ -17,7 +18,8 @@ function Main() {
     let isLoggedIn = loggedInfo? true : false;
 
     const writeBtn = isLoggedIn?  <WriteButton/> : null;
-
+    const location = useLocation();
+    const category = (location.state.category)
 
     const [posts, setPosts] = useState([]);
     const [totalElements, setTotalElements] = useState([]);
@@ -25,19 +27,20 @@ function Main() {
     const [postsPerPage, setPostsPerPage] = useState([]);
     const [loading, setLoading] = useState(false);
 
-
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
-            Content.getContentCategory("java")
+
+            Content.getContentCategory(category)
                 .then((response) =>{
+                    console.log(response.data)
                     setPostsPerPage(response.data['page']['size'])
                     setTotalElements(response.data['page']['totalElements'])
                     setPosts(response.data['_embedded']['contentList']);
-                    console.log((response.data))
                     setLoading(false)
                 })
                 .catch((error) => {
+                    setPosts(null)
                     console.log('error',error)
                 })
         };
@@ -68,7 +71,7 @@ function Main() {
                 <div className="article-container">
                     <div className="article-body">
                         <div className="noulstyle padding-tr-40p article-card-body">
-                            <Posts posts={posts} loading={loading}></Posts>
+                            <Posts posts={posts} loading={loading} category={category}></Posts>
                         </div>
 
                         <Pagination

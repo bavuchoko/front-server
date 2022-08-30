@@ -8,6 +8,7 @@ export default {
         })
     },
     getContentCategory(category) {
+        console.log(category)
         return instance({
             url: 'api/content/' + category,
             method: 'get'
