@@ -15,12 +15,15 @@ import {faChevronRight} from "@fortawesome/free-solid-svg-icons";
 
 const menuOn="disp-in width-menu back-color-menu fixed menu-downer";
 const menuOut="disp-out";
+const btnOn="float-left menu-div bac-color-red";
+const btnOff="float-left menu-div";
+
 
 class HeaderContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isMenu: true
+            isMenu: false
         }
     }
     handleLogout = async () => {
@@ -48,8 +51,8 @@ class HeaderContainer extends Component {
 
                     <div className="width-1140px mar-auto-0 height-70p text-center">
                         <div className="width-1140px  height-100per " >
-                            <div className="float-left menu-div"   onClick={this.clickedToggle}>
-                                <img  className="hover-btn" src={menu} />
+                            <div  className="float-left menu-div " onClick={this.clickedToggle}>
+                                <img   className={this.state.isMenu? btnOn: btnOff} src={menu} />
                             </div>
                             <span className="dsip-inlineblock blogname">blog name</span>
                             <div className="top-header float-right">
@@ -81,6 +84,12 @@ class HeaderContainer extends Component {
                 <div className={this.state.isMenu? menuOn: menuOut}>
 
                     <div className="sideMenu">
+                            <ul className="noulstyle">
+                                <li>
+                                    <Link className="topCate hover-btn" to="/">Home</Link>
+                                </li>
+                            </ul>
+
                             <ul className="noulstyle">
                                 <li className="topCate underline hover-btn">board</li>
                                 <li className="subCate hover-btn">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} /> java</li>

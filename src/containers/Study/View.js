@@ -61,7 +61,7 @@ function View() {
                     </div>
 
                     <div className="article-body">
-                        <div className="noulstyle padding-tr-40p article-card-body">
+                        <div className="noulstyle article-card-body">
 
 
                             {post.body&&< Viewer
