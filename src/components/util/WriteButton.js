@@ -8,10 +8,8 @@ import {faPenAlt} from "@fortawesome/free-solid-svg-icons";
 
 function WriteButton (props) {
     return (
-        <Link to ="/study/write">
-            <Button variant="contained" className="tpye_btn" >
-                <FontAwesomeIcon icon={faPenAlt} />
-            </Button>
+        <Link className="font-size-16px" to ="/study/write" >
+           글쓰기
         </Link>
     );
 }

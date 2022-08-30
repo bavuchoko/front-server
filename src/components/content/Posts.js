@@ -1,12 +1,13 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import java from '../../assets/image/big-java.png';
 
 const Posts = ({ posts, loading }) => {
     return (
         <>
             {loading && <div> loading... </div>}
             {posts.map((post) => (
-                <Link className="article-card hover-btn" key={post.id}
+                <Link className="article-card hover-btn disp-flex mar-b-20px" key={post.id}
                       to={{
                           pathname: '/study/view' ,
                           state: {
@@ -16,20 +17,25 @@ const Posts = ({ posts, loading }) => {
                           },
                       }}
                 >
-                    {/*<Link key={post.id} className="article-card hover-btn" to='/study/view'  state={{ data: 'a'}}>*/}
-                    <div className="width-100per height-230p bac-color-white2 ">
-                        <img className="article-card-img" src=""/>
+                    <div className="width-140p height-140p mar-r-20px article-img">
+                        <img  className="hover-btn" src={require('../../assets/image/big-'+post.category+'.png')}/>
+                        {/*<img  className="hover-btn" src={java} />*/}
                     </div>
-                    <div>
-                        <span className="article-card-category">JAVA</span>
-                        <span className="article-card-date">{post.writeTime.substring(0,16)}</span>
+                    <div className="article-card-body-body">
+                        <div className="disp-flex">
+                            <span className="article-card-category">[ {post.category.toUpperCase()} ]</span>
+                            {/*<span className="article-card-date">{post.writeTime.substring(0,10)}</span>*/}
+                            <p className="article-card-title">
+                                {post.title}
+                            </p>
+                        </div>
+                        <p className="article-card-content">
+                            {post.bodyPreView}
+                        </p>
+                        {/*<div className="width-100per height-160p bac-color-white2 ">*/}
+                        {/*    <img className="article-card-img" src=""/>*/}
+                        {/*</div>*/}
                     </div>
-                    <p className="article-card-title">
-                        {post.title}
-                    </p>
-                    <p className="article-card-content">
-                        {post.bodyPreView}
-                    </p>
 
                 </Link>
             ))}

@@ -11,7 +11,6 @@ import '@toast-ui/editor/dist/toastui-editor.css';
 import fileService from '../../lib/api/fileService'
 
 import SimpleSelect from "../../components/util/SimpleSelect";
-import BackwordButton from "../../components/util/BackwordButton";
 
 import {Editor} from "@toast-ui/react-editor";
 
@@ -19,7 +18,6 @@ import {Editor} from "@toast-ui/react-editor";
 import colorSyntaxPlugin from "@toast-ui/editor-plugin-color-syntax";
 import hljs from "highlight.js";
 import codeSyntaxHighlightPlugin from "@toast-ui/editor-plugin-code-syntax-highlight";
-import {Button} from "@material-ui/core";
 import Content from "../../lib/api/Content";
 import moment from 'moment';
 import 'moment/locale/ko';
@@ -73,11 +71,10 @@ function WriteContainer(props) {
 
     return (
         <div className="width-1140px mar-auto-0 disp-flex height-100vh">
-            <div className="width-1168px mar-auto-0 bac-color-white padding-rl-40p bac-color-temp">
+
 
                 <div className="title-div width-100per height-70p"></div>
-                <div className="editor-header-container mar-top-30">
-                </div>
+
                 <form>
                     <div className="editor-title-container bac-color-white disp-flex">
                         <SimpleSelect  setCategoryName={setCategoryName}/>
@@ -100,15 +97,13 @@ function WriteContainer(props) {
                             }}
 
                         />
-
-                        <Button onClick={handleRegisterButton} variant="contained">save</Button>
-                        <BackwordButton history={ history }>
-                        </BackwordButton>
-
-
+                            <div className="disp-flex">
+                                    <div className="hover-btn roboto font-size-18px mar-l-20px mar-r-20px mar-top-30" onClick={handleRegisterButton} variant="contained">save</div>
+                                    <div className="hover-btn roboto font-size-18px mar-l-20px mar-top-30" onClick={() => {props.history.goBack();} }>back</div>
+                            </div>
                     </div>
                 </form>
-            </div>
+
         </div>
     );
 }

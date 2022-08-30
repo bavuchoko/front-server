@@ -48,23 +48,16 @@ function View() {
 
     return (
         <div className="width-1140px mar-auto-0 disp-flex height-100vh">
-            <div className="width-340p">
-                <HomeSideMenu hits={hits} loading={loading}/>
-            </div>
 
-            <div className="width-800p mar-auto-0 bac-color-white">
-                <p className="text-indent-20p main-category padding-rl-40p">Java</p>
+
+            <div className="width-100per mar-auto-0 bac-color-white">
 
                 <div className="article-container">
-
-                    <div className="article-banner view-Header">
-                    </div>
-
                     <div className="article-title ">
+                        <span>{post.writeTime}</span>
                         <p>{post.title}</p>
 
 
-                        <span>{post.writeTime}</span>
                     </div>
 
                     <div className="article-body">
@@ -78,14 +71,15 @@ function View() {
                         </div>
                     </div>
                     <div className="article-footer">
-                        <ul className="noulstyle">
-                            <li className="disp-block float-left mar-l-20px">
-                                <PrevButton/>
-                            </li>
-                            <li  className="disp-block float-right mar-r-20px">
-                                <NextButton />
-                            </li>
-                        </ul>
+                        {/*<ul className="noulstyle">*/}
+                        {/*    <li className="disp-block float-left mar-l-20px">*/}
+                        {/*        <PrevButton/>*/}
+                        {/*    </li>*/}
+                        {/*    <li  className="disp-block float-right mar-r-20px">*/}
+                        {/*        <NextButton />*/}
+                        {/*    </li>*/}
+                        {/*</ul>*/}
+
                     </div>
                 </div>
             </div>

@@ -9,7 +9,6 @@ function Inputer () {
     const [visible, setVisible] = useState(false);
     const clickedToggle = () => {
        setVisible(!visible);
-
     };
     const magnifierIcon="magnifierIcon";
     const roateXIcon= "roateXIcon";

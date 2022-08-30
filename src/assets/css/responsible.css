@@ -35,6 +35,8 @@
 @media all and (max-width: 768px){
 /*브라우저 창 width가 768px보다 작아지는 순간부터 적용*/
 /*모바일*/
+    /*태블릿*/
+
 
     .top-header{
         position: absolute;
@@ -48,7 +50,7 @@
         display: block;
     }
     .width-900p{
-        width: 100%;
+        display: none;
     }
     .height-112p{
         height: 70px;
@@ -62,15 +64,29 @@
     .main-category{
         margin-top: 45px;
     }
-.login-from{
-    width: 100%;
-    display: block;
-}
-.profile-div{
-    margin: 0 auto;
-}
+    .article-banner {
+        display: none;
+    }
+    .login-from{
+        width: 100%;
+        display: block;
+    }
+    .profile-div{
+        margin: 0 auto;
+    }
     .width-1250px{
         width: 100%;
+    }
+    .pagination{
+        width: 100%;
+    }
+    .date-selector-div{
+        display: none;
+    }
+    .main-category{
+        position: relative;
+        z-index: 100;
+        top: -60px;
     }
     .form-tag{
         width: 302px;
@@ -115,7 +131,8 @@
 }
 @media all and (min-width: 768px){
 /*브라우저 창 width가 768px보다 커지는 순간부터 적용*/
-/*태블릿*/
+
+
 }
 
 
@@ -128,10 +145,10 @@
         width: 100%;
     }
 
+    .width-1140px{
+        width: 100%;
+    }
 
-.width-1140px{
-    width: 100%;
-}
 
     .width-70per{
         width: 100%;

@@ -1,12 +1,10 @@
-
-import React,{useState} from "react";
-import {Button} from "@material-ui/core";
+import React from "react";
 
 
 function BackwordButton (props) {
     return (
-            <div onClick={() => {props.history.goBack();} }>
-                <Button variant="contained">back</Button>
+            <div className="roboto font-size-18px" onClick={() => {props.history.goBack();} }>
+                back
             </div>
     );
 }
