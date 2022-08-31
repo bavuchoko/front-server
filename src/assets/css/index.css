@@ -864,6 +864,8 @@ ul > a.hover-li:hover p{
     box-shadow: 3px 0 6px 0 rgb(0 0 0 / 20%);
 }
 .article-body{
+    padding-top: 50px;
+    padding-bottom: 50px;
     width: calc( 100% );
     height: auto;
     border-bottom: 1px solid #d7d7d7;
@@ -1259,9 +1261,7 @@ code{
     width: 100%;
     overflow: hidden
 }
-.bac-color-red{
-    background-color: #ffde0a;
-}
+
 .topCate{
     font-weight: 600;
     padding-bottom: 4px;

@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {LoginButton} from '../../components/Base/Header';
 import {connect} from 'react-redux';
 import github from '../../assets/image/github.png';
-import menu from '../../assets/image/icon-m.png';
+import right from '../../assets/image/right-arrow.png';
+import letf from '../../assets/image/left-arrow.png';
 
 import storage from '../../lib/storage';
 import {Link} from "react-router-dom";
@@ -15,7 +16,7 @@ import {faChevronRight} from "@fortawesome/free-solid-svg-icons";
 
 const menuOn="disp-in width-menu back-color-menu fixed menu-downer";
 const menuOut="disp-out";
-const btnOn="float-left menu-div bac-color-red";
+const btnOn="float-left menu-div";
 const btnOff="float-left menu-div";
 
 
@@ -52,7 +53,7 @@ class HeaderContainer extends Component {
                     <div className="width-1140px mar-auto-0 height-70p text-center">
                         <div className="width-1140px  height-100per " >
                             <div  className="float-left menu-div " onClick={this.clickedToggle}>
-                                <img   className={this.state.isMenu? btnOn: btnOff} src={menu} />
+                                <img   className={this.state.isMenu? btnOn: btnOff} src={this.state.isMenu? letf : right} />
                             </div>
                             <span className="dsip-inlineblock blogname">blog name</span>
                             <div className="top-header float-right">
