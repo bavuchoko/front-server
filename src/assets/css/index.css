@@ -735,7 +735,7 @@ ul > a.hover-li:hover p{
 }
 .article-card{
     border-radius: 3px;
-    margin-top: 30px;
+    margin-top: 15px;
     width: 100%;
 }
 
@@ -1284,7 +1284,6 @@ code{
     margin-left: 25px;
 }
 .article-img{
-    border: 1px solid #f1f1f1;
 }
 .article-img > img{
     width: 140px;

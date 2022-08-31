@@ -12,6 +12,7 @@ const Posts = ({ category, currentPage, setPageInfo  }=[]) => {
 
             Content.getContentCategory(category)
                 .then((response) => {
+                    console.log(response.data)
                     setPosts(response.data['_embedded']['contentList']);
                     setPageInfo(response.data['page']);
                     setLoading(false)
@@ -29,7 +30,7 @@ const Posts = ({ category, currentPage, setPageInfo  }=[]) => {
             <>
                 {loading && <div> loading... </div>}
                 {posts.map((post) => (
-                    <Link className="article-card hover-btn disp-flex mar-b-20px" key={post.id}
+                    <Link className="article-card hover-btn disp-flex" key={post.id}
                           to={{
                               pathname: '/study/view',
                               state: {
