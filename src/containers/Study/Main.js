@@ -4,7 +4,6 @@ import {bindActionCreators} from "redux";
 import * as authActions from "../../redux/modules/auth";
 import * as userActions from "../../redux/modules/user";
 import Posts from "../../components/content/Posts";
-import Content from "../../lib/api/Content";
 import storage from "../../lib/storage";
 import WriteButton from "../../components/util/WriteButton";
 import {Pagination} from "../../components/content";
@@ -17,7 +16,9 @@ function Main() {
 
     const writeBtn = isLoggedIn?  <WriteButton/> : null;
     const location = useLocation();
-    const category = location.state.category;
+
+    const category = location.state ==undefined ? "" : location.state.category;
+
     const [totalElements, setTotalElements] = useState([]);
     const [currentPage, setCurrentPage] = useState([]);
     const [pages, setPages] = useState([]);
@@ -26,15 +27,13 @@ function Main() {
     useEffect(() => {
         setTotalElements(pages.totalElements)
     },[pages])
-    // setTotalElements(pages.totalElements)
-
 
     return (
 
         <div className="width-1140px mar-auto-0 height-100vh mein-body" >
 
             <div className="underline width-100per height-70p">
-                <span className="dsip-inlineblock mar-top-30 mar-l-20px mar-r-20px font-size-18px color-grey">({totalElements || 0})</span> {category.toUpperCase()}
+                <span className="dsip-inlineblock mar-top-30 mar-l-20px mar-r-20px font-size-18px color-grey">({totalElements || 0})</span> {category.toUpperCase() || 'All' }
                 <div className="wrt-btn-positioner">
                         {writeBtn}
                 </div>

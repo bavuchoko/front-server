@@ -42,12 +42,10 @@ const Posts = ({ category, currentPage, setPageInfo  }=[]) => {
                         <div className="width-140p height-140p mar-r-20px article-img">
                             <img className="hover-btn"
                                  src={require('../../assets/image/big-' + post.category + '.png')}/>
-                            {/*<img  className="hover-btn" src={java} />*/}
                         </div>
                         <div className="article-card-body-body">
                             <div className="disp-flex">
                                 <span className="article-card-category">[ {post.category.toUpperCase()} ]</span>
-                                {/*<span className="article-card-date">{post.writeTime.substring(0,10)}</span>*/}
                                 <p className="article-card-title">
                                     {post.title}
                                 </p>
@@ -55,9 +53,6 @@ const Posts = ({ category, currentPage, setPageInfo  }=[]) => {
                             <p className="article-card-content">
                                 {post.bodyPreView}
                             </p>
-                            {/*<div className="width-100per height-160p bac-color-white2 ">*/}
-                            {/*    <img className="article-card-img" src=""/>*/}
-                            {/*</div>*/}
                         </div>
 
                     </Link>

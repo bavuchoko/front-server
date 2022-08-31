@@ -95,7 +95,7 @@ class HeaderContainer extends Component {
                                     <Link  className="hover-li"  to={{
                                         pathname: '/study/list' ,
                                         state: {
-                                            category:'java'
+                                            category:''
                                         },
                                     }}>board</Link>
                                 </li>
