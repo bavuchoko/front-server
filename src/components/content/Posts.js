@@ -1,8 +1,30 @@
 import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
-import java from '../../assets/image/big-java.png';
+import Content from "../../lib/api/Content";
 
-const Posts = ({ posts, loading, category}) => {
+const Posts = ({ category, currentPage, setPageInfo  }=[]) => {
+
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(false);
+    useEffect(() => {
+        const fetchData = async () => {
+            setLoading(true);
+
+            Content.getContentCategory(category)
+                .then((response) => {
+                    setPosts(response.data['_embedded']['contentList']);
+                    setPageInfo(response.data['page']);
+                    setLoading(false)
+                })
+                .catch((error) => {
+                    setPosts(null)
+                    setPageInfo(0);
+                    console.log('error', error)
+                })
+        };
+        fetchData();
+    }, [category]);
+    if (posts != null) {
         return (
             <>
                 {loading && <div> loading... </div>}
@@ -18,7 +40,8 @@ const Posts = ({ posts, loading, category}) => {
                           }}
                     >
                         <div className="width-140p height-140p mar-r-20px article-img">
-                            <img className="hover-btn" src={require('../../assets/image/big-' + category + '.png')}/>
+                            <img className="hover-btn"
+                                 src={require('../../assets/image/big-' + post.category + '.png')}/>
                             {/*<img  className="hover-btn" src={java} />*/}
                         </div>
                         <div className="article-card-body-body">
@@ -41,5 +64,15 @@ const Posts = ({ posts, loading, category}) => {
                 ))}
             </>
         );
+    } else {
+        return (
+            <>
+                <div className="article-card">
+                    {loading && <div> loading...  or  no  data </div>}
+                </div>
+            </>
+        )
+    }
+    ;
 }
 export default Posts;

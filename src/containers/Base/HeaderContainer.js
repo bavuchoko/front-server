@@ -91,51 +91,74 @@ class HeaderContainer extends Component {
                             </ul>
 
                             <ul className="noulstyle">
-                                <li className="topCate underline hover-btn "><Link  className="hover-li"  to={{
-                                    pathname: '/study/list' ,
-                                    state: {
-                                        category:''
-                                    },
-                                }}>board</Link></li>
-                                <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} /> <Link className="hover-li" to={{
-                                    pathname: '/study/list' ,
-                                    state: {
-                                        category:'java'
-                                    },}}>java</Link></li>
-                                <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} /> <Link className="hover-li" to={{
-                                    pathname: '/study/list' ,
-                                    state: {
-                                        category:'springboot'
-                                    },}}>springboot</Link></li>
-                                <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} /> <Link className="hover-li" to={{
-                                    pathname: '/study/list' ,
-                                    state: {
-                                        category:'java'
-                                    },}}>database</Link></li>
-                                <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} /> <Link className="hover-li" to={{
-                                    pathname: '/study/list' ,
-                                    state: {
-                                        category:'java'
-                                    },}}>ubuntu</Link></li>
-                                <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} /> <Link className="hover-li" to={{
-                                    pathname: '/study/list' ,
-                                    state: {
-                                        category:'java'
-                                    },}}>Api/Docs</Link></li>
+                                <li className="topCate underline hover-btn ">
+                                    <Link  className="hover-li"  to={{
+                                        pathname: '/study/list' ,
+                                        state: {
+                                            category:'java'
+                                        },
+                                    }}>board</Link>
+                                </li>
+                                <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} />
+                                    <Link className="hover-li" to={{
+                                        pathname: '/study/list' ,
+                                        state: {
+                                            category:'java'
+                                        },}}>java
+                                    </Link>
+                                </li>
+                                <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} />
+                                    <Link className="hover-li" to={{
+                                        pathname: '/study/list' ,
+                                        state: {
+                                            category:'springboot'
+                                        },}}>springboot
+                                    </Link>
+                                </li>
+                                <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} />
+                                    <Link className="hover-li" to={{
+                                        pathname: '/study/list' ,
+                                        state: {
+                                            category:'database'
+                                        },}}>database
+                                    </Link>
+                                </li>
+                                <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} />
+                                    <Link className="hover-li" to={{
+                                        pathname: '/study/list' ,
+                                        state: {
+                                            category:'ubuntu'
+                                        },}}>ubuntu
+                                    </Link>
+                                </li>
+                                <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} />
+                                    <Link className="hover-li" to={{
+                                        pathname: '/study/list' ,
+                                        state: {
+                                            category:'docs'
+                                        },}}>Api/Docs
+                                    </Link>
+                                </li>
                             </ul>
 
 
                             <ul className="noulstyle">
-                                <li className="topCate underline hover-btn "><Link  className="hover-li" to={{
-                                    pathname: '/about' ,
-                                    state: {
-                                        category:'java'
-                                    },}}>about</Link></li>
-                                <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} /> <Link className="hover-li" to={{
-                                    pathname: '/study/list' ,
-                                    state: {
-                                        category:'java'
-                                    },}}>Enviroment</Link></li>
+                                <li className="topCate underline hover-btn ">
+                                    <Link  className="hover-li" to={{
+                                        pathname: '/about' ,
+                                        state: {
+                                            category:'about'
+                                        },}}>about
+                                    </Link>
+                                </li>
+                                <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} />
+                                    <Link className="hover-li" to={{
+                                        pathname: '/study/list' ,
+                                        state: {
+                                            category:'enviroment'
+                                        },}}>Enviroment
+                                    </Link>
+                                </li>
                             </ul>
                     </div>
 
