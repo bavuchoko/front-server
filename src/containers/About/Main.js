@@ -7,7 +7,7 @@ import Jpa from "../../assets/image/jpa.png";
 import Maria from "../../assets/image/mariadb.png";
 import Jenkins from "../../assets/image/jenkins.png";
 import Rest from "../../assets/image/restapi.png";
-import Srping from "../../assets/image/big-springboot.png";
+import Srping from "../../assets/image/big/springboot.png";
 import Redis from "../../assets/image/redis.png";
 import Ubuntu from "../../assets/image/ubuntu.png";
 import {faChevronRight} from "@fortawesome/free-solid-svg-icons";

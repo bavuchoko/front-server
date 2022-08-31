@@ -36,6 +36,7 @@ function WriteContainer(props) {
     };
     const [categoryName, setCategoryName] = useState("");
     const [title, setTitle] = useState("");
+    const [tag, setTag] = useState("");
 
 
     const handleRegisterButton = () => {
@@ -48,14 +49,16 @@ function WriteContainer(props) {
             alert("분류를 선택하세요");
             return;
         }
+
         console.log(categoryName)
         if(window.confirm("등록하시겠습니까")){
             const data={
-                "category"  : categoryName,
-                "title"     : title,
-                "body"      : editorRef.current?.getInstance().getHtml(),
-                "bodyPreView"      : editorRef.current?.getInstance().getMarkdown().substring(0,150),
-                "writeTime" : moment().format("YYYY-MM-DDTHH:mm:sszz")
+                "category"      : categoryName,
+                "title"         : title,
+                "body"          : editorRef.current?.getInstance().getHtml(),
+                "tag"           : tag,
+                "bodyPreView"   : editorRef.current?.getInstance().getMarkdown().substring(0,150),
+                "writeTime"     : moment().format("YYYY-MM-DDTHH:mm:sszz")
             }
             Content.postContent(categoryName, data)
                 .then((response)=>{
@@ -78,9 +81,9 @@ function WriteContainer(props) {
                 <form>
                     <div className="editor-title-container bac-color-white disp-flex">
                         <SimpleSelect  setCategoryName={setCategoryName}/>
-
-                        <input className="content-title-input text-indent-20p" onChange={(event) => setTitle(event.target.value)}/>
+                        <input className="content-title-input text-indent-20p" placeholder="제목..." onChange={(event) => setTitle(event.target.value)}/>
                     </div>
+                    <input className="tag-input text-indent-20p" placeholder="#thumbnail..." onChange={(event) => setTag(event.target.value)}/>
                     <div>
 
                         <Editor

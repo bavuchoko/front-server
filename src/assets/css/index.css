@@ -956,6 +956,18 @@ ul > a.hover-li:hover p{
     outline: none;
     border: 1px solid #d3d3d3;
 }
+.tag-input{
+    word-spacing: 3px;
+    color: #5d5a5a;
+    padding: 0;
+    margin: 0;
+    margin-left: 145px;
+    margin-bottom: 30px;
+    width: 850px;
+    height: 30px;
+    outline: none;
+    border: 1px solid #d3d3d3;
+}
 .te-editor-section{
     word-spacing: 3px;
 }

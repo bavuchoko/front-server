@@ -41,7 +41,7 @@ const Posts = ({ category, currentPage, setPageInfo  }=[]) => {
                     >
                         <div className="width-140p height-140p mar-r-20px article-img">
                             <img className="hover-btn"
-                                 src={require('../../assets/image/big-' + post.category + '.png')}/>
+                                 src={require('../../assets/image/big/' + post.thumbnail + '.png')}/>
                         </div>
                         <div className="article-card-body-body">
                             <div className="disp-flex">
