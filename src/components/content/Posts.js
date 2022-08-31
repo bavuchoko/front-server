@@ -12,7 +12,6 @@ const Posts = ({ category, currentPage, setPageInfo  }=[]) => {
 
             Content.getContentCategory(category)
                 .then((response) => {
-                    console.log(response.data)
                     setPosts(response.data['_embedded']['contentList']);
                     setPageInfo(response.data['page']);
                     setLoading(false)

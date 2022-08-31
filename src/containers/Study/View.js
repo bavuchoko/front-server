@@ -25,7 +25,7 @@ function View() {
             Content.getSingleContent("java", id)
                 .then((response) =>{
                     setPost(response.data);
-                    console.log(response.data)
+                    console.log(response.data['_links']['update'])
                 })
                 .catch((error) => {
                     console.log('error',error)
