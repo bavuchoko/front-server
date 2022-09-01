@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -15,20 +15,23 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function SimpleSelect(props) {
+export default function SimpleSelect(categoryName, setCategoryName) {
     const classes = useStyles();
     const [category, setCategory] = React.useState('');
 
     const handleChange = (event) => {
         setCategory(event.target.value);
-        props.setCategoryName(event.target.value)
+        categoryName.setCategoryName(event.target.value)
     };
 
+    useEffect(() => {
+        setCategory(categoryName.categoryName);
+        }, [categoryName.categoryName]);
     return (
         <>
             <FormControl className={classes.formControl}>
                 <InputLabel id="demo-simple-select-label">CATEGORY</InputLabel>
-                <Select
+                {category&&<Select
 
                     id="demo-simple-select"
                     name="category"
@@ -41,7 +44,7 @@ export default function SimpleSelect(props) {
                     <MenuItem value='java'>JAVA</MenuItem>
                     <MenuItem value='spring'>SRPING</MenuItem>
                     <MenuItem value='database'>DATABASE</MenuItem>
-                </Select>
+                </Select>}
             </FormControl>
 
         </>

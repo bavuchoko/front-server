@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { About, Study, Auth } from './pages';
-import {Main as StudyList, WriteContainer, View} from './containers/Study'
+import {Main as StudyList, WriteContainer, View , Update} from './containers/Study'
 
 
 import HeaderContainer from './containers/Base/HeaderContainer';
@@ -48,6 +48,7 @@ class App extends Component {
           <PublicRoute exact path="/study/list" component={StudyList}/>
           <PrivateRoute exact path="/study/write" component={WriteContainer}/>
           <Route exact path="/study/view" component={View}/>
+          <Route exact path="/study/update" component={Update}/>
           <Route path="/auth" component={Auth}/>
         </div>
     );

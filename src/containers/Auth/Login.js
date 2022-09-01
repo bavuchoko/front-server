@@ -46,7 +46,6 @@ class Login extends Component {
     }
 
     handleLocalLogin = async () => {
-        console.log("handleLocalLogin");
         const { form, AuthActions} = this.props;
         const { username, password } = form.toJS();
 
@@ -58,7 +57,6 @@ class Login extends Component {
                     window.location.replace("/")
                 })
                 .catch ((e)=> {
-                    console.log('a');
                     this.setError('잘못된 계정정보입니다.');
         })
     }
@@ -69,7 +67,6 @@ class Login extends Component {
         const { handleChange, handleLocalLogin } = this;
         const { error } = this.props;
         const handleOnKeyPress = e => {
-            console.log("aaa")
             if (e.key === 'Enter') {
                 handleLocalLogin();
             }

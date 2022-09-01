@@ -8,6 +8,9 @@ import '@toast-ui/editor/dist/toastui-editor.css';
 import codeSyntaxHighlightPlugin from "@toast-ui/editor-plugin-code-syntax-highlight";
 import hljs from "highlight.js";
 import colorSyntaxPlugin from "@toast-ui/editor-plugin-color-syntax";
+import UpdateBtn from "../../components/util/UpdateBtn";
+import DeleteBtn from "../../components/util/DeleteBtn";
+import ListBtn from "../../components/util/ListBtn";
 
 function View() {
     const location = useLocation();
@@ -15,7 +18,7 @@ function View() {
     const [hits, setHits] = useState([]);
     const [post, setPost] = useState(0);
     const [loading, setLoading] = useState(false);
-
+    const [updateUrl, setUpdateUrl] = useState([])
 
 
     useEffect(() => {
@@ -25,7 +28,8 @@ function View() {
             Content.getSingleContent("java", id)
                 .then((response) =>{
                     setPost(response.data);
-                    console.log(response.data['_links']['update'])
+                    setUpdateUrl(response.data['_links']['update'])
+                    console.log(response.data)
                 })
                 .catch((error) => {
                     console.log('error',error)
@@ -39,7 +43,6 @@ function View() {
                     setLoading(false);
                 })
             setLoading(false);
-        console.log(post)
         };
         fetchData();
     }, []);
@@ -51,6 +54,11 @@ function View() {
 
             <div className="width-100per mar-auto-0 bac-color-white">
 
+                <div className="updatebtn-div text-align-right">
+                {updateUrl&& <UpdateBtn category={post.category} id={post.id} />}
+                {updateUrl&& <DeleteBtn/>}
+                {updateUrl&& <ListBtn/>}
+                </div>
                 <div className="article-container">
                     <div className="article-title ">
                         <span>{post.writeTime}</span>
@@ -70,14 +78,6 @@ function View() {
                         </div>
                     </div>
                     <div className="article-footer">
-                        {/*<ul className="noulstyle">*/}
-                        {/*    <li className="disp-block float-left mar-l-20px">*/}
-                        {/*        <PrevButton/>*/}
-                        {/*    </li>*/}
-                        {/*    <li  className="disp-block float-right mar-r-20px">*/}
-                        {/*        <NextButton />*/}
-                        {/*    </li>*/}
-                        {/*</ul>*/}
 
                     </div>
                 </div>

@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as baseActions from "../redux/modules/base";
 import {Route} from "react-router-dom";
-import {Main, WriteContainer} from "../containers/Study";
+import {Main, WriteContainer, Update} from "../containers/Study";
 import AuthWrapper from "../components/Auth/AuthWrapper";
 
 class Study extends Component {
@@ -14,6 +14,7 @@ class Study extends Component {
             <AuthWrapper>
                 <Route path="/study/list" component={Main}/>
                 <Route path="/study/write" component={WriteContainer}/>
+                <Route path="/study/update" component={Update}/>
             </AuthWrapper>
         );
     }
