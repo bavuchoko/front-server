@@ -112,7 +112,7 @@ function Update(props) {
                     <div>
 
                         {post.body&&<Editor
-                            initialValue={post.body}
+                            initialValue={post.bodyHtml}
                             previewStyle="vertical"
                             height="600px"
                             initialEditType="markdown"

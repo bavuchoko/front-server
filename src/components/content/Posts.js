@@ -15,6 +15,7 @@ const Posts = ({ category, currentPage, setPageInfo  }=[]) => {
                     setPosts(response.data['_embedded']['contentList']);
                     setPageInfo(response.data['page']);
                     setLoading(false)
+                    console.log(response.data)
                 })
                 .catch((error) => {
                     setPosts(null)
@@ -51,7 +52,7 @@ const Posts = ({ category, currentPage, setPageInfo  }=[]) => {
                                 </p>
                             </div>
                             <p className="article-card-content">
-                                {post.bodyPreView}
+                                {post.bodyHtml&&post.bodyHtml.substring(0,150)+"..."}
                             </p>
                         </div>
 

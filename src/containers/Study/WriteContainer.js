@@ -57,7 +57,7 @@ function WriteContainer(props) {
                 "title"         : title,
                 "body"          : editorRef.current?.getInstance().getHtml(),
                 "tag"           : tag,
-                "bodyPreView"   : editorRef.current?.getInstance().getMarkdown().substring(0,150),
+                "bodyHtml"   : editorRef.current?.getInstance().getMarkdown(),
                 "writeTime"     : moment().format("YYYY-MM-DDTHH:mm:sszz")
             }
             Content.postContent(categoryName, data)
