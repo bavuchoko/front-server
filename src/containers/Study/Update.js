@@ -39,7 +39,7 @@ function Update(props) {
     const [thumbnail, setThumbnail] = useState("");
 
 
-    const handleRegisterButton = () => {
+    const handleUpdateButton = () => {
         //Todo 제목, 카테고리, 본문 등 유효성 체크
         if (title == '') {
             alert("제목을 입력하세요");
@@ -50,8 +50,7 @@ function Update(props) {
             return;
         }
 
-        console.log(categoryName)
-        if(window.confirm("등록하시겠습니까")){
+        if(window.confirm("저장하시겠습니까")){
             const data={
                 "category"      : categoryName,
                 "title"         : title,
@@ -62,14 +61,15 @@ function Update(props) {
                 "updateTime"    : moment().format("YYYY-MM-DDTHH:mm:sszz")
             }
             console.log(data)
-            // Content.putContent(categoryName, data)
-            //     .then((response)=>{
-            //         if(response.status==201){
-            //             window.location.replace("/")
-            //         }
-            //     }).catch((e)=>{
-            //     alert("수정에 실패하였습니다.");
-            // })
+            console.log(id)
+            Content.putContent(data, id)
+                .then((response)=>{
+                    if(response.status==201){
+                        window.location.replace("/")
+                    }
+                }).catch((e)=>{
+                alert("수정에 실패하였습니다.");
+            })
         }
 
     };
@@ -125,7 +125,7 @@ function Update(props) {
 
                         />}
                             <div className="disp-flex">
-                                    <div className="hover-btn roboto font-size-18px mar-l-20px mar-r-20px mar-top-30" onClick={handleRegisterButton} variant="contained">update</div>
+                                {updateUrl&&<div className="hover-btn roboto font-size-18px mar-l-20px mar-r-20px mar-top-30" onClick={handleUpdateButton} variant="contained">update</div>}
                                     <div className="hover-btn roboto font-size-18px mar-l-20px mar-top-30" onClick={() => {props.history.goBack();} }>back</div>
                             </div>
                     </div>

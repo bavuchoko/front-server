@@ -18,8 +18,7 @@ function View() {
     const [hits, setHits] = useState([]);
     const [post, setPost] = useState(0);
     const [loading, setLoading] = useState(false);
-    const [updateUrl, setUpdateUrl] = useState([])
-
+    const [updateUrl, setUpdateUrl] = useState(undefined)
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -29,7 +28,6 @@ function View() {
                 .then((response) =>{
                     setPost(response.data);
                     setUpdateUrl(response.data['_links']['update'])
-                    console.log(response.data)
                 })
                 .catch((error) => {
                     console.log('error',error)
@@ -55,9 +53,9 @@ function View() {
             <div className="width-100per mar-auto-0 bac-color-white">
 
                 <div className="updatebtn-div text-align-right">
-                {updateUrl&& <UpdateBtn category={post.category} id={post.id} />}
-                {updateUrl&& <DeleteBtn/>}
-                {updateUrl&& <ListBtn/>}
+                {updateUrl&&<UpdateBtn category={post.category} id={post.id} />}
+                {updateUrl&&<DeleteBtn category={post.category} id={post.id}/>}
+                {updateUrl&&<ListBtn category={post.category}/>}
                 </div>
                 <div className="article-container">
                     <div className="article-title ">
@@ -78,7 +76,6 @@ function View() {
                         </div>
                     </div>
                     <div className="article-footer">
-
                     </div>
                 </div>
             </div>

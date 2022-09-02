@@ -21,15 +21,25 @@ export default {
     },
     postContent(category, data) {
         return instance({
-            url: 'api/content/' + category,
-            method: 'post',
-            data : data
+            url     : 'api/content/' + category,
+            method  : 'post',
+            data    : data
         })
     },
-    test() {
+    putContent(data,id) {
+        console.log(data.category)
+        console.log(id)
         return instance({
-            url: 'api/content/sagong',
-            method: 'get'
+            url     : 'api/content/'+data.category+'/'+id,
+            method  : 'put',
+            data    : data
+        })
+    },
+
+    deleteContent(category, id) {
+        return instance({
+            url     : 'api/content/'+category+'/'+id,
+            method  : 'delete'
         })
     },
 }
