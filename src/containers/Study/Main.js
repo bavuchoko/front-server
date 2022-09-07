@@ -30,7 +30,7 @@ function Main() {
     return (
 
         <div className="width-1140px mar-auto-0 height-100vh mein-body" >
-
+            <div className="tc-spacer2"></div>
             <div className="underline width-100per height-70p">
                 <span className="dsip-inlineblock mar-top-30 mar-l-20px mar-r-20px font-size-18px color-grey">({totalElements || 0})</span> {category.toUpperCase() || 'All' }
                 <div className="wrt-btn-positioner">

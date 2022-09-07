@@ -75,10 +75,10 @@ function WriteContainer(props) {
     return (
         <div className="width-1140px mar-auto-0 disp-flex height-100vh">
 
-
-                <div className="title-div width-100per height-70p"></div>
+                <div className="title-div width-7per height-70p"></div>
 
                 <form>
+            <div className="tc-spacer2"> </div>
                     <div className="editor-title-container bac-color-white disp-flex">
                         <SimpleSelect  setCategoryName={setCategoryName}/>
                         <input className="content-title-input text-indent-20p" placeholder="제목..." onChange={(event) => setTitle(event.target.value)}/>

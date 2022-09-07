@@ -82,6 +82,7 @@ class HeaderContainer extends Component {
                 </div>
             </nav>
                 <div className="tc-spacer"></div>
+
                 <div className={this.state.isMenu? menuOn: menuOut}>
 
                     <div className="sideMenu">

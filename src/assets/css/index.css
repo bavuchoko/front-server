@@ -730,9 +730,15 @@ ul > a.hover-li:hover p{
     position: relative;
     top :-4px;
 }
+.width-7per{
+    width: 7%;
+}
 .tc-spacer{
     padding-top: 100px;
-    margin-bottom: 134px;
+    margin-bottom: 100px;
+}
+.tc-spacer2{
+    padding-top: 34px;
 }
 .padding-tr-40p{
     padding-left: 15px;
