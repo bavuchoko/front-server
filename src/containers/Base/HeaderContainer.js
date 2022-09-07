@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {LoginButton} from '../../components/Base/Header';
 import {connect} from 'react-redux';
 import github from '../../assets/image/github.png';
-import right from '../../assets/image/right-arrow.png';
-import letf from '../../assets/image/left-arrow.png';
+import close from '../../assets/image/close.png';
 import ron from '../../assets/image/r-menu-on.png';
 import roff from '../../assets/image/r-menu-off.png';
 
@@ -63,7 +62,7 @@ class HeaderContainer extends Component {
                     <div className="width-1140px mar-auto-0 height-70p text-center">
                         <div className="width-1140px  height-100per " >
                             <div  className="float-left menu-div " onClick={this.clickedToggle}>
-                                <img   className={this.state.isMenu? btnOn: btnOff} src={this.state.isMenu? letf : right} />
+                                <img   className={this.state.isMenu? btnOn: btnOff} src={this.state.isMenu? close : roff} />
                                 <img   className={this.state.isMenu? btnOn2: btnOff2} src={this.state.isMenu? ron : roff} />
                             </div>
                             <span className="dsip-inlineblock blogname">깨돌's &nbsp; 코딩주머니</span>

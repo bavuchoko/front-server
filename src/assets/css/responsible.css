@@ -70,7 +70,7 @@
 }
 @media all and (min-width: 768px){
 /*태블릿 세로*/
-
+    .menu-div2{display: none}
 
 }
 
