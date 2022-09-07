@@ -55,7 +55,7 @@ function View() {
                 <div className="updatebtn-div text-align-right">
                 {updateUrl&&<UpdateBtn category={post.category} id={post.id} />}
                 {updateUrl&&<DeleteBtn category={post.category} id={post.id}/>}
-                {updateUrl&&<ListBtn category={post.category}/>}
+                <ListBtn category={post.category}/>
                 </div>
                 <div className="article-container">
                     <div className="article-title ">

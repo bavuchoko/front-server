@@ -1,182 +1,84 @@
 @media all and (max-width: 1024px){
 /* 브라우저 창 width가 1024px보다 작아지는 순간부터 적용 */
 /* 태블릿 */
-    .article-banner{
-        height: auto;
-    }
-    .width-340p{
-    }
 
-    .width-1250px{
-        width: 100%;
-    }
-    .width-100per-350p{
-        width: 100%;
-    }
-
-
-    .width-70per{
-        width: 100%;
-    }
-    .width-100per-400p{
-        width: 100%;
-    }
-    .width-100per-400p{
-        width: 100%;
-    }
-
-    .top-pagenation-div{
-
-    }
-    .pagenation-div{
-        display: block;
-    }
 }
 @media all and (max-width: 768px){
-/*브라우저 창 width가 768px보다 작아지는 순간부터 적용*/
 /*모바일*/
-    /*태블릿*/
-
-
-    .top-header{
-        position: absolute;
-        top:0px;
-        right: 0px;
-    }
-    .line-h-90px{
-        line-height: 73px;
-    }
-    .article-card-body{
-        display: block;
-    }
-    .width-900p{
-        display: none;
-    }
-    .height-112p{
-        height: 70px;
-    }
-    .width-340p{
-        display: none;
-    }
-    .width-800p{
+    .width-1140px{
         width: 100%;
     }
-    .main-category{
-        margin-top: 45px;
+    .blogname{
+        margin-top: 80px;
+        font-size: 35px;
     }
-    .article-banner {
-        display: none;
+    .tc-spacer2{
+        padding: 0px;
     }
     .login-from{
-        width: 100%;
-        display: block;
+        width: 100% !important;
+        display: block !important;
+    }
+    .padding-rl-80p-t-40p{
+        padding: 0px;
     }
     .profile-div{
-        margin: 0 auto;
+        width: 100% !important;
+        height: auto !important;
     }
-    .width-1250px{
-        width: 100%;
+    .sc-iBkjds {
+        width: 100% !important;
     }
-    .pagination{
-        width: 100%;
+    .sc-ftvSup{
+        width: 100% !important;
     }
-    .date-selector-div{
+    .summit > nav > div > div > div{
+        height: 180px;
+        background-color: white;
+    }
+    .menu-div >img.menu-div{
         display: none;
     }
-    .main-category{
-        position: relative;
-        z-index: 100;
-        top: -60px;
+    .article-card-category{
+        min-width: 55px;
     }
-    .form-tag{
-        width: 302px;
-        margin: 0 auto;
+    .article-card-time{
+        display: none;
     }
-    .width-100per-350p{
-        width: 100%;
+    .disp-out{
+        display: inline-block;
+        position: fixed;
+        height: 0px;
+        transition: all 0.1s linear;
+        /*display: none;*/
     }
-    ul.padding-tr-40p > .disp-flex{
-        display: block;
-    }
-    .top-head-nav{
 
+    .disp-in{
+        float: left;
+        transition: all 0.1s linear;
     }
-    .top-head-nav2{
-        display: block;
-    }
-    .article-banner{
-
-    }
-    .width-70per{
+    .width-menu{
         width: 100%;
     }
-    .width-100per-400p{
-        width: 100%;
+    .back-color-menu{
+        background-color: #f1f1f1;
+        opacity: 0.93;
     }
-    .width-100per-400p{
-        width: 100%;
-    }
-    .height-230p{
-        height: 200px;
-    }
-    .width-1248px{
-    width: 100%;
-    }
-    .top-pagenation-div{
-
-    }
-    .pagenation-div{
+    .width-1140px > nav.disp-flex{
         display: block;
     }
 }
 @media all and (min-width: 768px){
-/*브라우저 창 width가 768px보다 커지는 순간부터 적용*/
+/*태블릿 세로*/
 
 
 }
 
 
-@media all and (max-width: 1140px){
-/* 브라우저 창 width가 1140px보다 작아지는 순간부터 적용 */
-    .width-1250px{
-        width: 100%;
-    }
-    .width-100per-350p{
-        width: 100%;
-    }
+@media all and (min-width: 992px){
+/* 태블릿 가로 */
 
-    .width-1140px{
-        width: 100%;
-    }
-
-
-    .width-70per{
-        width: 100%;
-    }
-    .width-100per-400p{
-        width: 100%;
-    }
-    .width-100per-400p{
-        width: 100%;
-    }
-
-    .top-pagenation-div{
-
-    }
-    .pagenation-div{
-        display: block;
-    }
 }
 @media all and (min-width: 1140px) {
-    .width-1250px {
-        width: 100%;
-    }
 
-    .width-100per-350p {
-        width: 100%;
-    }
-
-    .width-1140px {
-        width: 1140px;
-    }
 }

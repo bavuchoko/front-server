@@ -31,7 +31,7 @@ function WriteContainer(props) {
 
     const onUploadImage = async (blob, callback) => {
         const url = await fileService.imageUpload(blob);
-        callback("http://localhost:8080"+url, 'alt text');
+        callback("https://pjs.or.kr:8080"+url, 'alt text');
         return false;
     };
     const [categoryName, setCategoryName] = useState("");

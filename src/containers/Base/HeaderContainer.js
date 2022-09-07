@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import github from '../../assets/image/github.png';
 import right from '../../assets/image/right-arrow.png';
 import letf from '../../assets/image/left-arrow.png';
+import ron from '../../assets/image/r-menu-on.png';
+import roff from '../../assets/image/r-menu-off.png';
 
 import storage from '../../lib/storage';
 import {Link} from "react-router-dom";
@@ -18,6 +20,8 @@ const menuOn="disp-in width-menu back-color-menu fixed menu-downer";
 const menuOut="disp-out";
 const btnOn="float-left menu-div";
 const btnOff="float-left menu-div";
+const btnOn2="float-left menu-div2";
+const btnOff2="float-left menu-div2";
 
 
 class HeaderContainer extends Component {
@@ -42,6 +46,12 @@ class HeaderContainer extends Component {
        });
     }
 
+    clickMenu=()=>{
+        const {isMenu} = this.state;
+        this.setState({
+            isMenu: !isMenu
+        });
+    }
     render() {
         const {  user } = this.props;
 
@@ -54,6 +64,7 @@ class HeaderContainer extends Component {
                         <div className="width-1140px  height-100per " >
                             <div  className="float-left menu-div " onClick={this.clickedToggle}>
                                 <img   className={this.state.isMenu? btnOn: btnOff} src={this.state.isMenu? letf : right} />
+                                <img   className={this.state.isMenu? btnOn2: btnOff2} src={this.state.isMenu? ron : roff} />
                             </div>
                             <span className="dsip-inlineblock blogname">깨돌's &nbsp; 코딩주머니</span>
                             <div className="top-header float-right">
@@ -88,13 +99,13 @@ class HeaderContainer extends Component {
                     <div className="sideMenu">
                             <ul className="noulstyle">
                                 <li>
-                                    <Link className="topCate hover-btn hover-li" to="/about">Home</Link>
+                                    <Link className="topCate hover-btn hover-li" onClick={this.clickMenu} to="/about">Home</Link>
                                 </li>
                             </ul>
 
                             <ul className="noulstyle">
                                 <li className="topCate underline hover-btn ">
-                                    <Link  className="hover-li"  to={{
+                                    <Link  className="hover-li" onClick={this.clickMenu} to={{
                                         pathname: '/study/list' ,
                                         state: {
                                             category:''
@@ -102,7 +113,7 @@ class HeaderContainer extends Component {
                                     }}>board</Link>
                                 </li>
                                 <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} />
-                                    <Link className="hover-li" to={{
+                                    <Link className="hover-li"  onClick={this.clickMenu} to={{
                                         pathname: '/study/list' ,
                                         state: {
                                             category:'java'
@@ -110,7 +121,7 @@ class HeaderContainer extends Component {
                                     </Link>
                                 </li>
                                 <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} />
-                                    <Link className="hover-li" to={{
+                                    <Link className="hover-li" onClick={this.clickMenu} to={{
                                         pathname: '/study/list' ,
                                         state: {
                                             category:'springboot'
@@ -118,7 +129,7 @@ class HeaderContainer extends Component {
                                     </Link>
                                 </li>
                                 <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} />
-                                    <Link className="hover-li" to={{
+                                    <Link className="hover-li"  onClick={this.clickMenu} to={{
                                         pathname: '/study/list' ,
                                         state: {
                                             category:'database'
@@ -126,7 +137,7 @@ class HeaderContainer extends Component {
                                     </Link>
                                 </li>
                                 <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} />
-                                    <Link className="hover-li" to={{
+                                    <Link className="hover-li" onClick={this.clickMenu} to={{
                                         pathname: '/study/list' ,
                                         state: {
                                             category:'ubuntu'
@@ -137,7 +148,7 @@ class HeaderContainer extends Component {
 
                         <ul className="noulstyle">
                             <li className="topCate underline hover-btn ">
-                                <Link  className="hover-li" to={{
+                                <Link  className="hover-li" onClick={this.clickMenu} to={{
                                     pathname: '/docs' ,
                                     state: {
                                         category:'bard'
@@ -146,7 +157,7 @@ class HeaderContainer extends Component {
                             </li>
 
                             <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} />
-                                <Link className="hover-li" to={{
+                                <Link className="hover-li" onClick={this.clickMenu} to={{
                                     pathname: '/docs' ,
                                     state: {
                                         category:'board'
@@ -158,7 +169,7 @@ class HeaderContainer extends Component {
 
                             <ul className="noulstyle">
                                 <li className="topCate underline hover-btn ">
-                                    <Link  className="hover-li" to={{
+                                    <Link  className="hover-li" onClick={this.clickMenu} to={{
                                         pathname: '/about' ,
                                         state: {
                                             category:'about'
@@ -166,7 +177,7 @@ class HeaderContainer extends Component {
                                     </Link>
                                 </li>
                                 <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} />
-                                    <Link className="hover-li" to={{
+                                    <Link className="hover-li" onClick={this.clickMenu} to={{
                                         pathname: '/study/list' ,
                                         state: {
                                             category:'enviroment'
