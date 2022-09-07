@@ -10,7 +10,6 @@ class About extends Component {
     render() {
         return (
             <AuthWrapper>
-                <Route path="/" component={Main}/>
                 <Route path="/about" component={Main}/>
             </AuthWrapper>
         );

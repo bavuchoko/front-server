@@ -55,7 +55,7 @@ class HeaderContainer extends Component {
                             <div  className="float-left menu-div " onClick={this.clickedToggle}>
                                 <img   className={this.state.isMenu? btnOn: btnOff} src={this.state.isMenu? letf : right} />
                             </div>
-                            <span className="dsip-inlineblock blogname">blog name</span>
+                            <span className="dsip-inlineblock blogname">깨돌's &nbsp; 코딩주머니</span>
                             <div className="top-header float-right">
                                 <ul className="noulstyle disp-flex">
                                     <li className="noulstyle nav-div-ul-li top-bar-li">
