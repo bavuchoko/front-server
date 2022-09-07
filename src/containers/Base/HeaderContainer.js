@@ -132,15 +132,27 @@ class HeaderContainer extends Component {
                                         },}}>ubuntu
                                     </Link>
                                 </li>
-                                <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} />
-                                    <Link className="hover-li" to={{
-                                        pathname: '/study/list' ,
-                                        state: {
-                                            category:'docs'
-                                        },}}>Api/Docs
-                                    </Link>
-                                </li>
                             </ul>
+
+                        <ul className="noulstyle">
+                            <li className="topCate underline hover-btn ">
+                                <Link  className="hover-li" to={{
+                                    pathname: '/docs' ,
+                                    state: {
+                                        category:'bard'
+                                    },}}>Api/Docs
+                                </Link>
+                            </li>
+
+                            <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} />
+                                <Link className="hover-li" to={{
+                                    pathname: '/docs' ,
+                                    state: {
+                                        category:'board'
+                                    },}}>board
+                                </Link>
+                            </li>
+                        </ul>
 
 
                             <ul className="noulstyle">

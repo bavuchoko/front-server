@@ -6,7 +6,7 @@ pre, form, fieldset, textarea, blockquote, span, * {
 }
 p{margin: 0; padding: 0}
 .summit{
-    }
+}
 .top-header{
     top: -50px;
     right: -940px;
@@ -39,9 +39,9 @@ body::-webkit-scrollbar {
 }
 
 a{
-    text-decoration: none;
-    color: #262525;
-    font-weight: 400;
+    text-decoration: none !important;
+    color: #262525 !important;
+    font-weight: 400 !important;
 }
 html, body {
     margin: 0;
@@ -187,8 +187,8 @@ html, body {
 .bac-color-white{
     background-color: white;
 }.bac-color-gray-blue{
-    background-color: #515b75;
-}
+     background-color: #515b75;
+ }
 .noulstyle{
     margin: 0;
     padding: 0;
@@ -248,7 +248,11 @@ nav > div > div >  ul.noulstyle >a {
     z-index: 10;
 }
 .hover-li:hover {
+    font-weight: 800 !important;
     cursor: pointer;
+}
+.hover-li{
+    text-decoration: none !important;
 }
 .hover-btn:hover {
     cursor: pointer;
@@ -630,6 +634,7 @@ ul > a.hover-li:hover p{
 }
 .underline{
     border-bottom: 1px  solid #d7d7d7;
+    text-decoration :none !important
 }
 .recent-container{
     padding-top: 20px;
@@ -727,7 +732,7 @@ ul > a.hover-li:hover p{
 }
 .tc-spacer{
     padding-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 134px;
 }
 .padding-tr-40p{
     padding-left: 15px;
@@ -1019,7 +1024,7 @@ description-table-parent{
     padding: 0;
     margin: 0;
     width: 100%;
-background-color: #ddeaf5;
+    background-color: #ddeaf5;
 }
 .description-table > tr {
     height: 30px;
@@ -1260,7 +1265,7 @@ code{
     max-width: 350px;
     width: 300px;
     float: right;
-    margin-top: 158px;
+    margin-top: 192px;
 }
 .sideMenu > ul{
     margin-bottom: 60px;
@@ -1275,7 +1280,7 @@ code{
 }
 
 .topCate{
-    font-weight: 600;
+    font-weight: 400;
     padding-bottom: 4px;
     margin-bottom: 10px;
 }
@@ -1293,9 +1298,7 @@ code{
     padding-bottom: 10px;
     border-bottom: 1px solid #e0e0e0;
 }
-.hover-li:hover{
-    font-weight: 800;
-}
+
 .text-align-right{
     text-align: right;
 }
@@ -1307,4 +1310,9 @@ code{
     margin-left: 20px;
     display: inline-block;
     margin-bottom: 10px;
+}
+.doc-container >div > div{
+    margin: 0 !important;
+    padding-left: 15px;
+    padding-right: 15px;
 }

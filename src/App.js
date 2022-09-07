@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import { About, Study, Auth } from './pages';
+import { About, Study, Auth, Docs } from './pages';
 import {Main as StudyList, WriteContainer, View , Update} from './containers/Study'
 
 
@@ -50,6 +50,7 @@ class App extends Component {
           <Route exact path="/study/view" component={View}/>
           <Route exact path="/study/update" component={Update}/>
           <Route path="/auth" component={Auth}/>
+          <Route path="/docs" component={Docs}/>
         </div>
     );
   }
