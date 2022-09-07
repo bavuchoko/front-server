@@ -1211,15 +1211,21 @@ code{
 
 
 .pagination{
+    margin-top: 20px;
     background: none;
     text-align: center;
 }
 .page-item{
+    margin-left: 2px;
+    margin-right: 2px;
+    border-radius: 50px !important;
     display: inline-block;
     width: auto;
     text-align: center;
 }
-
+.page-item:hover{
+    background-color: red !important;
+}
 .menu-div >  img{
     margin-left: 20px;
     margin-top: 20px;
@@ -1260,6 +1266,10 @@ code{
 }
 .back-color-menu{
     background-color: #f1f7fd;
+}
+.article-card-time{
+    font-size: 13px;
+    margin-left: auto;
 }
 .sideMenu{
     max-width: 350px;
@@ -1312,7 +1322,58 @@ code{
     margin-bottom: 10px;
 }
 .doc-container >div > div{
-    margin: 0 !important;
     padding-left: 15px;
     padding-right: 15px;
 }
+.details{
+    color: #939394;
+    border-bottom: 1px solid #d7d7d7;
+}
+.doc-container > div > div > h1, h2{
+    color: #a2523d;
+}
+.paragraph > p{
+    color: #3a3b3f;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.tableblock >tr, th {
+    background-color: #f3f6f8;
+}
+div.content > pre {
+    padding: 10px;
+    background-color: #eeeded;
+}
+.tableblock > tr,  th, td {
+    font-family: Roboto;
+    text-align: left;
+    text-indent: 10px;
+    border: 1px solid black;
+    height: 2.5em ;
+}
+p.tableblock > code{
+    color: #262525 !important;
+}
+
+.language-bash, .language-http{
+    color: #262525 !important;
+}
+div.listingblock > div.content > pre > code{
+    color: #262525 !important;
+    word-break: break-all !important;
+    white-space: pre-wrap;
+}
+.sectionbody >  div > h3{
+    color: #1c8bec;
+}
+.paragraph > p > code{
+    font-weight: 600;
+    color: #262525 !important;
+}
+.sect4 >  h5{
+    color: #3d3d3d !important;
+}
+

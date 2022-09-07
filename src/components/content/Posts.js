@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import Content from "../../lib/api/Content";
 
-const Posts = ({ category, currentPage, setPageInfo  }=[]) => {
+const Posts = ({ category, currentPage, setPageInfo }=[]) => {
 
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -10,12 +10,12 @@ const Posts = ({ category, currentPage, setPageInfo  }=[]) => {
         const fetchData = async () => {
             setLoading(true);
 
-            Content.getContentCategory(category)
+            Content.getContentCategory(category, currentPage)
                 .then((response) => {
                     setPosts(response.data['_embedded']['contentList']);
                     setPageInfo(response.data['page']);
-                    setLoading(false)
-                    console.log(response.data)
+                    setLoading(false);
+                    console.log(response.data);
                 })
                 .catch((error) => {
                     setPosts(null)
@@ -24,7 +24,7 @@ const Posts = ({ category, currentPage, setPageInfo  }=[]) => {
                 })
         };
         fetchData();
-    }, [category]);
+    }, [category, currentPage]);
     if (posts != null) {
         return (
             <>
@@ -50,6 +50,7 @@ const Posts = ({ category, currentPage, setPageInfo  }=[]) => {
                                 <p className="article-card-title">
                                     {post.title}
                                 </p>
+                                <p className="article-card-time">{post.writeTime.substring(0,16)}</p>
                             </div>
                             <p className="article-card-content">
                                 {post.bodyHtml&&post.bodyHtml.substring(0,150)+"..."}

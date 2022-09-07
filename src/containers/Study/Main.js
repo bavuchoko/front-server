@@ -49,6 +49,7 @@ function Main() {
                             postsPerPage={pages.size}
                             totalPosts={pages.totalElements}
                             paginate={setCurrentPage}
+                            currentPage={currentPage}
                         ></Pagination>
                     </div>
 

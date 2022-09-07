@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Docs from "../../lib/api/Docs";
+import dompurify from "dompurify";
 
 function DocViewer() {
 
@@ -24,7 +25,8 @@ function DocViewer() {
     }, [html]);
 
     function createMarkup() {
-        return {__html: html};
+        const sanitizer = dompurify.sanitize;
+        return {__html: sanitizer(html)};
     }
 
     return (
