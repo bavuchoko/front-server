@@ -67,6 +67,12 @@
     .width-1140px > nav.disp-flex{
         display: block;
     }
+    .tui-editor-contents > pre{
+        width: calc(100% - 20px);
+    }
+    .article-card-body > div{
+        padding: 10px;
+    }
 }
 @media all and (min-width: 768px){
 /*태블릿 세로*/
