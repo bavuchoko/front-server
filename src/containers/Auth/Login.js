@@ -8,6 +8,7 @@ import queryString from 'query-string';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPowerOff} from "@fortawesome/free-solid-svg-icons";
 import storage from "../../lib/storage";
+import {Link} from "react-router-dom";
 
 class Login extends Component {
     componentWillUnmount() {
@@ -76,12 +77,14 @@ class Login extends Component {
 
 
                 <div className="width-1140px mar-auto-0  bac-color-white">
-                    <div className="padding-rl-80p-t-40p">
-
-                        <h2 className="login-h2 h2-head">로그인</h2>
+                    <div className="padding-rl-80p-t-9p">
+                    <div className="auth-menu">
+                        <Link to="/auth/login"><h2 className="login-h2 h2-head underline2">로그인</h2></Link>
+                        <Link to="/auth/join"><h2 className="login-h2 h2-head">회원가입</h2></Link>
+                    </div>
                         <div className="disp-flex login-from pad-t85p ">
                             <div className="profile-div">
-                                <img  className="" src={man} />
+                                <img  className="man" src={man} />
                             </div>
                             <form className="form-tag">
                                 <div className="width-100per pad-t56p">
@@ -89,7 +92,7 @@ class Login extends Component {
                                         <InputWithLabel
                                             className="login-frm-btn"
                                             name="username"
-                                            placeholder="username@email.com"
+                                            placeholder="이메일"
                                             value={username ||"" }
                                             onChange={handleChange}
                                             onKeyPress={handleOnKeyPress}
@@ -100,7 +103,7 @@ class Login extends Component {
                                         <InputWithLabel
                                             className="login-frm-btn"
                                             name="password"
-                                            placeholder="password"
+                                            placeholder="비밀번호"
                                             type="password"
                                             value={password}
                                             onChange={handleChange}

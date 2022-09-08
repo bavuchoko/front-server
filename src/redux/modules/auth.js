@@ -23,8 +23,10 @@ const initialState = Map({
     register: Map({
         form: Map({
             username: '',
+            nickname: '',
             password: '',
-            passwordConfirm: ''
+            passwordConfirm: '',
+            joinDate: ''
         }),
         exists: Map({
             username: false,

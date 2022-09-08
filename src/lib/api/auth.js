@@ -1,6 +1,7 @@
 import axios from 'axios';
 import storage, {getCookie} from '../../lib/storage';
 import instance from "../Validator"
+import moment from "moment";
 
 export const checkEmailExists = (email) => {
     console.log("checkEmailExists");
@@ -10,10 +11,13 @@ export const checkUsernameExists = (username) => {
     console.log("checkUsernameExists");
     axios.get(process.env.REACT_APP_SERVICE_URL + '/api/auth/exists/username/' + username);
 }
-export const userRegister = ({username, password}) => {
-    console.log("userRegister");
-    axios.post('/api/user/join', {username, password });
-}
+export const userRegister = (user) => {
+    return instance({
+        url:'api/user/join',
+        method: 'post',
+        data:user
+    })
+};
 export const userLogin = (username) => {
     return instance({
         url:'api/user/authenticate',
@@ -24,6 +28,8 @@ export const userLogin = (username) => {
         }
     })
 };
+
+
 
 const token = storage.get("token");
 export const checkStatus = () =>{

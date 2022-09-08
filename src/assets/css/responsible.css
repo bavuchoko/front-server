@@ -73,6 +73,13 @@
     .article-card-body > div{
         padding: 10px;
     }
+    .auth-menu{
+        margin: 0 auto;
+        text-align: center;
+    }
+    .pad-t10p{
+        padding-top: 40px;
+    }
 }
 @media all and (min-width: 768px){
 /*태블릿 세로*/

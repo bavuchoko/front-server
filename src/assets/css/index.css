@@ -411,14 +411,19 @@ a.dropdown-menu{
 }
 
 .h2-head{
-    width: 100%;
-    border-bottom: 1px solid #d5d2d2;
-    padding-bottom: 20px;
-    color: #525151;
+    display: inline-block;
+    padding: 20px;
+    color: #2B2B28;
 }
 
-
-
+.underline2{
+    border-bottom: 2px solid #FEB139;
+}
+.padding-rl-80p-t-9p{
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 9px;
+}
 
 
 .login-frm-btn{
@@ -446,11 +451,26 @@ a.dropdown-menu{
     border-bottom: 1px solid white;
 }
 .profile-div{
+    overflow: hidden;
     border-radius: 50%;
     width: 250px;
     height: 250px;
     margin-right: 50px;
+    box-shadow: 3px 3px 2px 1px #dad8d8;
 }
+.profile-div2{
+    overflow: hidden;
+    border: 1px solid #d2d0d0;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin-right: 50px;
+    box-shadow: 3px 3px 2px 1px #dad8d8;
+}
+.profile-div > img.man{
+    background-color: #f83f53;
+}
+
 .pad-t85p{
     padding-top: 85px;
 }
@@ -458,6 +478,10 @@ a.dropdown-menu{
     padding-top: 56px;
 }
 .profile-div > img {
+    width: 100%;
+    height: 100%;
+}
+.profile-div2 > img {
     width: 100%;
     height: 100%;
 }
@@ -1397,4 +1421,26 @@ div.listingblock > div.content > pre > code{
 .sect4 >  h5{
     color: #3d3d3d !important;
 }
+.join-btn{
+    border-radius: 3px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 52px;
+    border: 1px  solid #363636;
+    background-color: #0c0c0c;
+    color: #eaeaea;
+    text-align: center;
+    line-height: 51px;
+    font-size: 13px;
+}
+.join-btn:active{
+    background-color: #424141;
+}
+.pad-t10p{
+    padding-top: 10px;
+}
 
+.sc-kDDrLX{
+    max-width: 293px !important;
+}
