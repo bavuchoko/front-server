@@ -84,6 +84,9 @@
     .pad-t10p{
         padding-top: 40px;
     }
+    .h2-head{
+        padding: 3px;
+    }
 }
 @media all and (min-width: 768px){
 /*태블릿 세로*/
