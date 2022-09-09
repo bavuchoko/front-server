@@ -12,6 +12,7 @@ const PageLi = styled.li`
   font-weight: 500;
   padding: 3px;
   border-radius: 5px;
+  background-color: #f1f7fd;
 
 `;
 
@@ -21,6 +22,7 @@ const PageSpan = styled.span`
   width: 20px;
   padding: 3px;
   border-radius: 50px;
+  background-color: #f1f7fd;
   &:hover {
     cursor: pointer;
     font-weight: 900;
@@ -28,12 +30,12 @@ const PageSpan = styled.span`
 `;
 
 const tempStyle={
-    color:"black",
-    background:"#f1f7fd"
+    color:"white",
+    background:"#4d8bcb"
 }
 
 const tempStyle2={
-    background:"black"
+    background:"#f1f7fd"
 }
 const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
 
