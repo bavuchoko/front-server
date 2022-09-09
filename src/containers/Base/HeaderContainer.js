@@ -65,7 +65,7 @@ class HeaderContainer extends Component {
                                 <img   className={this.state.isMenu? btnOn: btnOff} src={this.state.isMenu? close : roff} />
                                 <img   className={this.state.isMenu? btnOn2: btnOff2} src={this.state.isMenu? ron : roff} />
                             </div>
-                            <span className="dsip-inlineblock blogname">깨돌's &nbsp; 코딩주머니</span>
+                            <span className="dsip-inlineblock blogname">노인과 자바</span>
                             <div className="top-header float-right">
                                 <ul className="noulstyle disp-flex">
                                     <li className="noulstyle nav-div-ul-li top-bar-li">
