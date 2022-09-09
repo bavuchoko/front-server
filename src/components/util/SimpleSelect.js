@@ -25,7 +25,12 @@ export default function SimpleSelect(categoryName, setCategoryName) {
     };
 
     useEffect(() => {
+        console.log(categoryName.categoryName)
+        if(categoryName.categoryName==''){
+            setCategory('none');
+        }else{
         setCategory(categoryName.categoryName);
+        }
         }, [categoryName.categoryName]);
     return (
         <>

@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as authActions from "../../redux/modules/auth";
 import * as userActions from "../../redux/modules/user";
-import {useHistory} from "react-router-dom";
+import {useHistory, useLocation} from "react-router-dom";
 import 'codemirror/lib/codemirror.css'
 import 'highlight.js/styles/github.css';
 import 'tui-color-picker/dist/tui-color-picker.css';
@@ -36,7 +36,7 @@ function WriteContainer(props) {
     };
     const [categoryName, setCategoryName] = useState("");
     const [title, setTitle] = useState("");
-    const [tag, setTag] = useState("");
+    // const [tag, setTag] = useState("");
 
 
     const handleRegisterButton = () => {
@@ -50,16 +50,16 @@ function WriteContainer(props) {
             return;
         }
 
-        console.log(categoryName)
         if(window.confirm("등록하시겠습니까")){
             const data={
                 "category"      : categoryName,
                 "title"         : title,
                 "body"          : editorRef.current?.getInstance().getHtml(),
-                "tag"           : tag,
-                "bodyHtml"   : editorRef.current?.getInstance().getMarkdown(),
+                "thumbnail"     : categoryName,
+                "bodyHtml"      : editorRef.current?.getInstance().getMarkdown(),
                 "writeTime"     : moment().format("YYYY-MM-DDTHH:mm:sszz")
             }
+            console.log(data)
             Content.postContent(categoryName, data)
                 .then((response)=>{
                     if(response.status==201){
@@ -80,10 +80,10 @@ function WriteContainer(props) {
                 <form>
             <div className="tc-spacer2"> </div>
                     <div className="editor-title-container bac-color-white disp-flex">
-                        <SimpleSelect  setCategoryName={setCategoryName}/>
+                        <SimpleSelect categoryName={categoryName} setCategoryName={setCategoryName}/>
                         <input className="content-title-input text-indent-20p" placeholder="제목..." onChange={(event) => setTitle(event.target.value)}/>
                     </div>
-                    <input className="tag-input text-indent-20p" placeholder="#thumbnail..." onChange={(event) => setTag(event.target.value)}/>
+
                     <div>
 
                         <Editor

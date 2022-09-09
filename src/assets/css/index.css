@@ -1,8 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 body, talbe, th, td, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,p
 pre, form, fieldset, textarea, blockquote, span, * {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Noto';
+}
+
+@font-face {
+    font-family: "Noto";
+    src:url("../fonts/NotoSerifKR-Regular.otf");
+    unicode-range: U+AC00-D7A3;
+}
+@font-face {
+    font-family: "Noto";
+    src:url("../fonts/NotoSansKR-Regular.otf");
+    unicode-range: U+0041-005A, U+0061-007A;
 }
 p{margin: 0; padding: 0}
 .summit{
@@ -225,9 +236,12 @@ html, body {
 }
 
 .nav-ul-li-p{
+    font-family: "Noto Sans Korean Regular";
+    line-height: 23px;
+    font-weight: 600;
     height: 20px;
     margin: 0px;
-    color: #7a7676;
+    color: black;
     font-size: 13px;
 }
 
@@ -401,11 +415,14 @@ a.dropdown-menu{
 }
 
 .top-bar-li{
+    font-family: "Noto Sans Korean Regular";
     font-size: 14px;
     border-right: 1px solid #cecdcd;
 
 }
-
+.top-bar-li > div{
+    font-family: "Noto Sans Korean Regular";
+}
 .login-div{
     width: 100%;
 }
@@ -438,6 +455,10 @@ a.dropdown-menu{
 .article-card-body > a:active > div.article-img{
     box-shadow: 0px 0px 0px 0px white;
 }
+.article-card-body-body > div > span, p{
+    font-family: "Noto Sans Korean Regular";
+}
+
 .article-card-body > a:active > div.article-card-body-body > div >.article-card-title{
     color:  white;
 }
@@ -1238,47 +1259,53 @@ description-table-parent{
     padding-right: 20px !important;
     padding-top: 40px !important;
     padding-bottom: 15px !important;
-    background-color: #333 !important;
-    border-bottom: 1px solid #e1d6d6 !important;
-    box-shadow: 0 6px 6px 0 rgb(0 0 0 / 20%) !important;
+    background-color: #f1f7fd !important;
 }
 code{
     font-family: Roboto !important;
     letter-spacing: 0.5px !important;
-    color: #e3e2e2 !important;
+    color: #24292e !important;
+    line-height: 23px !important;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.hljs-comment{
+    color: #ababab;
 }
 .hljs-type{
-    color: #e38951;
+    color: #FF6B6B;
 }
 .hljs-string{
-    color: #44a93f;
+    color: #50a14f;
+    font-weight: 300;
 }
 .hljs-variable{
-    color: #b86ce3;
+    color: #24292e;
 }
 .hljs-operator{
-    color: #f5f5f5;
+    color: #24292e;
 }
 .hljs-meta{
-    color: #d7d72c;
+    color: #929626;
+    font-weight: 500;
 }
 .hljs-keyword{
-    color:  #e38951 !important;
+    color:  #FF6B6B !important;
 }
 .function_{
-    color: #eec74b !important;
+    color: #005cc5 !important;
 }
 .hljs-params{
-    color: whitesmoke;
+    color: #24292e;
 }
+
 .hljs-literal{
     color:  #e38951 !important;
 }
 .class_ {
-    color: whitesmoke !important;
+    color: #FF6B6B !important;
+    font-weight: 600;
 }
 .hljs-built_in{
-
 }
 
 
