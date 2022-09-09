@@ -425,6 +425,46 @@ a.dropdown-menu{
     padding-top: 9px;
 }
 
+.article-img{
+    box-shadow: 1px 1px 1px 1px #e5e3e3;
+}
+.article-card-body > a:active{
+    background-color: #175ba9;
+    color: white;
+}
+.article-card-body > a:active > img{
+
+}
+.article-card-body > a:active > div.article-img{
+    box-shadow: 0px 0px 0px 0px white;
+}
+.article-card-body > a:active > div.article-card-body-body > div >.article-card-title{
+    color:  white;
+}
+.article-card-body > a:active > div.article-card-body-body{
+    color:  white;
+}
+.article-card-body > a:active > div.article-card-body-body > .article-card-content{
+    color:  white;
+}
+
+
+.article-card-body > a:hover{
+    background-color: #f1f7fd;
+    color: white;
+}
+.article-card-body > a:hover > div.article-img{
+    box-shadow: 0px 0px 0px 0px white;
+}
+.article-card-body > a:hover > div.article-card-body-body > div >.article-card-title{
+    /*color:  #0E185F;*/
+}
+.article-card-body > a:hover > div.article-card-body-body{
+    /*color:  #0E185F;*/
+}
+.article-card-body > a:hover > div.article-card-body-body > .article-card-content{
+    /*color:  #0E185F;*/
+}
 
 .login-frm-btn{
     text-indent: 15px;
@@ -1256,7 +1296,7 @@ code{
     text-align: center;
 }
 .page-item:hover{
-    background-color: red !important;
+    background-color: #f1f7fd !important;
 }
 .menu-div >  img{
     margin-left: 20px;
@@ -1385,6 +1425,10 @@ table{
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+table.tableblock{
+    margin-top: 10px;
+}
 .tableblock >tr, th {
     background-color: #f3f6f8;
 }
@@ -1396,7 +1440,7 @@ div.content > pre {
     font-family: Roboto;
     text-align: left;
     text-indent: 10px;
-    border: 1px solid black;
+    border: 1px solid #a9a9a9;
     height: 2.5em ;
 }
 p.tableblock > code{

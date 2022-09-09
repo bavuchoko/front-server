@@ -28,12 +28,12 @@ const PageSpan = styled.span`
 `;
 
 const tempStyle={
-    color:"white",
-    background:"red"
+    color:"black",
+    background:"#f1f7fd"
 }
 
 const tempStyle2={
-    background:"white"
+    background:"black"
 }
 const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
 
