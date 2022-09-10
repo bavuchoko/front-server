@@ -53,7 +53,7 @@ const Posts = ({ category, currentPage, setPageInfo }=[]) => {
                                 <p className="article-card-time">{post.writeTime.substring(0,16)}</p>
                             </div>
                             <p className="article-card-content">
-                                {post.bodyHtml&&post.bodyHtml.substring(0,150)+"..."}
+                                {post.bodyHtml&&post.bodyHtml.substring(0,350)+"..."}
                             </p>
                         </div>
 

@@ -12,6 +12,7 @@ import moment from "moment";
 import {isAlphanumeric, isEmail, isLength} from "validator";
 
 class Join extends Component {
+
     componentWillUnmount() {
         console.log("componentWillUnmount");
         const { AuthActions } = this.props;
@@ -46,14 +47,11 @@ class Join extends Component {
         username: (value) => {
             if(!isEmail(value)) {
                 this.setError('잘못된 이메일 형식 입니다.');
+                console.log(isEmail(value))
                 return false;
             }
 
-            if(!isAlphanumeric(value) || !isLength(value, { min:4, max: 25 })) {
-                if(!isEmail(value)) {
-                    this.setError('잘못된 이메일 형식 입니다.');
-                    return false;
-                }
+            if(!isLength(value, { min:4, max: 25 })) {
                 this.setError('아이디는 4~25 글자의 알파벳 혹은 숫자로 이뤄져야 합니다.');
                 return false;
             }
