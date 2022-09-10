@@ -27,8 +27,6 @@ export default {
         })
     },
     putContent(data,id) {
-        console.log(data.category)
-        console.log(id)
         return instance({
             url     : 'api/content/'+data.category+'/'+id,
             method  : 'put',

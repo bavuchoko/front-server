@@ -56,18 +56,18 @@ function Update(props) {
                 "title"         : title,
                 "body"          : editorRef.current?.getInstance().getHtml(),
                 "thumbnail"     : thumbnail,
-                "bodyPreView"   : editorRef.current?.getInstance().getMarkdown().substring(0,150),
-                "writeTime"     : post.writeTime,
+                "bodyHtml"      : editorRef.current?.getInstance().getMarkdown(),
+                "writeTime"     : post.writeTime.substring(0,10)+"T"+post.writeTime.substring(11,19),
                 "updateTime"    : moment().format("YYYY-MM-DDTHH:mm:sszz")
             }
-            console.log(data)
-            console.log(id)
             Content.putContent(data, id)
                 .then((response)=>{
-                    if(response.status==201){
+                    console.log(response)
+                    if(response.status==204){
                         window.location.replace("/")
                     }
                 }).catch((e)=>{
+                console.log(e);
                 alert("수정에 실패하였습니다.");
             })
         }

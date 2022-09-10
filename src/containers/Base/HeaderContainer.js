@@ -56,7 +56,7 @@ class HeaderContainer extends Component {
 
         return (
             <>
-            <nav id="#header" className="fullWidth bac-color-white fixed">
+            <nav id="#header" className="fullWidth bac-color-white fixed z-100">
                 <div className="height-70p">
 
                     <div className="width-1140px mar-auto-0 height-70p text-center">

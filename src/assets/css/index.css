@@ -961,6 +961,9 @@ ul > a.hover-li:hover p{
     left: calc(50% - 350px );
     box-shadow: 3px 0 6px 0 rgb(0 0 0 / 20%);
 }
+.z-100{
+    z-index: 100;
+}
 .article-body{
     padding-top: 50px;
     padding-bottom: 50px;
@@ -1253,7 +1256,7 @@ description-table-parent{
 }
 .tui-editor-contents > pre{
     margin: 0 auto;
-    width: calc(100% - 140px);
+    width: calc(100% - 40px);
     padding-left: 20px !important;
     padding-right: 20px !important;
     padding-top: 40px !important;
@@ -1278,7 +1281,7 @@ code{
     font-weight: 300;
 }
 .hljs-variable{
-    color: #24292e;
+    color: #347dc5;
 }
 .hljs-operator{
     color: #24292e;
@@ -1531,7 +1534,10 @@ div.listingblock > div.content > pre > code{
     font-size: 26px;
 }
 .tui-editor-contents > p {
-    font-size: 17px;
+    font-size: 16px;
+}
+.tui-editor-contents > blockquote > p {
+    font-size: 15px;
 }
 .tui-editor-contents > ol {
     font-size: 16px;
