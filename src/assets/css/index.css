@@ -1534,6 +1534,9 @@ div.listingblock > div.content > pre > code{
 .tui-editor-contents > h2 {
     font-size: 26px;
 }
+.tui-editor-contents > h3 {
+    line-height: 30px;
+}
 .tui-editor-contents > a {
     color: blue !important;
 }

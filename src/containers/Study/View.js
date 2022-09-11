@@ -52,19 +52,17 @@ function View() {
         <div className="width-1140px mar-auto-0 disp-flex height-100vh">
 
 
-            <div className="width-100per mar-auto-0 bac-color-white">
+            <div className="width-100per-20p mar-auto-0 bac-color-white">
 
                 <div className="updatebtn-div text-align-right">
                 {updateUrl&&<UpdateBtn category={post.category} id={post.id} />}
                 {updateUrl&&<DeleteBtn category={post.category} id={post.id}/>}
                 <ListBtn category={post.category}/>
                 </div>
+                        <span className="disp-block text-align-right mar-r-20px">{post.writeTime}</span>
                 <div className="article-container">
                     <div className="article-title ">
-                        <span>{post.writeTime}</span>
                         <p>{post.title}</p>
-
-
                     </div>
 
                     <div className="article-body">
