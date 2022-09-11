@@ -1534,15 +1534,33 @@ div.listingblock > div.content > pre > code{
 .tui-editor-contents > h2 {
     font-size: 26px;
 }
+.tui-editor-contents > a {
+    color: blue !important;
+}
+.tui-editor-contents > p > a {
+    color: blue !important;
+}
+.tui-editor-contents > blockquote > p > a {
+    color: blue !important;
+}
 .tui-editor-contents > p {
     font-size: 16px;
 }
 .tui-editor-contents > blockquote > p {
     font-size: 15px;
 }
+
 .tui-editor-contents > ul > li {
-    font-size: 16px;
-    line-height: 17px;
+    font-size: 15px;
+    line-height: 32px;
+}
+.tui-editor-contents > ol >  li {
+    font-size: 15px;
+    line-height: 32px;
+}
+.tui-editor-contents > ol > li > ul > li {
+    font-size: 15px;
+    line-height: 32px;
 }
 .tui-editor-contents > table > tr, th, td{
     font-size: 14px;
