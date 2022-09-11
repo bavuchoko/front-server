@@ -123,8 +123,8 @@ class HeaderContainer extends Component {
                                     <Link className="hover-li" onClick={this.clickMenu} to={{
                                         pathname: '/study/list' ,
                                         state: {
-                                            category:'springboot'
-                                        },}}>springboot
+                                            category:'spring'
+                                        },}}>spring
                                     </Link>
                                 </li>
                                 <li className="subCate hover-btn ">&nbsp;&nbsp;&nbsp; <FontAwesomeIcon className="dependecies-fontawsome" icon={faChevronRight} />
