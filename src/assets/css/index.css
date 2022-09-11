@@ -1540,8 +1540,9 @@ div.listingblock > div.content > pre > code{
 .tui-editor-contents > blockquote > p {
     font-size: 15px;
 }
-.tui-editor-contents > ol {
+.tui-editor-contents > ul > li {
     font-size: 16px;
+    line-height: 17px;
 }
 .tui-editor-contents > table > tr, th, td{
     font-size: 14px;
