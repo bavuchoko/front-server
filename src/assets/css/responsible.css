@@ -87,6 +87,15 @@
     .h2-head{
         padding: 3px;
     }
+
+    p.article-card-content{
+        font-size: 14px;
+        max-height: 80px;
+        overflow: hidden;
+    }
+    .res-disp-block{
+        display: block;
+    }
 }
 @media all and (min-width: 768px){
 /*태블릿 세로*/

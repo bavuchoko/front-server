@@ -1368,6 +1368,7 @@ code{
     height: 100%;
 }
 .disp-in{
+    z-index: 101;
     float: left;
     transition: all 0.1s linear;
 }

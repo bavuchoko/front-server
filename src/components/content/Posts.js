@@ -45,7 +45,7 @@ const Posts = ({ category, currentPage, setPageInfo }=[]) => {
                                  src={require('../../assets/image/big/' + post.thumbnail + '.png')}/>
                         </div>
                         <div className="article-card-body-body">
-                            <div className="disp-flex">
+                            <div className="disp-flex res-disp-block">
                                 <span className="article-card-category">[ {post.category.toUpperCase()} ]</span>
                                 <p className="article-card-title">
                                     {post.title}
@@ -53,7 +53,7 @@ const Posts = ({ category, currentPage, setPageInfo }=[]) => {
                                 <p className="article-card-time">{post.writeTime.substring(0,16)}</p>
                             </div>
                             <p className="article-card-content">
-                                {post.bodyHtml&&post.bodyHtml.substring(0,350)+"..."}
+                                {post.bodyHtml&&post.bodyHtml.substring(0,300)+"..."}
                             </p>
                         </div>
 
