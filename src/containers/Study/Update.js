@@ -78,11 +78,12 @@ function Update(props) {
     const [loading, setLoading] = useState(false);
     const [updateUrl, setUpdateUrl] = useState([])
     const id = (location.state.id)
+    const category = (location.state.category)
     useEffect(() => {
         window.scrollTo(0, 0);
         const fetchData = async () => {
             setLoading(true);
-            Content.getSingleContent("java", id)
+            Content.getSingleContent(category, id)
                 .then((response) =>{
                     setTitle(response.data['title'])
                     setThumbnail(response.data['thumbnail'])

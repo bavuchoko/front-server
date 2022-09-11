@@ -15,16 +15,18 @@ import ListBtn from "../../components/util/ListBtn";
 function View() {
     const location = useLocation();
     const id = (location.state.data)
+    const category = (location.state.category)
     const [hits, setHits] = useState([]);
     const [post, setPost] = useState(0);
     const [loading, setLoading] = useState(false);
     const [updateUrl, setUpdateUrl] = useState(undefined)
 
+
     useEffect(() => {
         window.scrollTo(0, 0);
         const fetchData = async () => {
             setLoading(true);
-            Content.getSingleContent("java", id)
+            Content.getSingleContent(category, id)
                 .then((response) =>{
                     setPost(response.data);
                     setUpdateUrl(response.data['_links']['update'])
@@ -32,7 +34,7 @@ function View() {
                 .catch((error) => {
                     console.log('error',error)
                 })
-            Content.getContentCategoryRecent("java")
+            Content.getContentCategoryRecent(category)
                 .then((response) =>{
                     setHits(response.data['_embedded']['contentList']);
                 })

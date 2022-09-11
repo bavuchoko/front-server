@@ -36,7 +36,7 @@ const Posts = ({ category, currentPage, setPageInfo }=[]) => {
                               state: {
                                   // name: '이름',
                                   data: post.id,
-                                  body: '본문',
+                                  category: post.category,
                               },
                           }}
                     >
