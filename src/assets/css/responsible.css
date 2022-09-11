@@ -105,6 +105,9 @@
         width: 80px;
         height: 80px;
     }
+    .article-card-body-body{
+        width: calc(100% - 90px);;
+    }
 }
 @media all and (min-width: 768px){
 /*태블릿 세로*/
