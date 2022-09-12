@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useLocation} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import Content from "../../lib/api/Content";
 import {Viewer} from '@toast-ui/react-editor';
 import 'highlight.js/styles/github.css';
@@ -11,6 +11,10 @@ import colorSyntaxPlugin from "@toast-ui/editor-plugin-color-syntax";
 import UpdateBtn from "../../components/util/UpdateBtn";
 import DeleteBtn from "../../components/util/DeleteBtn";
 import ListBtn from "../../components/util/ListBtn";
+import Replier from "../../components/content/Replier";
+import storage from "../../lib/storage";
+import WriteButton from "../../components/util/WriteButton";
+import unknown from "../../assets/image/unknown.png";
 
 function View() {
     const location = useLocation();
@@ -19,17 +23,26 @@ function View() {
     const [hits, setHits] = useState([]);
     const [post, setPost] = useState(0);
     const [loading, setLoading] = useState(false);
+    const [replies, setReplies] = useState(false);
     const [updateUrl, setUpdateUrl] = useState(undefined)
+    const loggedInfo = storage.get('loggedInfo');
 
+    const alrim =()=>{
+        alert("아직 개발중입니다.")
+    }
 
+    let isLoggedIn = loggedInfo? true : false;
+    const replier = isLoggedIn?  <Replier nickname={loggedInfo.nickname}/> : null;
     useEffect(() => {
         window.scrollTo(0, 0);
         const fetchData = async () => {
             setLoading(true);
             Content.getSingleContent(category, id)
                 .then((response) =>{
+                    console.log(response.data)
                     setPost(response.data);
                     setUpdateUrl(response.data['_links']['update'])
+                    setReplies(response.data['replies'])
                 })
                 .catch((error) => {
                     console.log('error',error)
@@ -77,9 +90,34 @@ function View() {
                     </div>
                     <div className="article-footer">
                     </div>
+                    <div className="article-replier">
+                        <div className="replier-head">0 개의 댓글</div>
+                        {replier}
+                        <div className="replies-container">
+                            {replies&&replies.map((reply) => (
+                            <div className="replies-body hover-btn " key={2123123}>
+                                <div className="width-100per replies-body-hedaer">
+                                    <div className="width-60p height-60p bac-color-FEB139 float-left margin-right-10p round replier-write-pic">
+                                        <img  src={unknown}></img>
+                                    </div>
+                                    <p className="replier-writer-nickname float-left mar-top-10p">{reply.account.nickname}</p>
+                                    <Link to="/" className="dsip-inlineblock margin-right-10p padding-rl-10px underline3" onClick={alrim}>삭제</Link>
+                                    <Link to="/" className="dsip-inlineblock padding-rl-10px underline3"  onClick={alrim}>수정</Link>
+                                </div>
+                                <div  className="replies-body-content width-100per-250p">
+                                    <p className="">
+                                        {reply.body}
+                                    </p>
+                                </div>
+                                <div className="replies-operator dsip-inlineblock float-right mar-l-10px">
+                                </div>
+                            </div>
+
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
-
 
         </div>
     );
