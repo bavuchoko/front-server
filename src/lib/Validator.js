@@ -1,12 +1,12 @@
 import axios from 'axios'
 import storage from "./storage";
 
-// axios.defaults.baseURL = 'https://pjs.or.kr:8080';
-axios.defaults.baseURL = 'http://localhost:8080';
+axios.defaults.baseURL = 'https://pjs.or.kr:8080';
+// axios.defaults.baseURL = 'http://localhost:8080';
 // axios 인스턴스를 생성합니다.
 const instance = axios.create({
-    // baseURL: 'https://pjs.or.kr:8080',
-    baseURL: 'http://localhost:8080',
+    baseURL: 'https://pjs.or.kr:8080',
+    // baseURL: 'http://localhost:8080',
     timeout: 1000
 });
 
