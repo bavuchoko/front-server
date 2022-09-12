@@ -95,7 +95,7 @@ function View() {
                         {replier}
                         <div className="replies-container">
                             {replies&&replies.map((reply) => (
-                            <div className="replies-body hover-btn " key={2123123}>
+                            <div className="replies-body hover-btn " key={reply.id}>
                                 <div className="width-100per replies-body-hedaer">
                                     <div className="width-60p height-60p bac-color-FEB139 float-left margin-right-10p round replier-write-pic">
                                         <img  src={unknown}></img>
