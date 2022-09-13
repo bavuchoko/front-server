@@ -28,7 +28,7 @@ function DeleteBtn (props) {
     };
 
     return (
-        <span className="font-size-16px hover-btn dsip-inlineblock mar-l-20px" onClick={handleDeleteButton} >
+        <span className="font-size-16px hover-btn dsip-inlineblock mar-l-20px margin-left-20p" onClick={handleDeleteButton} >
            삭제
         </span>
     );
