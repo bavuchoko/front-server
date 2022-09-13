@@ -16,7 +16,7 @@ const Replier = ({ nickname }=[]) => {
 
     return (
 
-        <div className="width-1140px mar-auto-0 replier-div">
+        <div className="width-100per mar-auto-0 replier-div">
 
             <div className="repiler-nick-name float-left">{nickname}</div>
             <div className="float-right reply-commit-btn" onClick={alrim}>commit</div>

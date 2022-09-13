@@ -31,6 +31,14 @@ function View() {
         alert("아직 개발중입니다.")
     }
 
+    const modify_reply =()=>{
+        alert("아직 개발중입니다.")
+    }
+
+    const delete_reply =()=>{
+        alert("아직 개발중입니다.")
+    }
+
     let isLoggedIn = loggedInfo? true : false;
     const replier = isLoggedIn?  <Replier nickname={loggedInfo.nickname}/> : null;
     useEffect(() => {
@@ -42,7 +50,7 @@ function View() {
                     console.log(response.data)
                     setPost(response.data);
                     setUpdateUrl(response.data['_links']['update'])
-                    setReplies(response.data['replies'])
+                    setReplies(response.data['replies']['_embedded']['repliesResourcesList'])
                 })
                 .catch((error) => {
                     console.log('error',error)
@@ -97,12 +105,12 @@ function View() {
                             {replies&&replies.map((reply) => (
                             <div className="replies-body hover-btn " key={reply.id}>
                                 <div className="width-100per replies-body-hedaer">
-                                    <div className="width-60p height-60p bac-color-FEB139 float-left margin-right-10p round replier-write-pic">
+                                    <div className="width-60p height-60p bac-color-FEB139 float-left margin-right-15p round replier-write-pic">
                                         <img  src={unknown}></img>
                                     </div>
-                                    <p className="replier-writer-nickname float-left mar-top-10p">{reply.account.nickname}</p>
-                                    <Link to="/" className="dsip-inlineblock margin-right-10p padding-rl-10px underline3" onClick={alrim}>삭제</Link>
-                                    <Link to="/" className="dsip-inlineblock padding-rl-10px underline3"  onClick={alrim}>수정</Link>
+                                    <p className="replier-writer-nickname float-left mar-top-15p">{reply.account.nickname}</p>
+                                    {reply._links && <Link to="/" className="dsip-inlineblock padding-rl-10px underline3"  onClick={modify_reply}>수정</Link> }
+                                    {reply._links && <Link to="/" className="dsip-inlineblock margin-right-10p padding-rl-10px underline3" onClick={delete_reply}>삭제</Link> }
                                 </div>
                                 <div  className="replies-body-content width-100per-100p">
                                     <p className="width-100per">
