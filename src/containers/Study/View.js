@@ -51,7 +51,11 @@ function View() {
                     console.log(response.data)
                     setPost(response.data);
                     setUpdateUrl(response.data['_links']['update'])
-                    setReplies(response.data['replies']['_embedded']['repliesResourcesList'])
+                    if(response.data['replies']['_embedded']['repliesResourcesList'] != undefined){
+                        setReplies(response.data['replies']['_embedded']['repliesResourcesList'])
+                    }else{
+                        setReplies(null);
+                    }
                 })
                 .catch((error) => {
                     console.log('error',error)
