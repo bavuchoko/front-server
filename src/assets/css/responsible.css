@@ -72,7 +72,7 @@
         display: block;
     }
     .tui-editor-contents > pre{
-        width: calc(100% - 20px);
+        width: calc(100% - 40px);
     }
     .article-card-body > div{
         padding: 10px;
