@@ -104,8 +104,8 @@ function View() {
                                     <Link to="/" className="dsip-inlineblock margin-right-10p padding-rl-10px underline3" onClick={alrim}>삭제</Link>
                                     <Link to="/" className="dsip-inlineblock padding-rl-10px underline3"  onClick={alrim}>수정</Link>
                                 </div>
-                                <div  className="replies-body-content width-100per-250p">
-                                    <p className="">
+                                <div  className="replies-body-content width-100per-100p">
+                                    <p className="width-100per">
                                         {reply.body}
                                     </p>
                                 </div>

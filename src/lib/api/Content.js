@@ -9,7 +9,7 @@ export default {
     },
     getContentCategory(category, currentPage) {
         return instance({
-            url: 'api/content/' + category+'?page='+(currentPage-1),
+            url: 'api/content/' + category+'?page='+(currentPage),
             method: 'get'
         })
     },

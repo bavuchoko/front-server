@@ -188,6 +188,9 @@ html, body {
 .width-100per-100p{
     width: calc( 100% - 100px);
 }
+.width-100per-20p{
+    width: calc( 100% - 20px);
+}
 .width-100per-200p{
     width: calc( 100% - 200px);
 }
