@@ -11,9 +11,6 @@ const Replier = ({ nickname }=[]) => {
     const alrim =()=>{
         alert("아직 개발중입니다.")
     }
-
-    console.log(nickname)
-
     return (
 
         <div className="width-100per mar-auto-0 replier-div">

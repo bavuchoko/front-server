@@ -15,6 +15,7 @@ import Replier from "../../components/content/Replier";
 import storage from "../../lib/storage";
 import WriteButton from "../../components/util/WriteButton";
 import unknown from "../../assets/image/unknown.png";
+import writerD from "../../assets/image/writer-default.png";
 
 function View() {
     const location = useLocation();
@@ -99,14 +100,14 @@ function View() {
                     <div className="article-footer">
                     </div>
                     <div className="article-replier">
-                        <div className="replier-head">0 개의 댓글</div>
+                        <div className="replier-head"> {replies.length} 개의 댓글</div>
                         {replier}
                         <div className="replies-container">
                             {replies&&replies.map((reply) => (
                             <div className="replies-body hover-btn " key={reply.id}>
                                 <div className="width-100per replies-body-hedaer">
-                                    <div className="width-60p height-60p bac-color-FEB139 float-left margin-right-15p round replier-write-pic">
-                                        <img  src={unknown}></img>
+                                    <div className="width-60p height-60p float-left margin-right-15p round replier-write-pic">
+                                        <img  src={ reply._links == null ?  unknown : writerD}></img>
                                     </div>
                                     <p className="replier-writer-nickname float-left mar-top-15p">{reply.account.nickname}</p>
                                     {reply._links && <Link to="/" className="dsip-inlineblock padding-rl-10px underline3"  onClick={modify_reply}>수정</Link> }
