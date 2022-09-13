@@ -65,7 +65,7 @@ function View() {
         <div className="width-1140px mar-auto-0 disp-flex height-100vh">
 
 
-            <div className="width-100per-20p mar-auto-0 bac-color-white">
+            <div className="width-100per mar-auto-0 bac-color-white">
 
                 <div className="updatebtn-div text-align-right">
                 {updateUrl&&<UpdateBtn category={post.category} id={post.id} />}
