@@ -55,7 +55,7 @@ for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
             <nav className="width-100per pagination-nav">
 
                 <PageUl className="pagination noulstyle">
-                <PageSpan onClick={() => {paginate(1)}} className="page-link left-left-arrow">
+                <PageSpan onClick={() => {paginate(0)}} className="page-link left-left-arrow">
                     &#60;&#60;
                 </PageSpan>
                     &nbsp;&nbsp; &nbsp;&nbsp;
@@ -74,7 +74,7 @@ for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
                         </PageLi>
                     ))}
                     &nbsp;&nbsp; &nbsp;&nbsp;
-                <PageSpan onClick={() => {paginate(pageNumbers.length)}} className="page-link  right-right-arrow">
+                <PageSpan onClick={() => { paginate(pageNumbers.length -1)}} className="page-link  right-right-arrow">
                     &#62;&#62;
                 </PageSpan>
                 </PageUl>

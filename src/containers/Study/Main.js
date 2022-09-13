@@ -23,6 +23,9 @@ function Main() {
     const [currentPage, setCurrentPage] = useState([]);
     const [pages, setPages] = useState([]);
 
+
+    console.log(";sdfe")
+    console.log(currentPage)
     useEffect(() => {
         setTotalElements(pages.totalElements)
     },[pages])

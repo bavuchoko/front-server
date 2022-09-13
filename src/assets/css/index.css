@@ -1650,6 +1650,9 @@ div.listingblock > div.content > pre > code{
     resize: none;
     outline: none;
 }
+.repliy-area::placeholder{
+    color: #abaaaa;
+}
 .replies-body{
     border-radius: 3px;
 }

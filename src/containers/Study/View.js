@@ -100,7 +100,7 @@ function View() {
                     <div className="article-footer">
                     </div>
                     <div className="article-replier">
-                        <div className="replier-head"> {replies.length} 개의 댓글</div>
+                        <div className="replier-head"> {replies.length ==null ? 0 : replies.length} 개의 댓글</div>
                         {replier}
                         <div className="replies-container">
                             {replies&&replies.map((reply) => (
