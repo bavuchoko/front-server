@@ -7,7 +7,7 @@ import unknown from '../../assets/image/unknown.png';
 import moment from "moment";
 import Content from "../../lib/api/Content";
 
-const Replier = ({ nickname, category, id    }=[]) => {
+const Replier = ({nickname, category, id, addReplier}=[]) => {
     const [reply, setReply] = useState([]);
 
     const commmit_reply =()=> {
@@ -20,7 +20,6 @@ const Replier = ({ nickname, category, id    }=[]) => {
                 "body": reply,
                 "writeTime": moment().format("YYYY-MM-DDTHH:mm:sszz")
             }
-            console.log(data)
             Content.addReply(category,id, data)
                 .then((response)=>{
                     if(response.status==200){

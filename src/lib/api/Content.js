@@ -42,16 +42,15 @@ export default {
     },
 
     addReply(category, id, data){
-        console.log(data)
         return instance({
             url     : 'api/content/'+category+'/'+id+'/reply',
             method  : 'post',
             data    : data
         })
     },
-    deleteReply(category, id){
+    deleteReply(category, contendId, replyId){
         return instance({
-            url     : 'api/content/'+category+'/'+id+'/reply',
+            url     : 'api/content/'+category+'/'+contendId+'/reply/'+replyId,
             method  : 'delete'
         })
     },

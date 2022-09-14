@@ -37,13 +37,15 @@ function View() {
         alert("아직 개발중입니다.")
     }
 
+
+
     const delete_reply =(id)=>{
         if (window.confirm("삭제 하시겠습니까")) {
-            Content.deleteReply(category,id) 
+            Content.deleteReply(category,post.id, id)
                 .then((response)=>{
-                if(response.status==200){
+                if(response.status==204){
                     alert("삭제되었습니다.");
-                    window.location.reload();
+                    setReplies(replies.filter(reply => reply.id !== id ));
                 }
             }).catch((e)=>{
                 alert("삭제에 실패하였습니다.");
@@ -52,7 +54,7 @@ function View() {
     }
 
     let isLoggedIn = loggedInfo? true : false;
-    const replier = isLoggedIn?  <Replier nickname={loggedInfo.nickname} category={category} id={id}/> : null;
+    const replier = isLoggedIn?  <Replier nickname={loggedInfo.nickname} category={category} id={id} /> : null;
     useEffect(() => {
         window.scrollTo(0, 0);
         const fetchData = async () => {
