@@ -104,12 +104,14 @@ class Join extends Component {
         }
         AuthActions.userRegister(user)
             .then((response)=>{
-                console.log(response)
-                storage.set("token" ,response.data["token"])
-                storage.set("username" , response.data["username"])
-                storage.set('loggedInfo', response.data);
-                alert("가입에 성공했습니다.")
-                window.location.replace("/")
+                if(response.status==200) {
+                    console.log(response)
+                    storage.set("token", response.data["token"])
+                    storage.set("username", response.data["username"])
+                    storage.set('loggedInfo', response.data);
+                    alert("가입에 성공했습니다.")
+                    window.location.replace("/")
+                }
             })
             .catch ((e)=> {
                 if(e.response.status === 409) {

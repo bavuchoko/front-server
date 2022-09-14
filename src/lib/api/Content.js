@@ -40,4 +40,20 @@ export default {
             method  : 'delete'
         })
     },
+
+    addReply(category, id, data){
+        console.log(data)
+        return instance({
+            url     : 'api/content/'+category+'/'+id+'/reply',
+            method  : 'post',
+            data    : data
+        })
+    },
+    deleteReply(category, id){
+        return instance({
+            url     : 'api/content/'+category+'/'+id+'/reply',
+            method  : 'delete'
+        })
+    },
+
 }

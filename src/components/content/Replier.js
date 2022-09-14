@@ -5,8 +5,9 @@ import 'tui-color-picker/dist/tui-color-picker.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import unknown from '../../assets/image/unknown.png';
 import moment from "moment";
+import Content from "../../lib/api/Content";
 
-const Replier = ({ nickname }=[]) => {
+const Replier = ({ nickname, category, id    }=[]) => {
     const [reply, setReply] = useState([]);
 
     const commmit_reply =()=> {
@@ -19,6 +20,17 @@ const Replier = ({ nickname }=[]) => {
                 "body": reply,
                 "writeTime": moment().format("YYYY-MM-DDTHH:mm:sszz")
             }
+            console.log(data)
+            Content.addReply(category,id, data)
+                .then((response)=>{
+                    if(response.status==200){
+                        alert("등록하였습니다.");
+                        window.location.reload();
+                    }
+                }).catch((e)=>{
+                alert("등록에 실패하였습니다.");
+            })
+
         }
 
     }
@@ -28,7 +40,7 @@ const Replier = ({ nickname }=[]) => {
         <div className="width-100per mar-auto-0 replier-div">
 
             <div className="repiler-nick-name float-left">{nickname}</div>
-            <div className="float-right reply-commit-btn" onClick={commmit_reply}>commit</div>
+            <div className="float-right reply-commit-btn hover-btn" onClick={commmit_reply}>commit</div>
          
             <textarea className="repliy-area"  placeholder="내용을 입력하세요" onChange={(event) => setReply(event.target.value)}></textarea>
         </div>

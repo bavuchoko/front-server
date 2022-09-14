@@ -32,16 +32,27 @@ function View() {
         alert("아직 개발중입니다.")
     }
 
-    const modify_reply =()=>{
+    const modify_reply =(id)=>{
+        alert(id)
         alert("아직 개발중입니다.")
     }
 
-    const delete_reply =()=>{
-        alert("아직 개발중입니다.")
+    const delete_reply =(id)=>{
+        if (window.confirm("삭제 하시겠습니까")) {
+            Content.deleteReply(category,id) 
+                .then((response)=>{
+                if(response.status==200){
+                    alert("삭제되었습니다.");
+                    window.location.reload();
+                }
+            }).catch((e)=>{
+                alert("삭제에 실패하였습니다.");
+            })
+        }
     }
 
     let isLoggedIn = loggedInfo? true : false;
-    const replier = isLoggedIn?  <Replier nickname={loggedInfo.nickname}/> : null;
+    const replier = isLoggedIn?  <Replier nickname={loggedInfo.nickname} category={category} id={id}/> : null;
     useEffect(() => {
         window.scrollTo(0, 0);
         const fetchData = async () => {
@@ -114,8 +125,10 @@ function View() {
                                         <img  src={ reply._links == null ?  unknown : writerD}></img>
                                     </div>
                                     <p className="replier-writer-nickname float-left mar-top-15p">{reply.account.nickname}</p>
-                                    {reply._links && <Link to="/" className="dsip-inlineblock padding-rl-10px underline3"  onClick={modify_reply}>수정</Link> }
-                                    {reply._links && <Link to="/" className="dsip-inlineblock margin-right-10p padding-rl-10px underline3" onClick={delete_reply}>삭제</Link> }
+                                    {reply._links && <span  className="dsip-inlineblock padding-rl-10px underline3"  onClick={()=>modify_reply(reply.id)}>수정</span> }
+                                    {reply._links && <span  className="dsip-inlineblock margin-right-10p padding-rl-10px underline3" onClick={() =>delete_reply(reply.id)}>삭제</span> }
+
+                                    <span className="dsip-inlineblock float-right">{reply.writeTime.substring(2,16)}</span>
                                 </div>
                                 <div  className="replies-body-content width-100per-100p">
                                     <p className="width-100per">

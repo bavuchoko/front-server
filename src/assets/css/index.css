@@ -1562,6 +1562,9 @@ div.listingblock > div.content > pre > code{
 .pad-t10p{
     padding-top: 10px;
 }
+.pad-t22p{
+    padding-top: 22px;
+}
 
 .sc-kDDrLX{
     max-width: 293px !important;
@@ -1675,7 +1678,7 @@ div.listingblock > div.content > pre > code{
 .replies-body-hedaer:after {
     content:""; display:block; clear:both;
 }
-.replies-body-hedaer> a {
+.replies-body-hedaer> span {
     padding-top: 22px;
     font-size: 13px;
 }
