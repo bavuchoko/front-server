@@ -38,6 +38,9 @@ function View() {
     const addReply =(data) => {
         setReplies([...replies, data])
     }
+    const updateReplies =(data) => {
+        setReplies(data)
+    }
     const checkClicked =(rid) => {
         setClickedRid(rid)
     }
@@ -51,7 +54,6 @@ function View() {
             setLoading(true);
             Content.getSingleContent(category, id)
                 .then((response) =>{
-                    console.log(response.data)
                     setPost(response.data);
                     setUpdateUrl(response.data['_links']['update'])
                     if(response.data['replies']['_embedded']['repliesResourcesList'] != undefined){
@@ -120,7 +122,7 @@ function View() {
                                     removeReply={removeReply}
                                     checkClicked={checkClicked}
                                     isThisModify={clickedRid == reply.id ? true:false}
-                                    setReplies={setReplies}
+                                    updateReplies={updateReplies}
                                 />
                                 </div>
                             ))}

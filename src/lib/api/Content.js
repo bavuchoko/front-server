@@ -48,13 +48,12 @@ export default {
             data    : data
         })
     },
-    updateReply(category, id, data){
-        console.log(data)
-        // return instance({
-        //     url     : 'api/content/'+category+'/'+id+'/reply',
-        //     method  : 'put',
-        //     data    : data
-        // })
+    updateReply(category, id, rid, data){
+        return instance({
+            url     : 'api/content/'+category+'/'+id+'/reply/'+rid,
+            method  : 'put',
+            data    : data
+        })
     },
     deleteReply(category, contendId, replyId){
         return instance({
