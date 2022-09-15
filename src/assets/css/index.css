@@ -1667,7 +1667,8 @@ div.listingblock > div.content > pre > code{
     padding-bottom: 25px;
     padding-top: 15px;
 }
-
+.replies-body-content > p{
+}
 .replies-operator{
     font-size: 14px;
     width: 100px;
@@ -1686,6 +1687,7 @@ div.listingblock > div.content > pre > code{
     padding: 5px;
     border: 1px solid #e8e8e8;
     border-radius: 2px;
+    margin-right: 10px;
 }
 .replier-write-pic{
     overflow: hidden;
@@ -1701,4 +1703,10 @@ div.listingblock > div.content > pre > code{
     margin-right: 20px;
     background-color: #525252;
     color: white;
+}
+.reply-modify-btn{
+    background-color: #3a3b3f;
+    color: white;
+    padding: 6px 12px !important;
+    margin-top: 16px;
 }

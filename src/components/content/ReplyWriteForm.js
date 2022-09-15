@@ -7,7 +7,7 @@ import unknown from '../../assets/image/unknown.png';
 import moment from "moment";
 import Content from "../../lib/api/Content";
 
-const Replier = ({nickname, category, id, addReplier}=[]) => {
+const ReplyWriteForm = ({nickname, category, id, addReply}=[]) => {
     const [reply, setReply] = useState([]);
 
     const commmit_reply =()=> {
@@ -24,7 +24,8 @@ const Replier = ({nickname, category, id, addReplier}=[]) => {
                 .then((response)=>{
                     if(response.status==200){
                         alert("등록하였습니다.");
-                        window.location.reload();
+                        addReply(response.data)
+                        // window.location.reload();
                     }
                 }).catch((e)=>{
                 alert("등록에 실패하였습니다.");
@@ -49,4 +50,4 @@ const Replier = ({nickname, category, id, addReplier}=[]) => {
 }
 
 
-export default Replier
+export default ReplyWriteForm

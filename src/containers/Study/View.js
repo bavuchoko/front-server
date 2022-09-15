@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Link, useLocation} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 import Content from "../../lib/api/Content";
 import {Viewer} from '@toast-ui/react-editor';
 import 'highlight.js/styles/github.css';
@@ -11,11 +11,9 @@ import colorSyntaxPlugin from "@toast-ui/editor-plugin-color-syntax";
 import UpdateBtn from "../../components/util/UpdateBtn";
 import DeleteBtn from "../../components/util/DeleteBtn";
 import ListBtn from "../../components/util/ListBtn";
-import Replier from "../../components/content/Replier";
+import ReplyWriteForm from "../../components/content/ReplyWriteForm";
 import storage from "../../lib/storage";
-import WriteButton from "../../components/util/WriteButton";
-import unknown from "../../assets/image/unknown.png";
-import writerD from "../../assets/image/writer-default.png";
+import ReplyViewUpdate from "../../components/content/ReplyViewUpdate";
 
 function View() {
     const location = useLocation();
@@ -26,35 +24,27 @@ function View() {
     const [loading, setLoading] = useState(false);
     const [replies, setReplies] = useState(false);
     const [updateUrl, setUpdateUrl] = useState(undefined)
+    const [clickedRid, setClickedRid] = useState([])
     const loggedInfo = storage.get('loggedInfo');
 
     const alrim =()=>{
         alert("아직 개발중입니다.")
     }
 
-    const modify_reply =(id)=>{
-        alert(id)
-        alert("아직 개발중입니다.")
+    const removeReply =(id) => {
+        setReplies(replies.filter(reply => reply.id !== id ))
     }
 
-
-
-    const delete_reply =(id)=>{
-        if (window.confirm("삭제 하시겠습니까")) {
-            Content.deleteReply(category,post.id, id)
-                .then((response)=>{
-                if(response.status==204){
-                    alert("삭제되었습니다.");
-                    setReplies(replies.filter(reply => reply.id !== id ));
-                }
-            }).catch((e)=>{
-                alert("삭제에 실패하였습니다.");
-            })
-        }
+    const addReply =(data) => {
+        setReplies([...replies, data])
     }
+    const checkClicked =(rid) => {
+        setClickedRid(rid)
+    }
+
 
     let isLoggedIn = loggedInfo? true : false;
-    const replier = isLoggedIn?  <Replier nickname={loggedInfo.nickname} category={category} id={id} /> : null;
+    const replier = isLoggedIn?  <ReplyWriteForm nickname={loggedInfo.nickname} category={category} id={id} addReply={addReply}/> : null;
     useEffect(() => {
         window.scrollTo(0, 0);
         const fetchData = async () => {
@@ -85,6 +75,7 @@ function View() {
         };
         fetchData();
     }, []);
+
 
 
     return (
@@ -121,26 +112,17 @@ function View() {
                         {replier}
                         <div className="replies-container">
                             {replies&&replies.map((reply) => (
-                            <div className="replies-body hover-btn " key={reply.id}>
-                                <div className="width-100per replies-body-hedaer">
-                                    <div className="width-60p height-60p float-left margin-right-15p round replier-write-pic">
-                                        <img  src={ reply._links == null ?  unknown : writerD}></img>
-                                    </div>
-                                    <p className="replier-writer-nickname float-left mar-top-15p">{reply.account.nickname}</p>
-                                    {reply._links && <span  className="dsip-inlineblock padding-rl-10px underline3"  onClick={()=>modify_reply(reply.id)}>수정</span> }
-                                    {reply._links && <span  className="dsip-inlineblock margin-right-10p padding-rl-10px underline3" onClick={() =>delete_reply(reply.id)}>삭제</span> }
-
-                                    <span className="dsip-inlineblock float-right">{reply.writeTime.substring(2,16)}</span>
+                                <div className="replies-body hover-btn " key={reply.id}>
+                                <ReplyViewUpdate
+                                    reply={reply}
+                                    category={post.category}
+                                    id={post.id}
+                                    removeReply={removeReply}
+                                    checkClicked={checkClicked}
+                                    isThisModify={clickedRid == reply.id ? true:false}
+                                    setReplies={setReplies}
+                                />
                                 </div>
-                                <div  className="replies-body-content width-100per-100p">
-                                    <p className="width-100per">
-                                        {reply.body}
-                                    </p>
-                                </div>
-                                <div className="replies-operator dsip-inlineblock float-right mar-l-10px">
-                                </div>
-                            </div>
-
                             ))}
                         </div>
                     </div>
