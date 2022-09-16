@@ -12,7 +12,7 @@ pre, form, fieldset, textarea, blockquote, span, * {
 }
 @font-face {
     font-family: "Noto";
-    src:url("../fonts/NotoSansKR-Regular.otf");
+    src:url("../fonts/RobotoSlab-VariableFont_wght.ttf");
     unicode-range: U+0041-005A, U+0061-007A;
 }
 p{margin: 0; padding: 0}
@@ -1302,16 +1302,14 @@ description-table-parent{
     width: calc( 100% - 160px);
 }
 .tui-editor-contents > pre{
+    font-family: 'Noto';
     margin: 0 auto;
     width: calc(100% - 40px);
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    padding-top: 40px !important;
-    padding-bottom: 15px !important;
+    padding: 15px 20px 15px !important;
     background-color: #f1f7fd !important;
 }
 code{
-    font-family: Roboto !important;
+    font-family: 'Noto' !important;
     letter-spacing: 0.5px !important;
     color: #24292e !important;
     line-height: 23px !important;
@@ -1580,44 +1578,56 @@ div.listingblock > div.content > pre > code{
 }
 
 .tui-editor-contents > h1 {
-    font-size: 30px;
+    font-family: 'Noto';
+    font-size: 32px;
 }
 .tui-editor-contents > h2 {
-    font-size: 26px;
+    font-family: 'Noto';
+    font-size: 28px;
 }
 .tui-editor-contents > h3 {
+    font-family: 'Noto';
     line-height: 30px;
 }
 .tui-editor-contents > a {
+    font-family: 'Noto';
     color: blue !important;
 }
 .tui-editor-contents > p > a {
+    font-family: 'Noto';
     color: blue !important;
 }
 .tui-editor-contents > blockquote > p > a {
+    font-family: 'Noto';
     color: blue !important;
 }
 
 .tui-editor-contents > p {
+    font-family: 'Noto';
     font-size: 16px;
 }
 .tui-editor-contents > blockquote > p {
+    font-family: 'Noto';
     font-size: 15px;
 }
 
 .tui-editor-contents > ul > li {
+    font-family: 'Noto';
     font-size: 15px;
     line-height: 32px;
 }
 .tui-editor-contents > ol >  li {
+    font-family: 'Noto';
     font-size: 15px;
     line-height: 32px;
 }
 .tui-editor-contents > ol > li > ul > li {
+    font-family: 'Noto';
     font-size: 15px;
     line-height: 32px;
 }
 .tui-editor-contents > table > tr, th, td{
+    font-family: 'Noto';
     font-size: 14px;
 }
 

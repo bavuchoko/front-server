@@ -21,6 +21,7 @@ import codeSyntaxHighlightPlugin from "@toast-ui/editor-plugin-code-syntax-highl
 import Content from "../../lib/api/Content";
 import moment from 'moment';
 import 'moment/locale/ko';
+import axios from "axios";
 
 
 function WriteContainer(props) {
@@ -31,7 +32,7 @@ function WriteContainer(props) {
 
     const onUploadImage = async (blob, callback) => {
         const url = await fileService.imageUpload(blob);
-        callback("https://pjs.or.kr:8080"+url, 'alt text');
+        callback(axios.defaults.baseURL+url, 'alt text');
         return false;
     };
     const [categoryName, setCategoryName] = useState("");
