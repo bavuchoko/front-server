@@ -112,8 +112,12 @@
     .article-title{
         padding-left: 10px;
         padding-right: 10px;
-
     }
+
+    .tui-editor-contents > table{
+        max-width: 100% !important;
+    }
+
 }
 @media all and (min-width: 768px){
 /*태블릿 세로*/

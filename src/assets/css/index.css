@@ -1597,6 +1597,7 @@ div.listingblock > div.content > pre > code{
 .tui-editor-contents > blockquote > p > a {
     color: blue !important;
 }
+
 .tui-editor-contents > p {
     font-size: 16px;
 }
