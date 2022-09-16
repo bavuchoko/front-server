@@ -116,6 +116,7 @@
 
     .tui-editor-contents > table{
         width: 100% !important;
+        table-layout: fixed !important;
     }
 
 }
