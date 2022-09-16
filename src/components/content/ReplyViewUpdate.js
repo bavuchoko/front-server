@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
 import 'highlight.js/styles/github.css';
 import 'tui-color-picker/dist/tui-color-picker.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
@@ -8,14 +7,14 @@ import moment from "moment";
 import Content from "../../lib/api/Content";
 import writerD from "../../assets/image/writer-default.png";
 
-const ReplyWriteForm = ({ reply, category, id, removeReply, checkClicked, isThisModify, setReplies}) => {
+const ReplyWriteForm = ({ reply, category, id, removeReply, checkClicked, isThisModify, updateReplies}) => {
 
     const [isSelected, setIsSelected] = useState(isThisModify);
     const [replyContent, setReplyContent] = useState(false);
 
 
 
-    const modify_reply =()=> {
+    const modify_reply =(rid)=> {
         if (reply == '') {
             alert("댓글 내용을 입력하세요");
             return;
@@ -24,17 +23,17 @@ const ReplyWriteForm = ({ reply, category, id, removeReply, checkClicked, isThis
             const data = {
                 "body": replyContent,
                 "writeTime":reply.writeTime.substring(0,10)+"T"+reply.writeTime.substring(11,19),
-                "updateTiem": moment().format("YYYY-MM-DDTHH:mm:sszz")
+                "updateTime": moment().format("YYYY-MM-DDTHH:mm:sszz")
             }
-            Content.updateReply(category,id, data)
+            Content.updateReply(category,id, rid, data)
                 .then((response)=>{
                     if(response.status==200){
+                        updateReplies(response.data['_embedded']['repliesResourcesList'])
+                        setIsSelected(false);
                         alert("수정하였습니다.");
-                        console.log(response.data)
-                        setReplies(response.data)
                     }
                 }).catch((e)=>{
-                alert("등록에 실패하였습니다.");
+                alert("수정에 실패하였습니다.");
             })
 
         }
