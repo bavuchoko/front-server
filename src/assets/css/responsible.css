@@ -118,6 +118,9 @@
         width: 100% !important;
         table-layout: fixed !important;
     }
+    .tui-editor-contents h2{
+        line-height: 45px;
+     }
 
 }
 @media all and (min-width: 768px){
