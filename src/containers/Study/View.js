@@ -36,7 +36,11 @@ function View() {
     }
 
     const addReply =(data) => {
-        setReplies([...replies, data])
+        if(!replies) {
+            setReplies([data])
+        }else{
+            setReplies([...replies, data])
+        }
     }
     const updateReplies =(data) => {
         setReplies(data)

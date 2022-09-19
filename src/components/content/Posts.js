@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import Content from "../../lib/api/Content";
+import bookmark from '../../assets/image/bookmark.png';
 
 const Posts = ({ category, currentPage, setPageInfo }=[]) => {
 
@@ -41,6 +42,9 @@ const Posts = ({ category, currentPage, setPageInfo }=[]) => {
                           }}
                     >
                         <div className="width-140p height-140p mar-r-20px article-img">
+                            <img className="hover-btn bookmark"
+                                 src={bookmark}/>
+                            <div className="boomark-count">{post.replies.length}</div>
                             <img className="hover-btn"
                                  src={require('../../assets/image/big/' + post.thumbnail + '.png')}/>
                         </div>

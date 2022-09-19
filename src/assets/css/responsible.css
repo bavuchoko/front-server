@@ -107,7 +107,7 @@
         height: 80px;
     }
     .article-card-body-body{
-        width: calc(100% - 90px);;
+        width: calc(100% - 90px);
     }
     .article-title{
         padding-left: 10px;

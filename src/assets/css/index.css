@@ -475,7 +475,7 @@ a.dropdown-menu{
 }
 
 .article-img{
-    box-shadow: 1px 1px 1px 1px #e5e3e3;
+    /*box-shadow: 1px 1px 1px 1px #e5e3e3;*/
 }
 
 .article-card-body > a:active{
@@ -752,6 +752,7 @@ ul > a.hover-li:hover p{
     border-bottom: 1px solid #e5e5e5;
     display: inline-block;
 }
+
 .font-size-15px{
     font-size: 14px;
 }
@@ -1453,10 +1454,33 @@ code{
     margin-left: 25px;
 }
 .article-img{
+    position: relative;
+    border: 1px solid #f1f1f1;
 }
+
 .article-img > img{
+    position: absolute;
     width: 140px;
     height: 140px;
+}
+.bookmark{
+    z-index: 19;
+    position: absolute;
+    top: -6px;
+    left: 0px;
+    width: 39px !important;
+    height: 35px !important;
+}
+.boomark-count{
+    z-index: 20;
+    text-align: center;
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    top: 0px;
+    left: 6px;
+    width: 20px !important;
+    height: 35px !important;
 }
 .article-card-body > a {
     padding-bottom: 10px;
