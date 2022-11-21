@@ -30,7 +30,6 @@ instance.interceptors.request.use(
 let isTokenRefreshing = false;
 let refreshSubscribers = [];
 
-
 const onTokenRefreshed = (accessToken) => {
     refreshSubscribers.map((callback) => callback(accessToken));
     refreshSubscribers = [];
